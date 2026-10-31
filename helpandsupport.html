@@ -1,0 +1,2137 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Help & Support | Donate Smarter</title>
+
+<style>
+
+/* ===============================
+   GLOBAL
+================================ */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+:root{
+    --purple:#7c3aed;
+    --purple-dark:#5b21b6;
+    --pink:#ec4899;
+    --pink-dark:#be185d;
+    --light-pink:#fdf2f8;
+    --lavender:#f5f3ff;
+    --white:#ffffff;
+    --text:#312e3f;
+    --muted:#756f80;
+    --border:#e9d5ff;
+    --green:#16a34a;
+}
+
+body{
+    background:
+        radial-gradient(circle at top right,#fce7f3,transparent 30%),
+        radial-gradient(circle at bottom left,#ede9fe,transparent 35%),
+        var(--lavender);
+    color:var(--text);
+    min-height:100vh;
+}
+
+
+/* ===============================
+   HEADER
+================================ */
+
+header{
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    color:white;
+    padding:16px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 5px 20px rgba(124,58,237,.22);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.back-btn{
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.35);
+    color:white;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:white;
+    color:var(--purple-dark);
+}
+
+
+/* ===============================
+   HERO
+================================ */
+
+.hero{
+    width:92%;
+    max-width:1150px;
+    margin:35px auto 25px;
+    background:linear-gradient(135deg,#ffffff,#fdf4ff);
+    border:1px solid var(--border);
+    border-radius:25px;
+    padding:40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+    box-shadow:0 15px 40px rgba(124,58,237,.10);
+}
+
+.hero-text h1{
+    font-size:35px;
+    margin-bottom:10px;
+    color:var(--purple-dark);
+}
+
+.hero-text p{
+    color:var(--muted);
+    line-height:1.6;
+    max-width:620px;
+}
+
+.hero-icon{
+    width:115px;
+    height:115px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:55px;
+    flex-shrink:0;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    box-shadow:0 12px 30px rgba(124,58,237,.30);
+}
+
+
+/* ===============================
+   SEARCH
+================================ */
+
+.search-box{
+    margin-top:25px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:6px;
+    display:flex;
+    max-width:650px;
+}
+
+.search-box input{
+    border:none;
+    outline:none;
+    flex:1;
+    padding:13px;
+    font-size:14px;
+    background:transparent;
+}
+
+.search-btn{
+    border:none;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    color:white;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+
+/* ===============================
+   MAIN
+================================ */
+
+.container{
+    width:92%;
+    max-width:1150px;
+    margin:25px auto 50px;
+}
+
+.section-title{
+    margin-bottom:18px;
+}
+
+.section-title h2{
+    font-size:25px;
+    color:var(--purple-dark);
+}
+
+.section-title p{
+    margin-top:6px;
+    color:var(--muted);
+}
+
+
+/* ===============================
+   HELP CATEGORIES
+================================ */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:17px;
+    margin-bottom:40px;
+}
+
+.category-card{
+    background:rgba(255,255,255,.92);
+    border:1px solid var(--border);
+    padding:23px;
+    border-radius:20px;
+    cursor:pointer;
+    transition:.3s;
+    position:relative;
+    overflow:hidden;
+}
+
+.category-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 30px rgba(124,58,237,.15);
+}
+
+.category-icon{
+    width:52px;
+    height:52px;
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    background:linear-gradient(135deg,#ede9fe,#fce7f3);
+    margin-bottom:14px;
+}
+
+.category-card h3{
+    margin-bottom:7px;
+}
+
+.category-card p{
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.5;
+}
+
+
+/* ===============================
+   SUPPORT GRID
+================================ */
+
+.support-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:22px;
+    margin-bottom:35px;
+}
+
+
+/* ===============================
+   FAQ
+================================ */
+
+.faq-box{
+    background:white;
+    padding:27px;
+    border-radius:22px;
+    border:1px solid var(--border);
+}
+
+.faq-box h2,
+.quick-box h2{
+    color:var(--purple-dark);
+    margin-bottom:18px;
+}
+
+.faq-item{
+    border-bottom:1px solid #eee4ff;
+}
+
+.faq-question{
+    width:100%;
+    padding:18px 0;
+    border:none;
+    background:none;
+    display:flex;
+    justify-content:space-between;
+    text-align:left;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+    color:var(--text);
+}
+
+.faq-question span{
+    color:var(--pink);
+    font-size:21px;
+    transition:.3s;
+}
+
+.faq-answer{
+    display:none;
+    color:var(--muted);
+    padding-bottom:17px;
+    line-height:1.6;
+    font-size:14px;
+}
+
+.faq-item.active .faq-answer{
+    display:block;
+}
+
+.faq-item.active .faq-question span{
+    transform:rotate(45deg);
+}
+
+
+/* ===============================
+   QUICK ACTIONS
+================================ */
+
+.quick-box{
+    background:linear-gradient(160deg,#ffffff,#fdf2f8);
+    border:1px solid var(--border);
+    padding:27px;
+    border-radius:22px;
+}
+
+.quick-action{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:13px;
+    padding:15px;
+    margin-bottom:11px;
+    border:none;
+    background:white;
+    border-radius:14px;
+    cursor:pointer;
+    text-align:left;
+    box-shadow:0 4px 12px rgba(124,58,237,.06);
+    transition:.3s;
+}
+
+.quick-action:hover{
+    transform:translateX(6px);
+    background:#faf5ff;
+}
+
+.quick-action span{
+    font-size:24px;
+}
+
+.quick-action strong{
+    display:block;
+}
+
+.quick-action small{
+    color:var(--muted);
+}
+
+
+/* ===============================
+   TICKET FORM
+================================ */
+
+.ticket-section,
+.ticket-status{
+    background:white;
+    padding:32px;
+    border-radius:24px;
+    border:1px solid var(--border);
+    margin-bottom:30px;
+}
+
+.ticket-section h2,
+.ticket-status h2{
+    color:var(--purple-dark);
+    margin-bottom:7px;
+}
+
+.ticket-section > p{
+    color:var(--muted);
+    margin-bottom:23px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:17px;
+}
+
+.full{
+    grid-column:span 2;
+}
+
+label{
+    display:block;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:13px;
+    border:1px solid var(--border);
+    border-radius:11px;
+    outline:none;
+    font-size:14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:var(--purple);
+    box-shadow:0 0 0 3px rgba(124,58,237,.10);
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.submit-btn{
+    margin-top:20px;
+    border:none;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    color:white;
+    padding:14px 25px;
+    border-radius:11px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:15px;
+}
+
+
+/* ===============================
+   TICKETS
+================================ */
+
+.ticket-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:17px;
+    border-radius:14px;
+    background:#fdfaff;
+    margin-bottom:11px;
+    border:1px solid #eee4ff;
+}
+
+.ticket-left h3{
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.ticket-left p{
+    font-size:13px;
+    color:var(--muted);
+}
+
+.ticket-badge{
+    padding:7px 13px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.open{
+    background:#e0e7ff;
+    color:#4338ca;
+}
+
+.progress{
+    background:#fce7f3;
+    color:#be185d;
+}
+
+.resolved{
+    background:#dcfce7;
+    color:#166534;
+}
+
+
+/* ===============================
+   MODALS
+================================ */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(49,46,63,.55);
+    backdrop-filter:blur(5px);
+    z-index:1000;
+    padding:20px;
+    overflow-y:auto;
+}
+
+.modal.show{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.modal-content{
+    width:100%;
+    max-width:650px;
+    background:white;
+    border-radius:25px;
+    padding:30px;
+    position:relative;
+    box-shadow:0 25px 70px rgba(0,0,0,.25);
+}
+
+.modal-close{
+    position:absolute;
+    right:18px;
+    top:15px;
+    width:38px;
+    height:38px;
+    border:none;
+    border-radius:50%;
+    background:#f5f3ff;
+    color:var(--purple-dark);
+    font-size:24px;
+    cursor:pointer;
+}
+
+.modal-title{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.modal-title h2{
+    color:var(--purple-dark);
+    margin-bottom:5px;
+}
+
+.modal-title p{
+    color:var(--muted);
+}
+
+.modal-icon{
+    width:58px;
+    height:58px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    background:linear-gradient(135deg,#ede9fe,#fce7f3);
+}
+
+.email-info{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    background:#faf5ff;
+    padding:14px;
+    border-radius:12px;
+    margin-top:15px;
+}
+
+.email-info p{
+    font-size:13px;
+    color:var(--muted);
+}
+
+
+/* ===============================
+   RATING
+================================ */
+
+.rating-content{
+    max-width:600px;
+    text-align:center;
+}
+
+.rating-header{
+    margin-bottom:25px;
+}
+
+.rating-header h2{
+    color:var(--purple-dark);
+    margin:12px 0 8px;
+}
+
+.rating-header p{
+    color:var(--muted);
+}
+
+.big-rating-icon{
+    width:75px;
+    height:75px;
+    margin:auto;
+    border-radius:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+    background:linear-gradient(135deg,#ede9fe,#fce7f3);
+}
+
+.emoji-ratings{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-bottom:25px;
+}
+
+.emoji-ratings button{
+    border:none;
+    background:white;
+    padding:10px;
+    border-radius:15px;
+    cursor:pointer;
+    font-size:27px;
+    transition:.3s;
+}
+
+.emoji-ratings button small{
+    display:block;
+    font-size:10px;
+    color:var(--muted);
+}
+
+.emoji-ratings button:hover,
+.emoji-ratings button.selected{
+    background:linear-gradient(135deg,#ede9fe,#fce7f3);
+    transform:translateY(-5px);
+}
+
+.rating-divider{
+    color:#a1a1aa;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:1px;
+    margin:15px 0;
+}
+
+.stars{
+    display:flex;
+    justify-content:center;
+    gap:7px;
+}
+
+.stars span{
+    font-size:42px;
+    color:#ddd6fe;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.stars span.active{
+    color:#f59e0b;
+}
+
+.rating-text{
+    color:var(--muted);
+    margin:12px 0 18px;
+    font-size:14px;
+}
+
+.rating-content textarea{
+    min-height:100px;
+}
+
+.rating-submit{
+    width:100%;
+}
+
+.rating-summary{
+    margin-top:22px;
+    display:flex;
+    gap:15px;
+}
+
+.rating-summary div{
+    flex:1;
+    padding:16px;
+    background:#faf5ff;
+    border-radius:15px;
+}
+
+.rating-summary strong{
+    display:block;
+    color:var(--purple-dark);
+    font-size:21px;
+}
+
+.rating-summary span{
+    font-size:11px;
+    color:var(--muted);
+}
+
+
+/* ===============================
+   CHAT
+================================ */
+
+.chat-button{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:62px;
+    height:62px;
+    border:none;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    color:white;
+    font-size:27px;
+    cursor:pointer;
+    box-shadow:0 10px 28px rgba(124,58,237,.35);
+    z-index:100;
+}
+
+.chat-window{
+    display:none;
+    position:fixed;
+    right:25px;
+    bottom:100px;
+    width:340px;
+    max-width:90%;
+    background:white;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 18px 45px rgba(0,0,0,.22);
+    z-index:100;
+}
+
+.chat-header{
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    color:white;
+    padding:17px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.close-chat{
+    background:none;
+    border:none;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+}
+
+.chat-messages{
+    height:280px;
+    overflow-y:auto;
+    padding:16px;
+    background:#faf7ff;
+}
+
+.bot-message{
+    background:white;
+    padding:12px;
+    border-radius:14px 14px 14px 3px;
+    margin-bottom:11px;
+    font-size:14px;
+}
+
+.user-message{
+    background:linear-gradient(135deg,#ede9fe,#fce7f3);
+    padding:12px;
+    border-radius:14px 14px 3px 14px;
+    margin-bottom:11px;
+    font-size:14px;
+    text-align:right;
+}
+
+.chat-input{
+    display:flex;
+    padding:10px;
+    border-top:1px solid var(--border);
+}
+
+.chat-input input{
+    border:none;
+    background:#f6f1ff;
+}
+
+.chat-input button{
+    border:none;
+    background:var(--purple);
+    color:white;
+    padding:0 16px;
+    border-radius:10px;
+    cursor:pointer;
+    margin-left:7px;
+}
+
+
+/* ===============================
+   TOAST
+================================ */
+
+.toast{
+    position:fixed;
+    top:25px;
+    right:25px;
+    background:var(--purple-dark);
+    color:white;
+    padding:15px 21px;
+    border-radius:11px;
+    display:none;
+    z-index:2000;
+}
+
+
+/* ===============================
+   FOOTER
+================================ */
+
+footer{
+    background:linear-gradient(135deg,#3b0764,#831843);
+    color:white;
+    text-align:center;
+    padding:28px;
+    margin-top:40px;
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media(max-width:900px){
+
+    .category-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .support-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:650px){
+
+    header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .hero{
+        flex-direction:column;
+        align-items:flex-start;
+        padding:26px;
+    }
+
+    .hero-text h1{
+        font-size:28px;
+    }
+
+    .category-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:span 1;
+    }
+
+    .ticket-card{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .emoji-ratings{
+        gap:2px;
+    }
+
+    .emoji-ratings button{
+        font-size:22px;
+        padding:6px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+
+<div class="logo">
+    🎁 Donate Smarter
+</div>
+
+
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+
+<div class="hero-text">
+
+    <h1>How can we help you? 💜</h1>
+
+    <p>
+        Explore help topics, find quick answers, create
+        support tickets, email our team, and chat with
+        our support assistant.
+    </p>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="helpSearch"
+            placeholder="Search for donation, account, events..."
+            onkeyup="searchHelp()"
+        >
+
+        <button class="search-btn" onclick="searchHelp()">
+            🔍 Search
+        </button>
+
+    </div>
+
+</div>
+
+<div class="hero-icon">🆘</div>
+
+
+</section>
+
+<div class="container">
+
+
+<!-- HELP TOPICS -->
+
+<div class="section-title">
+
+    <h2>✨ Explore Help Topics</h2>
+
+    <p>Select a category for quick assistance.</p>
+
+</div>
+
+
+<div class="category-grid">
+
+    <div class="category-card searchable"
+    onclick="showToast('Donation help selected! 🎁')">
+
+        <div class="category-icon">🎁</div>
+
+        <h3>Donations</h3>
+
+        <p>Create, manage and track your donations.</p>
+
+    </div>
+
+
+    <div class="category-card searchable"
+    onclick="showToast('Account help selected! 👤')">
+
+        <div class="category-icon">👤</div>
+
+        <h3>Account</h3>
+
+        <p>Profile, password and account settings.</p>
+
+    </div>
+
+
+    <div class="category-card searchable"
+    onclick="showToast('Event help selected! 📅')">
+
+        <div class="category-icon">📅</div>
+
+        <h3>Events</h3>
+
+        <p>Get help managing donation events.</p>
+
+    </div>
+
+
+    <div class="category-card searchable"
+    onclick="showToast('Technical support selected! 🛠️')">
+
+        <div class="category-icon">🛠️</div>
+
+        <h3>Technical Help</h3>
+
+        <p>Solve website and technical issues.</p>
+
+    </div>
+
+</div>
+
+
+<!-- FAQ AND QUICK ACTIONS -->
+
+<div class="support-grid">
+
+    <section class="faq-box">
+
+        <h2>💡 Popular Questions</h2>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question"
+            onclick="toggleFAQ(this)">
+
+                How do I create a donation request?
+
+                <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                Choose a donation category, enter item details,
+                and submit your donation request.
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question"
+            onclick="toggleFAQ(this)">
+
+                How can I track my donation?
+
+                <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                Open Donation History to check your
+                donation status and updates.
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question"
+            onclick="toggleFAQ(this)">
+
+                Can I update my profile?
+
+                <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                Yes. Open Account Settings, update your details,
+                and click Save Profile.
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question"
+            onclick="toggleFAQ(this)">
+
+                What happens after I donate?
+
+                <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                Your request is reviewed and its progress
+                appears in your Donation History.
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUICK ACTIONS -->
+
+    <section class="quick-box">
+
+        <h2>⚡ Quick Actions</h2>
+
+
+        <button class="quick-action" onclick="openChat()">
+
+            <span>🤖</span>
+
+            <div>
+
+                <strong>Smart Assistant</strong>
+
+                <small>Get quick answers</small>
+
+            </div>
+
+        </button>
+
+
+        <button class="quick-action"
+        onclick="scrollToTicket()">
+
+            <span>🎫</span>
+
+            <div>
+
+                <strong>Create a Ticket</strong>
+
+                <small>Get help from our team</small>
+
+            </div>
+
+        </button>
+
+
+        <button class="quick-action"
+        onclick="openEmailSupport()">
+
+            <span>📧</span>
+
+            <div>
+
+                <strong>Email Support</strong>
+
+                <small>Send a detailed message</small>
+
+            </div>
+
+        </button>
+
+
+        <button class="quick-action"
+        onclick="openRating()">
+
+            <span>⭐</span>
+
+            <div>
+
+                <strong>Rate Experience</strong>
+
+                <small>Help us improve Donate Smarter</small>
+
+            </div>
+
+        </button>
+
+    </section>
+
+</div>
+
+
+<!-- SUPPORT TICKET -->
+
+<section class="ticket-section" id="ticketSection">
+
+    <h2>🎫 Create a Support Ticket</h2>
+
+    <p>Tell us about your problem and we'll help you.</p>
+
+
+    <form onsubmit="createTicket(event)">
+
+        <div class="form-grid">
+
+            <div>
+
+                <label>Your Name</label>
+
+                <input
+                    type="text"
+                    id="ticketName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Email Address</label>
+
+                <input
+                    type="email"
+                    id="ticketEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Issue Category</label>
+
+                <select id="ticketCategory">
+
+                    <option>Donation Issue</option>
+                    <option>Account Issue</option>
+                    <option>Event Issue</option>
+                    <option>Technical Issue</option>
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <label>Priority</label>
+
+                <select>
+
+                    <option>Normal</option>
+                    <option>High</option>
+                    <option>Low</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="full">
+
+                <label>Describe Your Problem</label>
+
+                <textarea
+                    id="ticketMessage"
+                    placeholder="Explain your problem..."
+                    required
+                ></textarea>
+
+            </div>
+
+        </div>
+
+
+        <button type="submit" class="submit-btn">
+            Submit Support Ticket 🚀
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- TICKET STATUS -->
+
+<section class="ticket-status">
+
+    <h2>📊 Your Recent Tickets</h2>
+
+    <div id="ticketList">
+
+        <div class="ticket-card">
+
+            <div class="ticket-left">
+
+                <h3>Donation Pickup Question</h3>
+
+                <p>Ticket #DS-1024</p>
+
+            </div>
+
+            <span class="ticket-badge progress">
+                In Progress
+            </span>
+
+        </div>
+
+
+        <div class="ticket-card">
+
+            <div class="ticket-left">
+
+                <h3>Profile Update Help</h3>
+
+                <p>Ticket #DS-1018</p>
+
+            </div>
+
+            <span class="ticket-badge resolved">
+                Resolved
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</div>
+
+<!-- ===============================
+     EMAIL SUPPORT MODAL
+================================ -->
+
+<div class="modal" id="emailModal">
+
+
+<div class="modal-content">
+
+    <button class="modal-close"
+    onclick="closeEmailSupport()">
+        ×
+    </button>
+
+
+    <div class="modal-title">
+
+        <div class="modal-icon">📧</div>
+
+        <div>
+
+            <h2>Email Support</h2>
+
+            <p>Send a detailed support request to our team.</p>
+
+        </div>
+
+    </div>
+
+
+    <form onsubmit="sendSupportEmail(event)">
+
+        <div class="form-grid">
+
+            <div>
+
+                <label>Your Name</label>
+
+                <input
+                    type="text"
+                    id="supportName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Email Address</label>
+
+                <input
+                    type="email"
+                    id="supportEmail"
+                    placeholder="example@email.com"
+                    required
+                >
+
+            </div>
+
+
+            <div class="full">
+
+                <label>Subject</label>
+
+                <input
+                    type="text"
+                    id="supportSubject"
+                    placeholder="What do you need help with?"
+                    required
+                >
+
+            </div>
+
+
+            <div class="full">
+
+                <label>Support Category</label>
+
+                <select id="supportCategory">
+
+                    <option>General Question</option>
+                    <option>Donation Problem</option>
+                    <option>Account Problem</option>
+                    <option>Technical Issue</option>
+                    <option>Event Support</option>
+                    <option>Feedback</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="full">
+
+                <label>Your Message</label>
+
+                <textarea
+                    id="supportMessage"
+                    placeholder="Describe your problem in detail..."
+                    required
+                ></textarea>
+
+            </div>
+
+        </div>
+
+
+        <div class="email-info">
+
+            <span>💜</span>
+
+            <p>
+                Your request will be recorded for support review.
+            </p>
+
+        </div>
+
+
+        <button type="submit" class="submit-btn">
+            📤 Send Support Request
+        </button>
+
+    </form>
+
+</div>
+```
+
+</div>
+
+<!-- ===============================
+     RATING MODAL
+================================ -->
+
+<div class="modal" id="ratingModal">
+
+```
+<div class="modal-content rating-content">
+
+    <button class="modal-close"
+    onclick="closeRating()">
+        ×
+    </button>
+
+
+    <div class="rating-header">
+
+        <div class="big-rating-icon">💜</div>
+
+        <h2>How was your experience?</h2>
+
+        <p>
+            Your feedback helps us make
+            Donate Smarter better.
+        </p>
+
+    </div>
+
+
+    <div class="emoji-ratings">
+
+        <button onclick="selectEmoji(1,this)">
+            😞
+            <small>Poor</small>
+        </button>
+
+        <button onclick="selectEmoji(2,this)">
+            😕
+            <small>Fair</small>
+        </button>
+
+        <button onclick="selectEmoji(3,this)">
+            😐
+            <small>Good</small>
+        </button>
+
+        <button onclick="selectEmoji(4,this)">
+            😊
+            <small>Great</small>
+        </button>
+
+        <button onclick="selectEmoji(5,this)">
+            🤩
+            <small>Excellent</small>
+        </button>
+
+    </div>
+
+
+    <div class="rating-divider">
+        OR RATE WITH STARS
+    </div>
+
+
+    <div class="stars" id="stars">
+
+        <span onclick="selectStar(1)">★</span>
+        <span onclick="selectStar(2)">★</span>
+        <span onclick="selectStar(3)">★</span>
+        <span onclick="selectStar(4)">★</span>
+        <span onclick="selectStar(5)">★</span>
+
+    </div>
+
+
+    <p class="rating-text" id="ratingText">
+        Select a rating
+    </p>
+
+
+    <textarea
+        id="feedbackMessage"
+        placeholder="Tell us what you liked or what we can improve..."
+    ></textarea>
+
+
+    <button
+        class="submit-btn rating-submit"
+        onclick="submitRating()"
+    >
+        Submit Feedback 💜
+    </button>
+
+
+    <div class="rating-summary">
+
+        <div>
+
+            <strong>4.8</strong>
+
+            <span>Average Rating</span>
+
+        </div>
+
+
+        <div>
+
+            <strong id="totalRatings">128</strong>
+
+            <span>Community Ratings</span>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</div>
+
+<!-- CHAT BUTTON -->
+
+<button class="chat-button" onclick="toggleChat()">
+    💬
+</button>
+
+<!-- CHAT WINDOW -->
+
+<div class="chat-window" id="chatWindow">
+
+```
+<div class="chat-header">
+
+    <div>
+
+        <strong>🤖 Support Assistant</strong>
+
+        <br>
+
+        <small>Ready to help</small>
+
+    </div>
+
+    <button class="close-chat" onclick="toggleChat()">
+        ×
+    </button>
+
+</div>
+
+
+<div class="chat-messages" id="chatMessages">
+
+    <div class="bot-message">
+
+        👋 Hello!
+
+        <br><br>
+
+        I'm the Donate Smarter support assistant 💜
+
+        <br><br>
+
+        Ask me about donations, accounts,
+        events or support tickets.
+
+    </div>
+
+</div>
+
+
+<div class="chat-input">
+
+    <input
+        type="text"
+        id="chatInput"
+        placeholder="Type a message..."
+        onkeydown="checkEnter(event)"
+    >
+
+    <button onclick="sendChat()">➤</button>
+
+</div>
+```
+
+</div>
+
+<!-- TOAST -->
+
+<div class="toast" id="toast"></div>
+
+<!-- FOOTER -->
+
+<footer>
+
+
+<strong>🎁 Donate Smarter</strong>
+
+<br><br>
+
+Together We Can Make a Difference 💜
+
+<br><br>
+
+© 2026 Donate Smarter
+
+
+</footer>
+
+<script>
+
+/* ===============================
+   FAQ
+================================ */
+
+function toggleFAQ(button){
+
+    const item = button.parentElement;
+
+    document.querySelectorAll(".faq-item").forEach(function(faq){
+
+        if(faq !== item){
+            faq.classList.remove("active");
+        }
+
+    });
+
+    item.classList.toggle("active");
+
+}
+
+
+/* ===============================
+   SEARCH
+================================ */
+
+function searchHelp(){
+
+    const search =
+        document.getElementById("helpSearch")
+        .value
+        .toLowerCase();
+
+    document.querySelectorAll(".searchable")
+    .forEach(function(card){
+
+        const text = card.textContent.toLowerCase();
+
+        if(text.includes(search)){
+            card.style.display = "block";
+        }else{
+            card.style.display = "none";
+        }
+
+    });
+
+}
+
+
+/* ===============================
+   SCROLL TO TICKET
+================================ */
+
+function scrollToTicket(){
+
+    document
+    .getElementById("ticketSection")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* ===============================
+   CREATE TICKET
+================================ */
+
+function createTicket(event){
+
+    event.preventDefault();
+
+    const category =
+        document.getElementById("ticketCategory").value;
+
+    const number =
+        Math.floor(1000 + Math.random() * 9000);
+
+    const ticketNumber = "DS-" + number;
+
+    const ticket = document.createElement("div");
+
+    ticket.className = "ticket-card";
+
+    ticket.innerHTML = `
+        <div class="ticket-left">
+            <h3>${category}</h3>
+            <p>Ticket #${ticketNumber}</p>
+        </div>
+
+        <span class="ticket-badge open">
+            Open
+        </span>
+    `;
+
+    document
+    .getElementById("ticketList")
+    .prepend(ticket);
+
+    showToast(
+        "Ticket created successfully! 🎉"
+    );
+
+    event.target.reset();
+
+}
+
+
+/* ===============================
+   EMAIL SUPPORT
+================================ */
+
+function openEmailSupport(){
+
+    document
+    .getElementById("emailModal")
+    .classList.add("show");
+
+}
+
+
+function closeEmailSupport(){
+
+    document
+    .getElementById("emailModal")
+    .classList.remove("show");
+
+}
+
+
+function sendSupportEmail(event){
+
+    event.preventDefault();
+
+    const number =
+        Math.floor(10000 + Math.random() * 90000);
+
+    const reference = "EMAIL-" + number;
+
+    showToast(
+        "Support request sent! 💜 Ref: " + reference
+    );
+
+    event.target.reset();
+
+    setTimeout(function(){
+        closeEmailSupport();
+    },1500);
+
+}
+
+
+/* ===============================
+   RATING
+================================ */
+
+let selectedRating = 0;
+
+
+function openRating(){
+
+    document
+    .getElementById("ratingModal")
+    .classList.add("show");
+
+}
+
+
+function closeRating(){
+
+    document
+    .getElementById("ratingModal")
+    .classList.remove("show");
+
+}
+
+
+function selectStar(rating){
+
+    selectedRating = rating;
+
+    const stars =
+        document.querySelectorAll("#stars span");
+
+    stars.forEach(function(star,index){
+
+        if(index < rating){
+            star.classList.add("active");
+        }else{
+            star.classList.remove("active");
+        }
+
+    });
+
+    updateRatingText(rating);
+
+}
+
+
+function selectEmoji(rating,button){
+
+    document
+    .querySelectorAll(".emoji-ratings button")
+    .forEach(function(item){
+        item.classList.remove("selected");
+    });
+
+    button.classList.add("selected");
+
+    selectStar(rating);
+
+}
+
+
+function updateRatingText(rating){
+
+    const messages = {
+        1:"😞 We're sorry to hear that.",
+        2:"😕 Thanks! We can improve.",
+        3:"🙂 Good! Thank you.",
+        4:"😊 Great! We're happy.",
+        5:"🤩 Amazing! Thank you so much!"
+    };
+
+    document
+    .getElementById("ratingText")
+    .textContent =
+        messages[rating];
+
+}
+
+
+function submitRating(){
+
+    if(selectedRating === 0){
+
+        showToast(
+            "Please select a rating first! ⭐"
+        );
+
+        return;
+
+    }
+
+    const total =
+        document.getElementById("totalRatings");
+
+    total.textContent =
+        Number(total.textContent) + 1;
+
+    showToast(
+        "Thank you for your feedback! 💜✨"
+    );
+
+    setTimeout(function(){
+
+        closeRating();
+
+        selectedRating = 0;
+
+        document
+        .getElementById("feedbackMessage")
+        .value = "";
+
+        document
+        .querySelectorAll("#stars span")
+        .forEach(function(star){
+            star.classList.remove("active");
+        });
+
+        document
+        .querySelectorAll(".emoji-ratings button")
+        .forEach(function(button){
+            button.classList.remove("selected");
+        });
+
+        document
+        .getElementById("ratingText")
+        .textContent =
+            "Select a rating";
+
+    },1200);
+
+}
+
+
+/* ===============================
+   CHAT
+================================ */
+
+function toggleChat(){
+
+    const chat =
+        document.getElementById("chatWindow");
+
+    if(chat.style.display === "block"){
+        chat.style.display = "none";
+    }else{
+        chat.style.display = "block";
+    }
+
+}
+
+
+function openChat(){
+
+    document
+    .getElementById("chatWindow")
+    .style.display = "block";
+
+}
+
+
+function sendChat(){
+
+    const input =
+        document.getElementById("chatInput");
+
+    const message =
+        input.value.trim();
+
+    if(message === ""){
+        return;
+    }
+
+    const messages =
+        document.getElementById("chatMessages");
+
+    const user =
+        document.createElement("div");
+
+    user.className = "user-message";
+
+    user.textContent = message;
+
+    messages.appendChild(user);
+
+    input.value = "";
+
+    messages.scrollTop =
+        messages.scrollHeight;
+
+
+    setTimeout(function(){
+
+        const bot =
+            document.createElement("div");
+
+        bot.className = "bot-message";
+
+        bot.textContent =
+            getBotReply(message);
+
+        messages.appendChild(bot);
+
+        messages.scrollTop =
+            messages.scrollHeight;
+
+    },500);
+
+}
+
+
+function getBotReply(message){
+
+    message = message.toLowerCase();
+
+    if(message.includes("donat")){
+
+        return "🎁 You can create and track donations through your Donate Smarter dashboard.";
+
+    }
+
+    if(
+        message.includes("password") ||
+        message.includes("security")
+    ){
+
+        return "🔐 Go to Account Settings → Security to update your password.";
+
+    }
+
+    if(message.includes("ticket")){
+
+        return "🎫 You can create a support ticket using the form on this page.";
+
+    }
+
+    if(message.includes("event")){
+
+        return "📅 Check your dashboard to manage donation events.";
+
+    }
+
+    if(message.includes("account")){
+
+        return "👤 You can update your profile and preferences in Account Settings.";
+
+    }
+
+    if(
+        message.includes("hello") ||
+        message.includes("hi")
+    ){
+
+        return "👋 Hello! How can I help you today?";
+
+    }
+
+    return "💜 Thanks for your question! You can create a support ticket or use Email Support for detailed assistance.";
+
+}
+
+
+function checkEnter(event){
+
+    if(event.key === "Enter"){
+
+        event.preventDefault();
+
+        sendChat();
+
+    }
+
+}
+
+
+/* ===============================
+   TOAST
+================================ */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.style.display = "block";
+
+    clearTimeout(window.toastTimer);
+
+    window.toastTimer =
+        setTimeout(function(){
+
+            toast.style.display = "none";
+
+        },3000);
+
+}
+
+
+/* ===============================
+   CLOSE MODAL WHEN CLICKING OUTSIDE
+================================ */
+
+window.addEventListener("click",function(event){
+
+    const emailModal =
+        document.getElementById("emailModal");
+
+    const ratingModal =
+        document.getElementById("ratingModal");
+
+    if(event.target === emailModal){
+        closeEmailSupport();
+    }
+
+    if(event.target === ratingModal){
+        closeRating();
+    }
+
+});
+
+</script>
+
+</body>
+</html>

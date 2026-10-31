@@ -1,0 +1,2805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Available Items - Donate Smarter</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+/* =====================================================
+   BASIC
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f7f5fb;
+    color:#282436;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    width:100%;
+    height:82px;
+    background:linear-gradient(135deg,#5916e8,#7c25f2);
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 55px;
+
+    box-shadow:0 5px 25px rgba(80,20,200,.18);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-icon{
+    width:45px;
+    height:45px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.18);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+}
+
+.logo h1{
+    font-size:23px;
+    font-weight:800;
+}
+
+.logo p{
+    font-size:10px;
+    opacity:.8;
+    margin-top:-2px;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.header-right span{
+    font-size:13px;
+    opacity:.9;
+}
+
+.header-right i{
+    font-size:19px;
+}
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main{
+    max-width:1400px;
+    margin:auto;
+    padding:40px 45px;
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.page-title{
+    margin-bottom:30px;
+}
+
+.page-title h2{
+    font-size:34px;
+    font-weight:800;
+}
+
+.page-title p{
+    color:#898392;
+    font-size:14px;
+    margin-top:5px;
+}
+
+/* =====================================================
+   STAT CARDS
+===================================================== */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+
+    margin-bottom:28px;
+}
+
+.stat-card{
+    background:white;
+
+    padding:23px;
+
+    border-radius:22px;
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    box-shadow:0 7px 25px rgba(50,25,100,.07);
+}
+
+.stat-icon{
+    width:55px;
+    height:55px;
+
+    border-radius:17px;
+
+    background:#eee5ff;
+    color:#681ce8;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+}
+
+.stat-card h3{
+    font-size:26px;
+    font-weight:800;
+}
+
+.stat-card p{
+    color:#938d9c;
+    font-size:12px;
+}
+
+/* =====================================================
+   FILTER BOX
+===================================================== */
+
+.filter-box{
+    background:white;
+
+    padding:22px;
+
+    border-radius:24px;
+
+    box-shadow:0 7px 25px rgba(50,25,100,.07);
+
+    margin-bottom:35px;
+}
+
+/* SEARCH */
+
+.search{
+    position:relative;
+    margin-bottom:17px;
+}
+
+.search i{
+    position:absolute;
+
+    left:18px;
+    top:17px;
+
+    color:#9992a3;
+}
+
+.search input{
+    width:100%;
+    height:53px;
+
+    border:1px solid #e5e0ec;
+
+    border-radius:15px;
+
+    padding:0 20px 0 48px;
+
+    font-size:13px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+.search input:focus{
+    border-color:#6d1de9;
+
+    box-shadow:0 0 0 4px #eee6ff;
+}
+
+/* FILTERS */
+
+.filters{
+    display:grid;
+
+    grid-template-columns:1fr 1fr 180px;
+
+    gap:15px;
+}
+
+select{
+    height:50px;
+
+    border:1px solid #e5e0ec;
+
+    border-radius:14px;
+
+    background:white;
+
+    padding:0 15px;
+
+    color:#575260;
+
+    outline:none;
+
+    cursor:pointer;
+
+    font-size:13px;
+}
+
+.saved-btn{
+    height:50px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#eee5ff;
+
+    color:#681ce8;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.saved-btn:hover{
+    background:#681ce8;
+    color:white;
+}
+
+/* =====================================================
+   SECTION HEADER
+===================================================== */
+
+.section-heading{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+.section-heading h2{
+    font-size:22px;
+}
+
+.section-heading span{
+    color:#8f8998;
+
+    font-size:12px;
+}
+
+/* =====================================================
+   ITEMS GRID
+===================================================== */
+
+.items-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:25px;
+}
+
+/* =====================================================
+   ITEM CARD
+===================================================== */
+
+.item-card{
+    background:white;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 8px 28px rgba(50,25,100,.08);
+
+    transition:.3s;
+
+    cursor:pointer;
+}
+
+.item-card:hover{
+    transform:translateY(-7px);
+
+    box-shadow:
+        0 16px 35px rgba(85,25,190,.16);
+}
+
+/* IMAGE */
+
+.item-image{
+    width:100%;
+    height:210px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.item-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.4s;
+}
+
+.item-card:hover .item-image img{
+    transform:scale(1.06);
+}
+
+/* CONDITION */
+
+.condition{
+    position:absolute;
+
+    left:14px;
+    top:14px;
+
+    background:white;
+
+    padding:7px 12px;
+
+    border-radius:20px;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    color:#299b49;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
+}
+
+/* SAVE */
+
+.save{
+    position:absolute;
+
+    right:14px;
+    top:14px;
+
+    width:40px;
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#777;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
+
+    transition:.2s;
+}
+
+.save:hover{
+    transform:scale(1.08);
+}
+
+.save.saved{
+    color:#ed3c72;
+}
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.item-info{
+    padding:21px;
+}
+
+.category{
+    color:#6b1de8;
+
+    font-size:11px;
+
+    font-weight:700;
+}
+
+.item-info h3{
+    font-size:19px;
+
+    margin-top:5px;
+
+    margin-bottom:8px;
+}
+
+.description{
+    color:#898491;
+
+    font-size:12px;
+
+    line-height:1.65;
+
+    margin-bottom:12px;
+}
+
+.location{
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    color:#77717f;
+
+    font-size:11px;
+}
+
+.location i{
+    color:#6c1ee9;
+}
+
+/* FOOTER */
+
+.item-footer{
+    border-top:1px solid #eeeaf2;
+
+    margin-top:17px;
+
+    padding-top:14px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.donor{
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#77717e;
+
+    font-size:10px;
+}
+
+.donor-avatar{
+    width:31px;
+    height:31px;
+
+    border-radius:50%;
+
+    background:#eae0ff;
+
+    color:#6c1ee9;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.view-btn{
+    border:none;
+
+    background:#681ce8;
+
+    color:white;
+
+    padding:9px 14px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:10px;
+
+    font-weight:600;
+}
+
+/* =====================================================
+   NO ITEMS
+===================================================== */
+
+.no-items{
+    grid-column:1/-1;
+
+    background:white;
+
+    padding:70px 20px;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    color:#8b8494;
+}
+
+.no-items i{
+    font-size:50px;
+
+    color:#c9b5f4;
+
+    margin-bottom:15px;
+}
+
+.no-items h3{
+    color:#40394a;
+
+    margin-bottom:5px;
+}
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(25,13,45,.68);
+
+    backdrop-filter:blur(6px);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:1000;
+
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+/* MODAL BOX */
+
+.modal-box{
+    width:900px;
+
+    max-width:100%;
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    background:white;
+
+    border-radius:28px;
+
+    position:relative;
+
+    animation:popup .3s ease;
+}
+
+@keyframes popup{
+
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+/* CLOSE */
+
+.close{
+    position:absolute;
+
+    right:20px;
+    top:20px;
+
+    width:42px;
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#444;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    z-index:5;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+/* =====================================================
+   DETAILS
+===================================================== */
+
+.detail{
+    display:grid;
+
+    grid-template-columns:45% 55%;
+}
+
+.detail-image{
+    min-height:530px;
+}
+
+.detail-image img{
+    width:100%;
+    height:100%;
+
+    min-height:530px;
+
+    object-fit:cover;
+
+    border-radius:28px 0 0 28px;
+}
+
+.detail-content{
+    padding:42px;
+}
+
+.tag{
+    display:inline-block;
+
+    background:#eee5ff;
+
+    color:#691de8;
+
+    padding:7px 13px;
+
+    border-radius:20px;
+
+    font-size:10px;
+
+    font-weight:700;
+}
+
+.detail-content h2{
+    font-size:30px;
+
+    margin-top:14px;
+
+    margin-bottom:8px;
+}
+
+.condition-text{
+    color:#299c4a;
+
+    font-size:12px;
+
+    font-weight:600;
+}
+
+.detail-description{
+    color:#77717e;
+
+    font-size:13px;
+
+    line-height:1.8;
+
+    margin:20px 0;
+}
+
+/* DETAILS INFORMATION */
+
+.details-list{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+
+    margin-bottom:20px;
+}
+
+.detail-box{
+    background:#f8f6fb;
+
+    padding:15px;
+
+    border-radius:14px;
+}
+
+.detail-box small{
+    display:block;
+
+    color:#9992a2;
+
+    font-size:9px;
+
+    margin-bottom:4px;
+}
+
+.detail-box strong{
+    font-size:12px;
+}
+
+/* DONOR */
+
+.donor-detail{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    border:1px solid #eee8f4;
+
+    padding:14px;
+
+    border-radius:15px;
+}
+
+.donor-big{
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    background:#eae0ff;
+
+    color:#691de8;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+/* =====================================================
+   REQUEST BUTTON
+===================================================== */
+
+.request-btn{
+    width:100%;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:14px;
+
+    margin-top:20px;
+
+    background:
+        linear-gradient(135deg,#6417e8,#8d39f4);
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.request-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(103,28,232,.25);
+}
+
+.request-btn.requested{
+    background:#28a745;
+
+    cursor:default;
+
+    transform:none;
+
+    box-shadow:none;
+}
+
+/* =====================================================
+   SUCCESS MESSAGE
+===================================================== */
+
+.request-success{
+    margin-top:15px;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    background:#eaf8ee;
+
+    color:#218838;
+
+    text-align:center;
+
+    font-size:12px;
+
+    line-height:1.7;
+
+    animation:success .3s ease;
+}
+
+.request-success i{
+    margin-right:5px;
+}
+
+@keyframes success{
+
+    from{
+        opacity:0;
+        transform:translateY(5px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1100px){
+
+    .items-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:800px){
+
+    .header{
+        padding:0 20px;
+    }
+
+    .main{
+        padding:30px 20px;
+    }
+
+    .filters{
+        grid-template-columns:1fr;
+    }
+
+    .items-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .detail{
+        grid-template-columns:1fr;
+    }
+
+    .detail-image{
+        min-height:270px;
+        height:270px;
+    }
+
+    .detail-image img{
+        min-height:270px;
+        height:270px;
+
+        border-radius:28px 28px 0 0;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .logo h1{
+        font-size:18px;
+    }
+
+    .logo p{
+        display:none;
+    }
+
+    .header-right span{
+        display:none;
+    }
+
+    .page-title h2{
+        font-size:27px;
+    }
+
+    .main{
+        padding:25px 15px;
+    }
+
+    .detail-content{
+        padding:25px;
+    }
+
+    .details-list{
+        grid-template-columns:1fr;
+    }
+
+}
+/* =====================================================
+   PREMIUM PURPLE THEME
+===================================================== */
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%, #eadcff 0%, transparent 30%),
+        radial-gradient(circle at 90% 20%, #d9c7ff 0%, transparent 28%),
+        linear-gradient(135deg,#f4efff,#eee8fa 50%,#f8f5ff);
+    color:#29213d;
+    min-height:100vh;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    background:
+        linear-gradient(
+            135deg,
+            #4210a8,
+            #6818df 45%,
+            #8d3df4
+        );
+
+    box-shadow:
+        0 10px 35px rgba(76,25,180,.28);
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main{
+    max-width:1450px;
+}
+
+
+/* =====================================================
+   PREMIUM STAT CARDS
+===================================================== */
+
+.stat-card{
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.72),
+            rgba(246,239,255,.55)
+        );
+
+    border:1px solid rgba(255,255,255,.9);
+
+    backdrop-filter:blur(18px);
+
+    padding:25px;
+
+    border-radius:24px;
+
+    box-shadow:
+        0 12px 35px rgba(72,31,135,.10),
+        inset 0 1px 0 rgba(255,255,255,.9);
+
+    transition:.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 18px 40px rgba(91,32,190,.18);
+}
+
+.stat-icon{
+
+    background:
+        linear-gradient(
+            135deg,
+            #e7d8ff,
+            #d4baff
+        );
+
+    color:#6417d8;
+
+    box-shadow:
+        0 8px 20px rgba(105,28,232,.12);
+}
+
+.stat-card h3{
+    color:#32204f;
+}
+
+
+/* =====================================================
+   PREMIUM FILTER BOX
+===================================================== */
+
+.filter-box{
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.82),
+            rgba(242,234,255,.70)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.95);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:26px;
+
+    box-shadow:
+        0 14px 40px rgba(70,30,140,.10),
+        inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search input{
+
+    background:
+        rgba(255,255,255,.72);
+
+    border:
+        1px solid #ddd0f2;
+
+    color:#352b45;
+
+    box-shadow:
+        inset 0 2px 8px rgba(70,30,130,.03);
+}
+
+.search input:focus{
+
+    border-color:#7625ed;
+
+    box-shadow:
+        0 0 0 4px rgba(118,37,237,.10),
+        0 5px 20px rgba(118,37,237,.08);
+}
+
+
+/* =====================================================
+   FILTER SELECT
+===================================================== */
+
+select{
+
+    background:
+        rgba(255,255,255,.75);
+
+    border:
+        1px solid #ddd0f2;
+
+    color:#4c4160;
+}
+
+select:focus{
+
+    border-color:#7625ed;
+
+    box-shadow:
+        0 0 0 4px rgba(118,37,237,.09);
+}
+
+
+/* =====================================================
+   SAVED BUTTON
+===================================================== */
+
+.saved-btn{
+
+    background:
+        linear-gradient(
+            135deg,
+            #eee4ff,
+            #dfccff
+        );
+
+    color:#6417d8;
+
+    box-shadow:
+        0 6px 15px rgba(105,28,232,.08);
+}
+
+.saved-btn:hover{
+
+    background:
+        linear-gradient(
+            135deg,
+            #6218dc,
+            #8738f2
+        );
+
+    color:white;
+
+    box-shadow:
+        0 10px 25px rgba(105,28,232,.25);
+}
+
+
+/* =====================================================
+   ITEM CARD
+===================================================== */
+
+.item-card{
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.92),
+            rgba(247,241,255,.82)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.95);
+
+    border-radius:26px;
+
+    box-shadow:
+        0 12px 35px rgba(55,25,110,.10),
+        inset 0 1px 0 rgba(255,255,255,.9);
+
+    backdrop-filter:blur(15px);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.item-card:hover{
+
+    transform:
+        translateY(-9px)
+        scale(1.01);
+
+    box-shadow:
+        0 22px 45px rgba(83,28,180,.18);
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.item-image{
+    height:220px;
+}
+
+.item-image img{
+    filter:saturate(1.05);
+}
+
+
+/* =====================================================
+   CONDITION BADGE
+===================================================== */
+
+.condition{
+
+    background:
+        rgba(255,255,255,.88);
+
+    color:#208c42;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+        0 6px 18px rgba(30,100,50,.12);
+}
+
+
+/* =====================================================
+   SAVE HEART
+===================================================== */
+
+.save{
+
+    background:
+        rgba(255,255,255,.9);
+
+    color:#766d82;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+        0 7px 20px rgba(50,20,100,.13);
+}
+
+.save.saved{
+
+    color:#e53675;
+
+    background:#fff0f6;
+}
+
+
+/* =====================================================
+   ITEM CONTENT
+===================================================== */
+
+.item-info h3{
+    color:#30233f;
+}
+
+.category{
+    color:#701de5;
+}
+
+.description{
+    color:#777083;
+}
+
+
+/* =====================================================
+   LOCATION
+===================================================== */
+
+.location{
+    color:#6d6578;
+}
+
+.location i{
+    color:#7121e8;
+}
+
+
+/* =====================================================
+   DONOR
+===================================================== */
+
+.donor-avatar{
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9dcff,
+            #d6bcff
+        );
+
+    color:#681ce8;
+
+    box-shadow:
+        0 5px 15px rgba(100,25,210,.10);
+}
+
+
+/* =====================================================
+   VIEW DETAILS
+===================================================== */
+
+.view-btn{
+
+    background:
+        linear-gradient(
+            135deg,
+            #5c13d4,
+            #8734f0
+        );
+
+    box-shadow:
+        0 7px 18px rgba(95,20,215,.20);
+
+    transition:.25s;
+}
+
+.view-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(95,20,215,.30);
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.section-heading h2{
+    color:#32213f;
+}
+
+.section-heading span{
+    color:#81788d;
+}
+
+
+/* =====================================================
+   NO ITEMS
+===================================================== */
+
+.no-items{
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.85),
+            rgba(242,233,255,.75)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.9);
+
+    box-shadow:
+        0 12px 35px rgba(60,25,120,.08);
+}
+
+
+/* =====================================================
+   PREMIUM MODAL
+===================================================== */
+
+.modal{
+
+    background:
+        rgba(34,13,65,.72);
+
+    backdrop-filter:blur(12px);
+}
+
+.modal-box{
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f6efff
+        );
+
+    box-shadow:
+        0 30px 80px rgba(25,5,70,.35);
+}
+
+
+/* =====================================================
+   DETAIL BOXES
+===================================================== */
+
+.detail-box{
+
+    background:
+        linear-gradient(
+            135deg,
+            #f6f0ff,
+            #eee4ff
+        );
+
+    border:
+        1px solid #e4d7f6;
+}
+
+.detail-box small{
+    color:#8d8399;
+}
+
+.detail-box strong{
+    color:#39294b;
+}
+
+
+/* =====================================================
+   DONOR DETAIL
+===================================================== */
+
+.donor-detail{
+
+    background:
+        rgba(255,255,255,.55);
+
+    border:
+        1px solid #e5daf2;
+
+    box-shadow:
+        0 5px 15px rgba(70,25,120,.04);
+}
+
+.donor-big{
+
+    background:
+        linear-gradient(
+            135deg,
+            #eadfff,
+            #d4b8ff
+        );
+
+    color:#681ce8;
+}
+
+
+/* =====================================================
+   REQUEST BUTTON
+===================================================== */
+
+.request-btn{
+
+    background:
+        linear-gradient(
+            135deg,
+            #5310c9,
+            #7621e9,
+            #9a48f7
+        );
+
+    box-shadow:
+        0 10px 25px rgba(99,25,220,.22);
+}
+
+.request-btn:hover{
+
+    box-shadow:
+        0 14px 30px rgba(99,25,220,.32);
+}
+
+.request-btn.requested{
+
+    background:
+        linear-gradient(
+            135deg,
+            #159447,
+            #27b95a
+        );
+
+    box-shadow:
+        0 8px 20px rgba(20,150,70,.20);
+}
+
+
+/* =====================================================
+   SUCCESS
+===================================================== */
+
+.request-success{
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9fff0,
+            #dcf8e5
+        );
+
+    border:
+        1px solid #c5efd1;
+
+    box-shadow:
+        0 7px 20px rgba(35,150,70,.08);
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-heart"></i>
+        </div>
+
+        <div>
+
+            <h1>Donate Smarter</h1>
+
+            <p>Give Today, Change Tomorrow</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="header-right">
+
+        <i class="fa-solid fa-box-open"></i>
+
+        <span>Available Items</span>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+
+    <!-- PAGE TITLE -->
+
+    <div class="page-title">
+
+        <h2>Available Items</h2>
+
+        <p>
+            Find useful items donated by people in your community ❤️
+        </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         STATISTICS
+    ================================================== -->
+
+    <div class="stats">
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+
+                <i class="fa-solid fa-boxes-stacked"></i>
+
+            </div>
+
+            <div>
+
+                <h3 id="totalItems">0</h3>
+
+                <p>Total Available Items</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+
+                <i class="fa-solid fa-heart"></i>
+
+            </div>
+
+            <div>
+
+                <h3 id="savedItems">0</h3>
+
+                <p>Saved Items</p>
+
+            </div>
+
+        </div>
+
+
+        
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         SEARCH AND FILTER
+    ================================================== -->
+
+    <div class="filter-box">
+
+
+        <!-- SEARCH -->
+
+        <div class="search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search for school bag, laptop, books..."
+                oninput="filterItems()"
+            >
+
+        </div>
+
+
+
+        <!-- FILTERS -->
+
+        <div class="filters">
+
+
+            <select
+                id="categoryFilter"
+                onchange="filterItems()"
+            >
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="Education">
+                    Education
+                </option>
+
+                <option value="Electronics">
+                    Electronics
+                </option>
+
+                <option value="Clothing">
+                    Clothing
+                </option>
+
+                <option value="Accessories">
+                    Accessories
+                </option>
+
+                <option value="Stationery">
+                    Stationery
+                </option>
+
+            </select>
+
+
+
+            <select
+                id="locationFilter"
+                onchange="filterItems()"
+            >
+
+                <option value="all">
+                    All Locations
+                </option>
+
+                <option value="Chennai">
+                    Chennai
+                </option>
+
+                <option value="Coimbatore">
+                    Coimbatore
+                </option>
+
+                <option value="Madurai">
+                    Madurai
+                </option>
+
+                <option value="Bangalore">
+                    Bangalore
+                </option>
+
+                <option value="Salem">
+                    Salem
+                </option>
+
+            </select>
+
+
+
+            <button
+                class="saved-btn"
+                onclick="showSaved()"
+            >
+
+                <i class="fa-solid fa-heart"></i>
+
+                Saved Items
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         ITEM SECTION
+    ================================================== -->
+
+    <div class="section-heading">
+
+        <h2>Items You May Need</h2>
+
+        <span id="resultText">
+            Showing all items
+        </span>
+
+    </div>
+
+
+
+    <!-- ITEMS -->
+
+    <div
+        class="items-grid"
+        id="itemsGrid"
+    ></div>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     ITEM DETAILS MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="itemModal"
+>
+
+
+    <div class="modal-box">
+
+
+        <!-- CLOSE -->
+
+        <button
+            class="close"
+            onclick="closeModal()"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+
+        <div class="detail">
+
+
+            <!-- IMAGE -->
+
+            <div class="detail-image">
+
+                <img
+                    id="detailImage"
+                    src=""
+                    alt="Item"
+                >
+
+            </div>
+
+
+
+            <!-- INFORMATION -->
+
+            <div class="detail-content">
+
+
+                <span
+                    class="tag"
+                    id="detailCategory"
+                ></span>
+
+
+
+                <h2 id="detailName"></h2>
+
+
+
+                <div class="condition-text">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span id="detailCondition"></span>
+
+                </div>
+
+
+
+                <p
+                    class="detail-description"
+                    id="detailDescription"
+                ></p>
+
+
+
+                <!-- DETAILS -->
+
+                <div class="details-list">
+
+
+                    <div class="detail-box">
+
+                        <small>
+                            Category
+                        </small>
+
+                        <strong id="detailCategory2"></strong>
+
+                    </div>
+
+
+
+                    <div class="detail-box">
+
+                        <small>
+                            Location
+                        </small>
+
+                        <strong id="detailLocation"></strong>
+
+                    </div>
+
+
+
+                    <div class="detail-box">
+
+                        <small>
+                            Posted Date
+                        </small>
+
+                        <strong id="detailDate"></strong>
+
+                    </div>
+
+
+
+                    <div class="detail-box">
+
+                        <small>
+                            Availability
+                        </small>
+
+                        <strong style="color:#299c4a;">
+                            Available
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- DONOR -->
+                 <!-- =================================================
+                     DONOR
+                ================================================== -->
+
+                <div class="donor-detail">
+
+                    <div class="donor-big">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small
+                            style="
+                            color:#999;
+                            font-size:9px;
+                            "
+                        >
+                            Donated by
+                        </small>
+
+                        <br>
+
+                        <strong
+                            id="detailDonor"
+                            style="
+                            font-size:13px;
+                            "
+                        ></strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     REQUEST ITEM
+                ================================================== -->
+
+                <button
+                    class="request-btn"
+                    id="requestButton"
+                    onclick="requestItem()"
+                >
+
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+
+                    Request This Item
+
+                </button>
+
+
+                <!-- SUCCESS MESSAGE -->
+
+                <div
+                    id="requestSuccess"
+                    class="request-success"
+                    style="display:none;"
+                >
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <strong>Item Requested Successfully!</strong>
+
+                    <br>
+
+                    Your request has been saved.
+                    The donor can now respond to your request.
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   ITEMS
+===================================================== */
+
+const items = [
+
+    {
+        id:1,
+
+        name:"School Bag",
+
+        category:"Education",
+
+        condition:"Good Condition",
+
+        location:"Chennai",
+
+        date:"30 Aug 2026",
+
+        donor:"Gowsalya",
+
+        description:
+        "A clean and durable school bag suitable for school students. It has multiple compartments for books, notebooks, stationery and lunch box.",
+
+        image:
+        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1000&q=80"
+    },
+
+
+    {
+        id:2,
+
+        name:"Story Books",
+
+        category:"Education",
+
+        condition:"Like New",
+
+        location:"Coimbatore",
+
+        date:"29 Aug 2026",
+
+        donor:"Priya",
+
+        description:
+        "A collection of interesting children's storybooks. The books are clean and well maintained.",
+
+        image:
+        "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1000&q=80"
+    },
+
+
+    {
+        id:3,
+
+        name:"Student Laptop",
+
+        category:"Electronics",
+
+        condition:"Good Condition",
+
+        location:"Bangalore",
+
+        date:"28 Aug 2026",
+
+        donor:"Arun",
+
+        description:
+        "A working laptop suitable for students. It can be used for online classes, assignments, browsing and basic programming.",
+
+        image:
+        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1000&q=80"
+    },
+
+
+    {
+        id:4,
+
+        name:"Winter Clothes",
+
+        category:"Clothing",
+
+        condition:"Good Condition",
+
+        location:"Madurai",
+
+        date:"27 Aug 2026",
+
+        donor:"Meena",
+
+        description:
+        "Clean and warm winter clothes including sweaters and jackets.",
+
+        image:
+        "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80"
+    },
+
+
+    {
+        id:5,
+
+        name:"Study Timetable",
+
+        category:"Stationery",
+
+        condition:"Like New",
+
+        location:"Salem",
+
+        date:"26 Aug 2026",
+
+        donor:"Karthik",
+
+        description:
+        "A useful timetable planner for students to organize classes, study sessions and daily activities.",
+
+        image:
+        "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=80"
+    },
+
+
+    {
+        id:6,
+
+        name:"College Backpack",
+
+        category:"Accessories",
+
+        condition:"Good Condition",
+
+        location:"Chennai",
+
+        date:"25 Aug 2026",
+
+        donor:"Divya",
+
+        description:
+        "A spacious college backpack with multiple compartments suitable for books and laptops.",
+
+        image:
+        "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1000&q=80"
+    }
+
+];
+
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let selectedItem = null;
+
+let savedItems =
+    JSON.parse(
+        localStorage.getItem("savedItems")
+    ) || [];
+
+let requestedItems =
+    JSON.parse(
+        localStorage.getItem("requestedItems")
+    ) || [];
+
+
+
+/* =====================================================
+   DISPLAY ITEMS
+===================================================== */
+
+function displayItems(list = items){
+
+    const grid =
+        document.getElementById("itemsGrid");
+
+    grid.innerHTML = "";
+
+
+    if(list.length === 0){
+
+        grid.innerHTML = `
+
+            <div class="no-items">
+
+                <i class="fa-solid fa-box-open"></i>
+
+                <h3>
+                    No Items Found
+                </h3>
+
+                <p>
+                    Try another search or filter.
+                </p>
+
+            </div>
+
+        `;
+
+        document.getElementById("resultText")
+        .innerText = "No items found";
+
+        return;
+    }
+
+
+    list.forEach(item => {
+
+        const saved =
+            savedItems.includes(item.id);
+
+
+        grid.innerHTML += `
+
+            <div
+                class="item-card"
+                onclick="openModal(${item.id})"
+            >
+
+                <div class="item-image">
+
+                    <img
+                        src="${item.image}"
+                        alt="${item.name}"
+                    >
+
+                    <span class="condition">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        ${item.condition}
+
+                    </span>
+
+
+                    <button
+                        class="save ${saved ? "saved" : ""}"
+                        onclick="
+                            event.stopPropagation();
+                            toggleSave(${item.id});
+                        "
+                    >
+
+                        <i class="fa-solid fa-heart"></i>
+
+                    </button>
+
+                </div>
+
+
+                <div class="item-info">
+
+                    <span class="category">
+                        ${item.category}
+                    </span>
+
+                    <h3>
+                        ${item.name}
+                    </h3>
+
+                    <p class="description">
+                        ${item.description}
+                    </p>
+
+                    <div class="location">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        ${item.location}
+
+                    </div>
+
+
+                    <div class="item-footer">
+
+                        <div class="donor">
+
+                            <div class="donor-avatar">
+
+                                <i class="fa-solid fa-user"></i>
+
+                            </div>
+
+                            Donated by
+                            <strong>${item.donor}</strong>
+
+                        </div>
+
+
+                        <button
+                            class="view-btn"
+                            onclick="
+                                event.stopPropagation();
+                                openModal(${item.id});
+                            "
+                        >
+
+                            View Details
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+
+    document.getElementById("resultText")
+    .innerText =
+        `Showing ${list.length} item${list.length > 1 ? "s" : ""}`;
+
+}
+
+
+
+/* =====================================================
+   FILTER
+===================================================== */
+
+function filterItems(){
+
+    const search =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    const category =
+        document
+        .getElementById("categoryFilter")
+        .value;
+
+
+    const location =
+        document
+        .getElementById("locationFilter")
+        .value;
+
+
+    const filtered =
+        items.filter(item => {
+
+
+            const matchesSearch =
+
+                item.name
+                .toLowerCase()
+                .includes(search)
+
+                ||
+
+                item.category
+                .toLowerCase()
+                .includes(search)
+
+                ||
+
+                item.description
+                .toLowerCase()
+                .includes(search);
+
+
+            const matchesCategory =
+
+                category === "all"
+                ||
+                item.category === category;
+
+
+            const matchesLocation =
+
+                location === "all"
+                ||
+                item.location === location;
+
+
+            return (
+                matchesSearch
+                &&
+                matchesCategory
+                &&
+                matchesLocation
+            );
+
+        });
+
+
+    displayItems(filtered);
+
+}
+
+
+
+/* =====================================================
+   SAVED ITEMS
+===================================================== */
+
+function toggleSave(id){
+
+    if(savedItems.includes(id)){
+
+        savedItems =
+            savedItems.filter(
+                itemId => itemId !== id
+            );
+
+    }
+    else{
+
+        savedItems.push(id);
+
+    }
+
+
+    localStorage.setItem(
+        "savedItems",
+        JSON.stringify(savedItems)
+    );
+
+
+    displayItems();
+
+    updateStats();
+
+}
+
+
+
+/* =====================================================
+   SHOW SAVED
+===================================================== */
+
+function showSaved(){
+
+    const saved =
+        items.filter(item =>
+            savedItems.includes(item.id)
+        );
+
+
+    displayItems(saved);
+
+}
+
+
+
+/* =====================================================
+   OPEN MODAL
+===================================================== */
+
+function openModal(id){
+
+    selectedItem =
+        items.find(
+            item => item.id === id
+        );
+
+
+    if(!selectedItem) return;
+
+
+    document.getElementById("detailImage")
+    .src = selectedItem.image;
+
+
+    document.getElementById("detailName")
+    .innerText = selectedItem.name;
+
+
+    document.getElementById("detailCategory")
+    .innerText = selectedItem.category;
+
+
+    document.getElementById("detailCategory2")
+    .innerText = selectedItem.category;
+
+
+    document.getElementById("detailCondition")
+    .innerText = selectedItem.condition;
+
+
+    document.getElementById("detailLocation")
+    .innerText = selectedItem.location;
+
+
+    document.getElementById("detailDate")
+    .innerText = selectedItem.date;
+
+
+    document.getElementById("detailDonor")
+    .innerText = selectedItem.donor;
+
+
+    document.getElementById("detailDescription")
+    .innerText = selectedItem.description;
+
+
+    updateRequestButton();
+
+
+    document.getElementById("itemModal")
+    .classList.add("show");
+
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+
+/* =====================================================
+   REQUEST ITEM
+===================================================== */
+
+function requestItem(){
+
+    if(!selectedItem) return;
+
+
+    if(
+        requestedItems.includes(
+            selectedItem.id
+        )
+    ){
+
+        return;
+
+    }
+
+
+    requestedItems.push(
+        selectedItem.id
+    );
+
+
+    localStorage.setItem(
+        "requestedItems",
+        JSON.stringify(
+            requestedItems
+        )
+    );
+
+
+    updateRequestButton();
+
+
+    document.getElementById(
+        "requestSuccess"
+    ).style.display = "block";
+
+
+    showNotification(
+        "Item requested successfully!"
+    );
+
+}
+
+
+
+/* =====================================================
+   UPDATE REQUEST BUTTON
+===================================================== */
+
+function updateRequestButton(){
+
+    const button =
+        document.getElementById(
+            "requestButton"
+        );
+
+
+    const success =
+        document.getElementById(
+            "requestSuccess"
+        );
+
+
+    const requested =
+        requestedItems.includes(
+            selectedItem.id
+        );
+
+
+    if(requested){
+
+        button.classList.add(
+            "requested"
+        );
+
+
+        button.innerHTML = `
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            Item Requested
+
+        `;
+
+
+        success.style.display =
+            "block";
+
+    }
+
+    else{
+
+        button.classList.remove(
+            "requested"
+        );
+
+
+        button.innerHTML = `
+
+            <i class="fa-solid fa-hand-holding-heart"></i>
+
+            Request This Item
+
+        `;
+
+
+        success.style.display =
+            "none";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   CLOSE MODAL
+===================================================== */
+
+function closeModal(){
+
+    document.getElementById("itemModal")
+    .classList.remove("show");
+
+
+    document.body.style.overflow =
+        "auto";
+
+}
+
+
+
+/* CLOSE WHEN CLICK OUTSIDE */
+
+document.getElementById("itemModal")
+.addEventListener(
+    "click",
+    function(e){
+
+        if(e.target === this){
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   STATISTICS
+===================================================== */
+
+function updateStats(){
+
+    document.getElementById(
+        "totalItems"
+    ).innerText = items.length;
+
+
+    document.getElementById(
+        "savedItems"
+    ).innerText =
+        savedItems.length;
+
+
+    const categories =
+        new Set(
+            items.map(
+                item => item.category
+            )
+        );
+
+
+    document.getElementById(
+        "categoryCount"
+    ).innerText =
+        categories.size;
+
+}
+
+
+
+/* =====================================================
+   NOTIFICATION
+===================================================== */
+
+function showNotification(message){
+
+    const notification =
+        document.createElement("div");
+
+
+    notification.style.position =
+        "fixed";
+
+    notification.style.right =
+        "25px";
+
+    notification.style.bottom =
+        "25px";
+
+    notification.style.background =
+        "#29243a";
+
+    notification.style.color =
+        "white";
+
+    notification.style.padding =
+        "15px 22px";
+
+    notification.style.borderRadius =
+        "14px";
+
+    notification.style.fontSize =
+        "12px";
+
+    notification.style.zIndex =
+        "5000";
+
+    notification.innerHTML = `
+
+        <i
+            class="fa-solid fa-circle-check"
+            style="color:#42d267;margin-right:8px;"
+        ></i>
+
+        ${message}
+
+    `;
+
+
+    document.body.appendChild(
+        notification
+    );
+
+
+    setTimeout(() => {
+
+        notification.remove();
+
+    },3000);
+
+}
+
+
+
+/* =====================================================
+   INITIAL LOAD
+===================================================== */
+
+displayItems();
+
+updateStats();
+
+
+</script>
+
+</body>
+</html>

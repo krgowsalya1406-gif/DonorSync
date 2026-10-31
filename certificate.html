@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewards & Achievements | Donate Smarter</title>
+
+    <link rel="stylesheet" href="certificate.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+
+
+<main class="container">
+
+    <!-- Heading -->
+    <section class="heading">
+        <div>
+            <span class="eyebrow">YOUR KINDNESS JOURNEY</span>
+            <h1>Rewards & Achievements</h1>
+            <p>Every act of kindness earns you something special.</p>
+        </div>
+        <div class="streak">
+            <i class="fa-solid fa-fire"></i>
+            <div>
+                <h3 id="streakCount">0 Days</h3>
+                <small>Kindness Streak</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- XP Card -->
+    <section class="xp-card">
+        <div class="xp-top">
+            <div>
+                <span>CURRENT LEVEL</span>
+                <h2 id="levelName">Kindness Beginner</h2>
+                <p>Keep spreading kindness and unlock new levels!</p>
+            </div>
+            <div class="level-icon">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+        </div>
+
+        <div class="xp-info">
+            <strong><span id="xpValue">0</span> XP</strong>
+            <span id="nextLevel">500 XP to next level</span>
+        </div>
+
+        <div class="progress-track">
+            <div id="xpProgress" class="progress-fill"></div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="stats">
+        <div class="stat">
+            <i class="fa-solid fa-award"></i>
+            <h2 id="badgeCount">0</h2>
+            <p>Badges Earned</p>
+        </div>
+
+        <div class="stat">
+            <i class="fa-solid fa-gift"></i>
+            <h2 id="rewardCount">0</h2>
+            <p>Rewards Unlocked</p>
+        </div>
+
+        <div class="stat">
+            <i class="fa-solid fa-heart"></i>
+            <h2 id="donationCount">0</h2>
+            <p>Completed Donations</p>
+        </div>
+
+        <div class="stat">
+            <i class="fa-solid fa-star"></i>
+            <h2 id="totalPoints">0</h2>
+            <p>Total XP Earned</p>
+        </div>
+    </section>
+
+    <!-- Daily Challenges -->
+    <section class="section">
+        <div class="section-heading">
+            <div>
+                <h2>Daily Kindness Challenges</h2>
+                <p>Complete challenges to earn bonus XP.</p>
+            </div>
+            <span class="section-icon"><i class="fa-solid fa-bolt"></i></span>
+        </div>
+
+        <div class="challenge-grid">
+
+            <div class="challenge-card">
+                <div class="challenge-icon green">
+                    <i class="fa-solid fa-shirt"></i>
+                </div>
+                <h3>Share Kindness</h3>
+                <p>Donate usable clothes to someone in need.</p>
+                <span class="xp-tag">+100 XP</span>
+                <button onclick="completeChallenge(this, 'clothes', 100)">
+                    Complete Challenge
+                </button>
+            </div>
+
+            <div class="challenge-card">
+                <div class="challenge-icon orange">
+                    <i class="fa-solid fa-bowl-food"></i>
+                </div>
+                <h3>Food for Everyone</h3>
+                <p>Help provide food to a needy person.</p>
+                <span class="xp-tag">+150 XP</span>
+                <button onclick="completeChallenge(this, 'food', 150)">
+                    Complete Challenge
+                </button>
+            </div>
+
+            <div class="challenge-card">
+                <div class="challenge-icon purple">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+                <h3>Education Support</h3>
+                <p>Donate books or learning materials.</p>
+                <span class="xp-tag">+120 XP</span>
+                <button onclick="completeChallenge(this, 'education', 120)">
+                    Complete Challenge
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Achievement Badges -->
+    <section class="section">
+        <div class="section-heading">
+            <div>
+                <h2>Achievement Badges</h2>
+                <p>Collect badges as you spread kindness.</p>
+            </div>
+        </div>
+
+        <div class="badge-grid" id="badgeGrid">
+
+            <div class="achievement">
+                <div class="badge-circle gold">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <h3>First Kindness</h3>
+                <p>Complete your first donation.</p>
+                <span class="locked">LOCKED</span>
+            </div>
+
+            <div class="achievement">
+                <div class="badge-circle blue">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <h3>Food Hero</h3>
+                <p>Complete a food challenge.</p>
+                <span class="locked">LOCKED</span>
+            </div>
+
+            <div class="achievement">
+                <div class="badge-circle purple">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3>Education Star</h3>
+                <p>Support education.</p>
+                <span class="locked">LOCKED</span>
+            </div>
+
+            <div class="achievement">
+                <div class="badge-circle green">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+                <h3>Consistency King</h3>
+                <p>Maintain a 7-day streak.</p>
+                <span class="locked">LOCKED</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Lucky Wheel -->
+    <section class="section">
+        <div class="section-heading">
+            <div>
+                <h2>Lucky Kindness Wheel</h2>
+                <p>Spin the wheel and discover your surprise reward!</p>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <div class="wheel-wrapper">
+                <div class="wheel-pointer"></div>
+                <div class="wheel" id="wheel">
+                    <span>50 XP</span>
+                    <span>100 XP</span>
+                    <span>20 XP</span>
+                    <span>150 XP</span>
+                    <span>Badge</span>
+                    <span>75 XP</span>
+                </div>
+            </div>
+
+            <h3 id="wheelMessage">Your kindness deserves a surprise!</h3>
+            <p>One free spin per day.</p>
+
+            <button class="main-btn" id="spinButton" onclick="spinWheel()">
+                <i class="fa-solid fa-rotate"></i> SPIN NOW
+            </button>
+        </div>
+    </section>
+
+    <!-- Mystery Box -->
+    <section class="section">
+        <div class="section-heading">
+            <div>
+                <h2>Mystery Reward Box</h2>
+                <p>Open your mystery box to discover a surprise.</p>
+            </div>
+        </div>
+
+        <div class="mystery-card">
+            <div class="gift-box" id="giftBox">
+                <i class="fa-solid fa-gift"></i>
+            </div>
+
+            <h3 id="mysteryMessage">A surprise is waiting for you!</h3>
+            <p>Discover your hidden kindness reward.</p>
+
+            <button class="main-btn" id="mysteryButton"
+            onclick="openMysteryBox()">
+                Open Mystery Box
+            </button>
+        </div>
+    </section>
+
+    <!-- Scratch & Win -->
+    <section class="section">
+        <div class="section-heading">
+            <div>
+                <h2>Scratch & Win</h2>
+                <p>Reveal your surprise kindness reward.</p>
+            </div>
+        </div>
+
+        <div class="scratch-card">
+            <h3>✨ Your Hidden Reward ✨</h3>
+            <div class="scratch-area" id="scratchArea">
+                <div id="scratchCover">
+                    <i class="fa-solid fa-hand-sparkles"></i>
+                    <span>SCRATCH HERE</span>
+                </div>
+                <div id="scratchReward">+100 XP 🎉</div>
+            </div>
+            <button class="main-btn" onclick="revealScratch()">
+                Reveal Reward
+            </button>
+        </div>
+    </section>
+
+    <!-- Kindness Tree -->
+    <section class="section">
+        <div class="section-heading">
+            <div>
+                <h2>Grow Your Kindness Tree</h2>
+                <p>Every completed donation helps your tree grow.</p>
+            </div>
+        </div>
+
+        <div class="tree-card">
+            <div class="tree-visual" id="treeVisual">
+                <i class="fa-solid fa-seedling"></i>
+            </div>
+
+            <h3 id="treeLevel">Your Kindness Seed</h3>
+            <p id="treeDescription">Complete donations to grow your tree.</p>
+
+            <div class="tree-progress">
+                <div id="treeProgress"></div>
+            </div>
+
+            <small id="treeCount">0 donations completed</small>
+        </div>
+    </section>
+
+    <!-- Kindness Passport -->
+    <section class="section">
+        <div class="section-heading">
+            <div>
+                <h2>Kindness Passport</h2>
+                <p>Collect stamps from different donation categories.</p>
+            </div>
+        </div>
+
+        <div class="passport-grid">
+
+            <div class="passport-stamp" id="stamp-food">
+                <i class="fa-solid fa-bowl-food"></i>
+                <h4>Food Hero</h4>
+                <span>Not Collected</span>
+            </div>
+
+            <div class="passport-stamp" id="stamp-clothes">
+                <i class="fa-solid fa-shirt"></i>
+                <h4>Clothing Angel</h4>
+                <span>Not Collected</span>
+            </div>
+
+            <div class="passport-stamp" id="stamp-education">
+                <i class="fa-solid fa-book"></i>
+                <h4>Knowledge Star</h4>
+                <span>Not Collected</span>
+            </div>
+
+            <div class="passport-stamp" id="stamp-medical">
+                <i class="fa-solid fa-kit-medical"></i>
+                <h4>Life Supporter</h4>
+                <span>Not Collected</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Reward History -->
+    <section class="section">
+        <div class="section-heading">
+            <div>
+                <h2>Reward History</h2>
+                <p>Your recent kindness activities.</p>
+            </div>
+        </div>
+
+        <div class="history-card" id="historyList">
+            <p class="no-history">No rewards collected yet.</p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    © 2026 Donate Smarter | Every Act of Kindness Matters ❤️
+</footer>
+
+<script src="certificate.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DonateSmart - Login</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+    url("https://images.unsplash.com/photo-1488521787991-ed7bbaae773c")
+    center/cover no-repeat;
+}
+
+.login-box{
+    width:400px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.logo{
+    text-align:center;
+    font-size:32px;
+    font-weight:bold;
+    color:#19a463;
+    margin-bottom:20px;
+}
+
+h2{
+    text-align:center;
+    color:#333;
+    margin-bottom:25px;
+}
+
+.input-box{
+    margin-bottom:18px;
+}
+
+.input-box input{
+    width:100%;
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    background:#19a463;
+    color:white;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#117845;
+}
+
+.links{
+    margin-top:20px;
+    display:flex;
+    justify-content:space-between;
+    font-size:15px;
+}
+
+.links a{
+    text-decoration:none;
+    color:#19a463;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="login-box">
+
+<div class="logo">
+❤ DonateSmart
+</div>
+
+<h2>Login</h2>
+
+<form action="dashboard.html">
+
+<div class="input-box">
+<input type="email" placeholder="Email Address" required>
+</div>
+
+<div class="input-box">
+<input type="password" placeholder="Password" required>
+</div>
+
+<button type="submit">
+Login
+</button>
+
+</form>
+
+<div class="links">
+
+<a href="register.html">Create Account</a>
+</div>
+
+</div>
+
+</body>
+</html>

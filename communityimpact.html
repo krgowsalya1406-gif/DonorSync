@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Community Impact | Donate Smarter</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+:root{
+    --bg:#0b1120;
+    --bg-light:#111a2d;
+    --card:#162136;
+    --card-hover:#1b2942;
+    --mint:#38e6b0;
+    --mint-dark:#16b887;
+    --blue:#60a5fa;
+    --purple:#a78bfa;
+    --orange:#fbbf24;
+    --red:#fb7185;
+    --text:#f8fafc;
+    --muted:#94a3b8;
+    --border:#263550;
+}
+
+body{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at 10% 10%,rgba(56,230,176,.10),transparent 25%),
+        radial-gradient(circle at 90% 20%,rgba(96,165,250,.10),transparent 25%),
+        var(--bg);
+    color:var(--text);
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+    padding:40px 0 70px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    background:
+        linear-gradient(
+            135deg,
+            rgba(22,33,54,.95),
+            rgba(20,45,60,.95)
+        );
+
+    border:1px solid var(--border);
+
+    border-radius:28px;
+
+    padding:38px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(56,230,176,.20),
+            transparent 70%
+        );
+
+    right:-70px;
+    top:-100px;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero-tag{
+    display:inline-flex;
+
+    gap:8px;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    background:
+        rgba(56,230,176,.10);
+
+    border:
+        1px solid
+        rgba(56,230,176,.25);
+
+    color:var(--mint);
+
+    font-size:11px;
+
+    font-weight:600;
+}
+
+.hero h1{
+    font-size:38px;
+
+    margin-top:18px;
+}
+
+.hero p{
+    max-width:620px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.7;
+
+    margin-top:10px;
+}
+
+
+/* ================= HERO STATS ================= */
+
+.hero-stats{
+    display:flex;
+
+    gap:35px;
+
+    margin-top:28px;
+}
+
+.hero-stat h2{
+    color:var(--mint);
+
+    font-size:25px;
+}
+
+.hero-stat p{
+    font-size:10px;
+
+    margin-top:2px;
+}
+
+
+/* ================= GRID ================= */
+
+.grid{
+    display:grid;
+
+    grid-template-columns:
+    1.1fr .9fr;
+
+    gap:20px;
+
+    margin-top:25px;
+}
+
+
+/* ================= SECTION CARD ================= */
+
+.card{
+    background:
+        rgba(22,33,54,.85);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:22px;
+
+    padding:25px;
+
+    transition:.25s;
+}
+
+.card:hover{
+    border-color:
+        rgba(56,230,176,.35);
+}
+
+.card-header{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:20px;
+}
+
+.card-header h2{
+    font-size:17px;
+}
+
+.card-header span{
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+
+/* ================= AREA IMPACT ================= */
+
+.area-list{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+}
+
+.area{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:
+        var(--bg-light);
+
+    border:
+        1px solid
+        transparent;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.area:hover,
+.area.active{
+    border-color:
+        rgba(56,230,176,.35);
+
+    background:
+        #182940;
+}
+
+.area-left{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+.area-icon{
+    width:42px;
+    height:42px;
+
+    border-radius:13px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+        rgba(96,165,250,.12);
+
+    font-size:18px;
+}
+
+.area-info h4{
+    font-size:12px;
+}
+
+.area-info p{
+    margin-top:3px;
+
+    font-size:10px;
+
+    color:var(--muted);
+}
+
+.area-count{
+    text-align:right;
+}
+
+.area-count strong{
+    color:var(--mint);
+
+    font-size:14px;
+}
+
+.area-count span{
+    display:block;
+
+    font-size:9px;
+
+    color:var(--muted);
+}
+
+
+/* ================= COMMUNITY NEEDS ================= */
+
+.need-list{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+}
+
+.need{
+    padding:15px;
+
+    border-radius:16px;
+
+    background:
+        var(--bg-light);
+}
+
+.need-top{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.need-name{
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    font-size:12px;
+}
+
+.need-level{
+    font-size:9px;
+
+    padding:5px 9px;
+
+    border-radius:15px;
+}
+
+.high{
+    background:
+        rgba(251,113,133,.12);
+
+    color:
+        var(--red);
+}
+
+.medium{
+    background:
+        rgba(251,191,36,.12);
+
+    color:
+        var(--orange);
+}
+
+.low{
+    background:
+        rgba(56,230,176,.12);
+
+    color:
+        var(--mint);
+}
+
+.need-bar{
+    height:6px;
+
+    border-radius:20px;
+
+    background:
+        #263550;
+
+    margin-top:12px;
+
+    overflow:hidden;
+}
+
+.need-fill{
+    height:100%;
+
+    border-radius:20px;
+}
+
+.need-fill.high{
+    width:88%;
+
+    background:
+        var(--red);
+}
+
+.need-fill.medium{
+    width:60%;
+
+    background:
+        var(--orange);
+}
+
+.need-fill.low{
+    width:35%;
+
+    background:
+        var(--mint);
+}
+
+
+/* ================= DONATION STORY ================= */
+
+.story{
+    margin-top:20px;
+}
+
+.story-main{
+    background:
+        linear-gradient(
+            135deg,
+            #172842,
+            #142337
+        );
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:24px;
+
+    padding:25px;
+}
+
+.story-top{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+}
+
+.story-item{
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+}
+
+.story-image{
+    width:55px;
+    height:55px;
+
+    border-radius:17px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+        rgba(167,139,250,.13);
+
+    font-size:27px;
+}
+
+.story-item h3{
+    font-size:15px;
+}
+
+.story-item p{
+    color:var(--muted);
+
+    font-size:10px;
+
+    margin-top:3px;
+}
+
+.status{
+    padding:6px 10px;
+
+    border-radius:20px;
+
+    background:
+        rgba(56,230,176,.12);
+
+    color:
+        var(--mint);
+
+    font-size:9px;
+}
+
+
+/* ================= STORY JOURNEY ================= */
+
+.story-journey{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:28px;
+
+    position:relative;
+}
+
+.story-journey::before{
+    content:"";
+
+    position:absolute;
+
+    height:2px;
+
+    background:
+        #2b3c58;
+
+    left:8%;
+
+    right:8%;
+
+    top:20px;
+
+    z-index:0;
+}
+
+.story-step{
+    position:relative;
+
+    z-index:1;
+
+    text-align:center;
+
+    width:20%;
+}
+
+.story-dot{
+    width:42px;
+    height:42px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+        #263550;
+
+    border:
+        3px solid
+        #172842;
+
+    font-size:16px;
+}
+
+.story-step.completed .story-dot{
+    background:
+        var(--mint);
+
+    color:
+        #052e24;
+}
+
+.story-step.active .story-dot{
+    background:
+        var(--blue);
+}
+
+.story-step p{
+    margin-top:8px;
+
+    font-size:9px;
+
+    color:
+        var(--muted);
+}
+
+.story-step.completed p{
+    color:
+        var(--mint);
+}
+
+
+/* ================= STORY BUTTON ================= */
+
+.story-btn{
+    margin-top:25px;
+
+    width:100%;
+
+    border:none;
+
+    background:
+        rgba(56,230,176,.10);
+
+    border:
+        1px solid
+        rgba(56,230,176,.20);
+
+    color:
+        var(--mint);
+
+    padding:11px;
+
+    border-radius:12px;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.story-btn:hover{
+    background:
+        rgba(56,230,176,.18);
+}
+
+
+/* ================= LIVE FEED ================= */
+
+.feed{
+    margin-top:20px;
+}
+
+.feed-list{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:0;
+}
+
+.feed-item{
+    display:flex;
+
+    gap:13px;
+
+    padding:15px 0;
+
+    border-bottom:
+        1px solid
+        #263550;
+}
+
+.feed-item:last-child{
+    border-bottom:none;
+}
+
+.feed-dot{
+    width:10px;
+    height:10px;
+
+    min-width:10px;
+
+    margin-top:5px;
+
+    border-radius:50%;
+
+    background:
+        var(--mint);
+
+    box-shadow:
+        0 0 10px
+        rgba(56,230,176,.6);
+}
+
+.feed-text h4{
+    font-size:11px;
+
+    font-weight:500;
+}
+
+.feed-text p{
+    margin-top:4px;
+
+    font-size:9px;
+
+    color:
+        var(--muted);
+}
+
+
+/* ================= COMMUNITY VOICES ================= */
+
+.voices{
+    margin-top:20px;
+}
+
+.voice-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:14px;
+}
+
+.voice{
+    background:
+        var(--bg-light);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:18px;
+
+    padding:17px;
+
+    transition:.25s;
+}
+
+.voice:hover{
+    transform:
+        translateY(-4px);
+}
+
+.quote{
+    color:
+        var(--mint);
+
+    font-size:22px;
+}
+
+.voice p{
+    margin-top:7px;
+
+    font-size:10px;
+
+    line-height:1.7;
+
+    color:
+        var(--muted);
+}
+
+.voice span{
+    display:block;
+
+    margin-top:12px;
+
+    font-size:9px;
+
+    color:
+        var(--blue);
+}
+
+
+/* ================= MODAL ================= */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    background:
+        rgba(0,0,0,.65);
+
+    backdrop-filter:
+        blur(5px);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    z-index:1000;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+
+    max-width:500px;
+
+    background:
+        #162136;
+
+    border:
+        1px solid
+        #31405c;
+
+    border-radius:25px;
+
+    padding:28px;
+
+    animation:
+        popup .3s ease;
+}
+
+@keyframes popup{
+
+    from{
+        opacity:0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+.modal-box h2{
+    font-size:19px;
+}
+
+.modal-box p{
+    margin-top:10px;
+
+    font-size:11px;
+
+    color:
+        var(--muted);
+
+    line-height:1.7;
+}
+
+.modal-details{
+    margin-top:20px;
+
+    background:
+        var(--bg-light);
+
+    border-radius:16px;
+
+    padding:15px;
+}
+
+.modal-row{
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:9px 0;
+
+    border-bottom:
+        1px solid
+        #263550;
+
+    font-size:10px;
+}
+
+.modal-row:last-child{
+    border:none;
+}
+
+.modal-row span{
+    color:
+        var(--muted);
+}
+
+.close-btn{
+    width:100%;
+
+    margin-top:20px;
+
+    padding:11px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:
+        var(--mint);
+
+    color:
+        #052e24;
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:850px){
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .voice-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .container{
+        width:90%;
+        padding-top:25px;
+    }
+
+    .hero{
+        padding:25px 20px;
+    }
+
+    .hero h1{
+        font-size:27px;
+    }
+
+    .hero-stats{
+        gap:18px;
+        flex-wrap:wrap;
+    }
+
+    .story-journey{
+        overflow-x:auto;
+        justify-content:flex-start;
+        gap:25px;
+    }
+
+    .story-step{
+        min-width:90px;
+    }
+
+    .story-journey::before{
+        display:none;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+
+<div class="hero-content">
+
+    <div class="hero-tag">
+        🌍 COMMUNITY IMPACT
+    </div>
+
+    <h1>
+        Every Donation Has a Story.
+    </h1>
+
+    <p>
+        Explore how donated items travel through the community
+        and become something meaningful for someone else.
+    </p>
+
+
+    <div class="hero-stats">
+
+        <div class="hero-stat">
+
+            <h2>1,250</h2>
+
+            <p>Items Reused</p>
+
+        </div>
+
+
+        <div class="hero-stat">
+
+            <h2>890</h2>
+
+            <p>People Supported</p>
+
+        </div>
+
+
+        <div class="hero-stat">
+
+            <h2>92%</h2>
+
+            <p>Completed</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- ================= GRID ================= -->
+
+<div class="grid">
+
+<!-- ================= AREA IMPACT ================= -->
+
+<section class="card">
+
+<div class="card-header">
+
+    <h2>
+        📍 Impact by Area
+    </h2>
+
+    <span>
+        Click an area
+    </span>
+
+</div>
+
+
+<div class="area-list">
+
+
+    <div
+        class="area active"
+        onclick="selectArea(this,'Anna Nagar','24','18')">
+
+        <div class="area-left">
+
+            <div class="area-icon">
+                📍
+            </div>
+
+            <div class="area-info">
+
+                <h4>
+                    Anna Nagar
+                </h4>
+
+                <p>
+                    Active donation community
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="area-count">
+
+            <strong>
+                24
+            </strong>
+
+            <span>
+                completed
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <div
+        class="area"
+        onclick="selectArea(this,'KK Nagar','18','14')">
+
+        <div class="area-left">
+
+            <div class="area-icon">
+                📍
+            </div>
+
+            <div class="area-info">
+
+                <h4>
+                    KK Nagar
+                </h4>
+
+                <p>
+                    Growing community support
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="area-count">
+
+            <strong>
+                18
+            </strong>
+
+            <span>
+                completed
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <div
+        class="area"
+        onclick="selectArea(this,'Tallakulam','12','9')">
+
+        <div class="area-left">
+
+            <div class="area-icon">
+                📍
+            </div>
+
+            <div class="area-info">
+
+                <h4>
+                    Tallakulam
+                </h4>
+
+                <p>
+                    Students and families helped
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="area-count">
+
+            <strong>
+                12
+            </strong>
+
+            <span>
+                completed
+            </span>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+<!-- ================= COMMUNITY NEED ================= -->
+
+<section class="card">
+
+
+<div class="card-header">
+
+    <h2>
+        🎯 Community Needs Now
+    </h2>
+
+    <span>
+        Updated today
+    </span>
+
+</div>
+
+
+<div class="need-list">
+
+
+    <div class="need">
+
+        <div class="need-top">
+
+            <div class="need-name">
+
+                📚 Study Books
+
+            </div>
+
+            <span class="need-level high">
+                HIGH NEED
+            </span>
+
+        </div>
+
+        <div class="need-bar">
+
+            <div class="need-fill high"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="need">
+
+        <div class="need-top">
+
+            <div class="need-name">
+
+                👕 Clothes
+
+            </div>
+
+            <span class="need-level high">
+                HIGH NEED
+            </span>
+
+        </div>
+
+        <div class="need-bar">
+
+            <div class="need-fill high"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="need">
+
+        <div class="need-top">
+
+            <div class="need-name">
+
+                💻 Electronics
+
+            </div>
+
+            <span class="need-level medium">
+                MEDIUM
+            </span>
+
+        </div>
+
+        <div class="need-bar">
+
+            <div class="need-fill medium"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="need">
+
+        <div class="need-top">
+
+            <div class="need-name">
+
+                🪑 Furniture
+
+            </div>
+
+            <span class="need-level low">
+                LOW
+            </span>
+
+        </div>
+
+        <div class="need-bar">
+
+            <div class="need-fill low"></div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+</div>
+
+<!-- ================= DONATION STORY ================= -->
+
+<section class="story">
+
+
+<div class="card-header">
+
+    <h2>
+        🔄 A Real Donation Journey
+    </h2>
+
+    <span>
+        Follow the story
+    </span>
+
+</div>
+
+
+<div class="story-main">
+
+
+    <div class="story-top">
+
+        <div class="story-item">
+
+            <div class="story-image">
+                💻
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Study Laptop
+                </h3>
+
+                <p>
+                    Electronics • Excellent Condition
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <span class="status">
+            ✓ COMPLETED
+        </span>
+
+    </div>
+
+
+
+    <div class="story-journey">
+
+
+        <div class="story-step completed">
+
+            <div class="story-dot">
+                📦
+            </div>
+
+            <p>
+                Donated
+            </p>
+
+        </div>
+
+
+
+        <div class="story-step completed">
+
+            <div class="story-dot">
+                ❤️
+            </div>
+
+            <p>
+                Requested
+            </p>
+
+        </div>
+
+
+
+        <div class="story-step completed">
+
+            <div class="story-dot">
+                ✓
+            </div>
+
+            <p>
+                Accepted
+            </p>
+
+        </div>
+
+
+
+        <div class="story-step completed">
+
+            <div class="story-dot">
+                📍
+            </div>
+
+            <p>
+                Handed Over
+            </p>
+
+        </div>
+
+
+
+        <div class="story-step completed">
+
+            <div class="story-dot">
+                🎉
+            </div>
+
+            <p>
+                Impact Created
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <button
+        class="story-btn"
+        onclick="openStory()">
+
+        View Complete Story →
+
+    </button>
+
+
+</div>
+
+
+</section>
+
+<!-- ================= LIVE FEED + VOICES ================= -->
+
+<div class="grid">
+
+<!-- LIVE FEED -->
+
+<section class="card feed">
+
+
+<div class="card-header">
+
+    <h2>
+        🔥 Live Community Feed
+    </h2>
+
+    <span>
+        Live updates
+    </span>
+
+</div>
+
+
+<div class="feed-list">
+
+
+    <div class="feed-item">
+
+        <div class="feed-dot"></div>
+
+        <div class="feed-text">
+
+            <h4>
+                📚 Study books donation completed
+            </h4>
+
+            <p>
+                A student received useful engineering books • 5 min ago
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="feed-item">
+
+        <div class="feed-dot"></div>
+
+        <div class="feed-text">
+
+            <h4>
+                💻 A laptop request was accepted
+            </h4>
+
+            <p>
+                Handover details are being confirmed • 20 min ago
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="feed-item">
+
+        <div class="feed-dot"></div>
+
+        <div class="feed-text">
+
+            <h4>
+                👕 Clothes were successfully handed over
+            </h4>
+
+            <p>
+                A family received 6 clothing items • 1 hour ago
+            </p>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+<!-- COMMUNITY VOICES -->
+
+<section class="card voices">
+
+
+<div class="card-header">
+
+    <h2>
+        💬 Community Voices
+    </h2>
+
+    <span>
+        Shared experiences
+    </span>
+
+</div>
+
+
+<div class="voice-grid">
+
+
+    <div class="voice">
+
+        <div class="quote">
+            “
+        </div>
+
+        <p>
+            The books helped me prepare for my semester exams.
+            Thank you for sharing them.
+        </p>
+
+        <span>
+            — Student 📚
+        </span>
+
+    </div>
+
+
+
+    <div class="voice">
+
+        <div class="quote">
+            “
+        </div>
+
+        <p>
+            The laptop is helping me complete my college
+            projects and continue my studies.
+        </p>
+
+        <span>
+            — College Student 💻
+        </span>
+
+    </div>
+
+
+
+    <div class="voice">
+
+        <div class="quote">
+            “
+        </div>
+
+        <p>
+            Receiving these clothes was very helpful
+            for our family.
+        </p>
+
+        <span>
+            — Community Member 💚
+        </span>
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+</div>
+
+</div>
+
+<!-- ================= STORY MODAL ================= -->
+
+<div
+    class="modal"
+    id="storyModal">
+
+
+<div class="modal-box">
+
+
+    <h2>
+        💻 Study Laptop Journey
+    </h2>
+
+
+    <p>
+        This laptop was donated by a community member and
+        requested by a college student for studies and projects.
+    </p>
+
+
+    <div class="modal-details">
+
+
+        <div class="modal-row">
+
+            <span>
+                📦 Item
+            </span>
+
+            <strong>
+                Study Laptop
+            </strong>
+
+        </div>
+
+
+        <div class="modal-row">
+
+            <span>
+                ❤️ Request
+            </span>
+
+            <strong>
+                College Studies
+            </strong>
+
+        </div>
+
+
+        <div class="modal-row">
+
+            <span>
+                📍 Handover
+            </span>
+
+            <strong>
+                Anna Nagar
+            </strong>
+
+        </div>
+
+
+        <div class="modal-row">
+
+            <span>
+                🎉 Status
+            </span>
+
+            <strong
+                style="color:#38e6b0;">
+
+                Completed
+            </strong>
+
+        </div>
+
+
+    </div>
+
+
+    <button
+        class="close-btn"
+        onclick="closeStory()">
+
+        Close Story
+
+    </button>
+
+
+</div>
+
+
+</div>
+
+<script>
+
+
+/* ================= AREA SELECTION ================= */
+
+function selectArea(element,name,donations,people){
+
+    document
+        .querySelectorAll(".area")
+        .forEach(function(area){
+
+            area.classList.remove("active");
+
+        });
+
+
+    element.classList.add("active");
+
+
+    alert(
+        name +
+        "\n\n📦 " +
+        donations +
+        " Donations Completed" +
+        "\n👥 " +
+        people +
+        " People Helped"
+    );
+
+}
+
+
+/* ================= OPEN STORY ================= */
+
+function openStory(){
+
+    document
+        .getElementById("storyModal")
+        .classList
+        .add("show");
+
+}
+
+
+/* ================= CLOSE STORY ================= */
+
+function closeStory(){
+
+    document
+        .getElementById("storyModal")
+        .classList
+        .remove("show");
+
+}
+
+
+/* ================= CLOSE OUTSIDE ================= */
+
+document
+.getElementById("storyModal")
+.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target === this
+        ){
+
+            closeStory();
+
+        }
+
+    }
+);
+
+
+</script>
+
+</body>
+</html>

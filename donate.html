@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DonateSmart | Donate Item</title>
+
+    <link rel="stylesheet" href="donate.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>
+        <i class="fa-solid fa-hand-holding-heart"></i>
+        Donate an Item
+    </h1>
+
+    <!-- FORM START -->
+    <form id="donationForm">
+
+        <div class="row">
+
+            <div class="input-box">
+                <label>Donor Name</label>
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your name"
+                    required>
+            </div>
+
+            <div class="input-box">
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter email"
+                    required>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="input-box">
+                <label>Phone Number</label>
+
+                <input
+                    type="tel"
+                    name="phone"
+                    placeholder="9876543210"
+                    maxlength="10"
+                    required>
+            </div>
+
+            <div class="input-box">
+                <label>Category</label>
+
+                <select name="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Food">Food</option>
+                    <option value="Books">Books</option>
+                    <option value="Clothes">Clothes</option>
+                    <option value="Furniture">Furniture</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Medical">Medical</option>
+                    <option value="Toys">Toys</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="input-box">
+                <label>Item Name</label>
+
+                <input
+                    type="text"
+                    name="item"
+                    placeholder="Enter item name"
+                    required>
+            </div>
+
+            <div class="input-box">
+                <label>Quantity</label>
+
+                <input
+                    type="number"
+                    name="quantity"
+                    min="1"
+                    placeholder="Enter quantity"
+                    required>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="input-box">
+                <label>Condition</label>
+
+                <select name="condition" required>
+                    <option value="New">New</option>
+                    <option value="Like New">Like New</option>
+                    <option value="Good">Good</option>
+                    <option value="Used">Used</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label>Available Date</label>
+
+                <input
+                    type="date"
+                    name="date"
+                    required>
+            </div>
+
+        </div>
+
+
+        <div class="input-box">
+
+            <label>Description</label>
+
+            <textarea
+                name="description"
+                rows="5"
+                placeholder="Describe the donated item..."
+                required></textarea>
+
+        </div>
+
+
+        <div class="input-box">
+
+            <label>Pickup Address</label>
+
+            <textarea
+                name="address"
+                rows="4"
+                placeholder="Enter Pickup Address"
+                required></textarea>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="input-box">
+
+                <label>Delivery Method</label>
+
+                <select name="delivery" required>
+                    <option value="Pickup by NGO">
+                        Pickup by NGO
+                    </option>
+
+                    <option value="Self Delivery">
+                        Self Delivery
+                    </option>
+                </select>
+
+            </div>
+
+
+            <div class="input-box">
+
+                <label>Upload Image</label>
+
+                <input
+                    type="file"
+                    name="image"
+                    accept="image/*"
+                    required>
+
+            </div>
+
+        </div>
+
+
+        <!-- DONATE BUTTON -->
+
+        <button type="submit" class="btn">
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+            Donate Now
+
+        </button>
+
+    </form>
+    <!-- FORM END -->
+
+</div>
+
+
+<script src="donate.js"></script>
+
+</body>
+</html>

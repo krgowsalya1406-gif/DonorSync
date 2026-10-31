@@ -1,0 +1,2987 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate Smarter | Community Events</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+:root{
+    --green:#087f5b;
+    --green2:#13b87a;
+    --dark:#073b32;
+    --light:#effff7;
+    --cream:#fffaf0;
+    --yellow:#ffd43b;
+    --pink:#ff5d8f;
+    --purple:#7657d8;
+    --text:#20332d;
+    --muted:#6b7772;
+    --border:#d9ebe3;
+    --white:#ffffff;
+}
+
+body{
+    background:
+        radial-gradient(circle at 5% 5%,#d8fff0 0,transparent 25%),
+        radial-gradient(circle at 95% 10%,#fff0bd 0,transparent 22%),
+        #f4fbf7;
+    color:var(--text);
+    min-height:100vh;
+}
+
+/* HEADER */
+
+header{
+    min-height:76px;
+    padding:0 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    background:rgba(255,255,255,.88);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:50;
+}
+
+.brand{
+    font-size:23px;
+    font-weight:800;
+    color:var(--dark);
+}
+
+.brand span{
+    color:var(--green2);
+}
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.icon-button{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:#e5f9ef;
+    cursor:pointer;
+    font-size:18px;
+    position:relative;
+}
+
+.notification-badge{
+    position:absolute;
+    top:5px;
+    right:6px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--pink);
+    border:2px solid white;
+}
+
+.primary-button{
+    border:none;
+    background:linear-gradient(135deg,var(--green),var(--green2));
+    color:white;
+    padding:13px 19px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.primary-button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(8,127,91,.22);
+}
+
+.container{
+    width:min(1180px,90%);
+    margin:auto;
+    padding:35px 0 60px;
+}
+
+/* HERO */
+
+.hero{
+    display:grid;
+    grid-template-columns:1.4fr .8fr;
+    gap:22px;
+    align-items:stretch;
+}
+
+.hero-main{
+    background:linear-gradient(135deg,#087f5b,#17b978,#46d6a4);
+    border-radius:28px;
+    padding:38px;
+    color:white;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-main:after{
+    content:"";
+    position:absolute;
+    width:240px;
+    height:240px;
+    border:45px solid rgba(255,255,255,.12);
+    border-radius:50%;
+    right:-90px;
+    top:-100px;
+}
+
+.hero-main h1{
+    font-size:36px;
+    max-width:620px;
+    position:relative;
+    z-index:1;
+}
+
+.hero-main p{
+    margin-top:10px;
+    max-width:550px;
+    line-height:1.7;
+    font-size:14px;
+    color:#eafff7;
+    position:relative;
+    z-index:1;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:24px;
+    position:relative;
+    z-index:1;
+}
+
+.white-button{
+    border:none;
+    padding:12px 18px;
+    border-radius:11px;
+    background:white;
+    color:var(--green);
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.outline-button{
+    border:1px solid rgba(255,255,255,.5);
+    padding:12px 18px;
+    border-radius:11px;
+    background:rgba(255,255,255,.12);
+    color:white;
+    cursor:pointer;
+}
+
+.hero-side{
+    display:grid;
+    gap:14px;
+}
+
+.mini-card{
+    background:rgba(255,255,255,.9);
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:22px;
+}
+
+.mini-card .number{
+    font-size:30px;
+    color:var(--green);
+    font-weight:bold;
+}
+
+.mini-card p{
+    font-size:12px;
+    color:var(--muted);
+    margin-top:5px;
+}
+
+/* TOOLBAR */
+
+.toolbar{
+    margin-top:28px;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.search-box{
+    flex:1;
+    min-width:220px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:13px 16px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:14px;
+}
+
+.search-box input{
+    width:100%;
+    border:none;
+    outline:none;
+    font-size:14px;
+}
+
+.filter-row{
+    margin-top:18px;
+    display:flex;
+    gap:9px;
+    flex-wrap:wrap;
+}
+
+.filter{
+    border:1px solid var(--border);
+    background:white;
+    padding:10px 15px;
+    border-radius:25px;
+    cursor:pointer;
+    font-size:12px;
+}
+
+.filter.active{
+    background:var(--green);
+    color:white;
+    border-color:var(--green);
+}
+
+/* FEATURED */
+
+.section{
+    margin-top:35px;
+}
+
+.section-heading{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:16px;
+}
+
+.section-heading h2{
+    font-size:22px;
+}
+
+.section-heading p{
+    color:var(--muted);
+    font-size:12px;
+    margin-top:4px;
+}
+
+.featured-card{
+    display:grid;
+    grid-template-columns:1fr 1.1fr;
+    min-height:280px;
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    border:1px solid var(--border);
+}
+
+.featured-image{
+    background:linear-gradient(135deg,#ffcf66,#ff8b4a);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:100px;
+    min-height:250px;
+}
+
+.featured-image img{
+    width:100%;
+    height:100%;
+    min-height:250px;
+    object-fit:cover;
+}
+
+.featured-content{
+    padding:30px;
+}
+
+.featured-label{
+    display:inline-block;
+    background:#fff4c7;
+    color:#785800;
+    padding:7px 12px;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.featured-content h2{
+    margin-top:14px;
+    font-size:26px;
+}
+
+.featured-content p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.7;
+    margin-top:8px;
+}
+
+.featured-info{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:18px;
+}
+
+.info-chip{
+    background:#effaf4;
+    color:#27584a;
+    padding:9px 12px;
+    border-radius:10px;
+    font-size:11px;
+}
+
+/* EVENT GRID */
+
+.event-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(310px,1fr));
+    gap:20px;
+}
+
+.event-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:22px;
+    overflow:hidden;
+    transition:.25s;
+    position:relative;
+}
+
+.event-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 18px 35px rgba(20,80,60,.10);
+}
+
+.event-image{
+    height:165px;
+    background:linear-gradient(135deg,#d9f8e8,#b7efd4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:60px;
+    overflow:hidden;
+}
+
+.event-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.save-button{
+    position:absolute;
+    top:12px;
+    right:12px;
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.92);
+    cursor:pointer;
+    font-size:18px;
+}
+
+.save-button.saved{
+    background:#ffe1ea;
+}
+
+.event-body{
+    padding:20px;
+}
+
+.event-category{
+    font-size:10px;
+    color:var(--green);
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.event-body h3{
+    margin-top:7px;
+    font-size:19px;
+}
+
+.description{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+    margin-top:7px;
+    min-height:38px;
+}
+
+.event-meta{
+    margin-top:14px;
+    display:grid;
+    gap:7px;
+    color:#52615b;
+    font-size:11px;
+}
+
+.status{
+    display:inline-block;
+    margin-top:13px;
+    padding:6px 10px;
+    border-radius:20px;
+    background:#e3f8ec;
+    color:#087f5b;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.countdown{
+    margin-top:13px;
+    background:#f5faf7;
+    padding:10px;
+    border-radius:10px;
+    color:#41554d;
+    font-size:11px;
+}
+
+.card-actions{
+    margin-top:16px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+}
+
+.action-btn{
+    padding:10px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    background:white;
+    cursor:pointer;
+    font-size:11px;
+}
+
+.action-btn.green{
+    background:var(--green);
+    border-color:var(--green);
+    color:white;
+}
+
+/* IMPACT */
+
+.impact{
+    margin-top:35px;
+    background:linear-gradient(135deg,#073b32,#087f5b);
+    color:white;
+    padding:30px;
+    border-radius:25px;
+}
+
+.impact-grid{
+    margin-top:22px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+}
+
+.impact-card{
+    background:rgba(255,255,255,.10);
+    padding:20px;
+    border-radius:17px;
+    text-align:center;
+}
+
+.impact-card strong{
+    display:block;
+    font-size:25px;
+}
+
+.impact-card span{
+    font-size:11px;
+    color:#d7f7e9;
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,30,20,.58);
+    z-index:200;
+    overflow-y:auto;
+    padding:25px;
+}
+
+.modal.show{
+    display:block;
+}
+
+.modal-box{
+    width:min(650px,100%);
+    background:white;
+    margin:30px auto;
+    border-radius:24px;
+    padding:27px;
+    animation:slide .25s ease;
+}
+
+@keyframes slide{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.modal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.modal-header h2{
+    font-size:22px;
+}
+
+.close{
+    width:38px;
+    height:38px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:20px;
+    background:#eef7f2;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.form-group{
+    margin-top:15px;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:7px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+    padding:12px;
+    border:1px solid #d9e5df;
+    border-radius:10px;
+    outline:none;
+    background:#fbfefc;
+}
+
+.form-group textarea{
+    min-height:90px;
+    resize:vertical;
+}
+
+.image-preview{
+    margin-top:10px;
+    width:100%;
+    height:160px;
+    border:2px dashed #b9dccc;
+    border-radius:13px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    color:var(--muted);
+    font-size:12px;
+}
+
+.image-preview img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.modal-actions{
+    display:flex;
+    gap:10px;
+    margin-top:22px;
+}
+
+.modal-actions button{
+    flex:1;
+}
+
+/* DETAILS */
+
+.details-image{
+    width:100%;
+    height:220px;
+    background:#e5f8ed;
+    border-radius:16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:70px;
+    overflow:hidden;
+    margin-top:18px;
+}
+
+.details-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.detail-list{
+    margin-top:18px;
+    display:grid;
+    gap:10px;
+}
+
+.detail-item{
+    background:#f4faf6;
+    padding:13px;
+    border-radius:11px;
+    font-size:12px;
+}
+
+.detail-item b{
+    color:var(--dark);
+}
+
+.tab-row{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.tab-button{
+    padding:9px 12px;
+    border:1px solid var(--border);
+    background:white;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:11px;
+}
+
+.tab-button.active{
+    background:var(--green);
+    color:white;
+}
+
+.tab-content{
+    margin-top:14px;
+    display:none;
+}
+
+.tab-content.active{
+    display:block;
+}
+
+.person-row,
+.update-row{
+    padding:12px;
+    border-bottom:1px solid #edf2ef;
+    font-size:12px;
+}
+
+.person-row:last-child,
+.update-row:last-child{
+    border-bottom:none;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+}
+
+.gallery img{
+    width:100%;
+    height:90px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.empty{
+    color:var(--muted);
+    font-size:12px;
+    padding:15px 0;
+}
+
+/* NOTIFICATIONS */
+
+.notification-panel{
+    display:none;
+    position:fixed;
+    right:5%;
+    top:82px;
+    width:min(350px,90%);
+    background:white;
+    border:1px solid var(--border);
+    border-radius:18px;
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+    z-index:150;
+    overflow:hidden;
+}
+
+.notification-panel.show{
+    display:block;
+}
+
+.notification-panel h3{
+    padding:17px;
+    border-bottom:1px solid var(--border);
+}
+
+.notification-item{
+    padding:14px 17px;
+    border-bottom:1px solid #eef4f0;
+    font-size:12px;
+}
+
+.notification-item small{
+    display:block;
+    color:var(--muted);
+    margin-top:4px;
+}
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    background:#073b32;
+    color:white;
+    padding:14px 18px;
+    border-radius:12px;
+    z-index:500;
+    display:none;
+    font-size:13px;
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+}
+
+.toast.show{
+    display:block;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .hero{
+        grid-template-columns:1fr;
+    }
+
+    .featured-card{
+        grid-template-columns:1fr;
+    }
+
+    .impact-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    header{
+        padding:12px 5%;
+    }
+
+    .brand{
+        font-size:18px;
+    }
+
+    .primary-button{
+        padding:11px 13px;
+        font-size:11px;
+    }
+
+    .container{
+        width:92%;
+        padding-top:24px;
+    }
+
+    .hero-main{
+        padding:27px;
+    }
+
+    .hero-main h1{
+        font-size:28px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .impact-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .modal{
+        padding:10px;
+    }
+
+    .modal-box{
+        padding:20px;
+        margin:10px auto;
+    }
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <div class="brand">Donate <span>Smarter</span></div>
+
+
+<div class="header-actions">
+    
+
+    <button class="primary-button" onclick="openCreateModal()">
+        ➕ Create Event
+    </button>
+</div>
+
+
+</header>
+
+<div class="notification-panel" id="notificationPanel">
+    <h3>🔔 Notifications</h3>
+    <div id="notificationList"></div>
+</div>
+
+<main class="container">
+
+
+<section class="hero">
+
+    <div class="hero-main">
+
+        <h1>Create events. Bring people together. Make an impact. 🌍</h1>
+
+        <p>
+            Organize donation drives, volunteer activities and community events
+            in one simple place.
+        </p>
+
+        <div class="hero-buttons">
+            <button class="white-button" onclick="openCreateModal()">
+                ✨ Start an Event
+            </button>
+
+            <button class="outline-button" onclick="document.getElementById('events').scrollIntoView({behavior:'smooth'})">
+                Explore Events ↓
+            </button>
+        </div>
+
+    </div>
+
+
+    <div class="hero-side">
+
+        <div class="mini-card">
+            <div class="number" id="heroEventCount">3</div>
+            <p>Active community events</p>
+        </div>
+
+        <div class="mini-card">
+            <div class="number" id="heroParticipantCount">0</div>
+            <p>Participants joined events</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="toolbar">
+
+    <div class="search-box">
+        🔍
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by event name, location or category..."
+            oninput="renderEvents()">
+    </div>
+
+    <button class="action-btn" onclick="showSavedOnly()">
+        ❤️ Saved Events
+    </button>
+
+    <button class="action-btn" onclick="showAllEvents()">
+        🌍 All Events
+    </button>
+
+</section>
+
+
+<div class="filter-row">
+    <button class="filter active" onclick="setFilter('all',this)">All</button>
+    <button class="filter" onclick="setFilter('Books',this)">📚 Books</button>
+    <button class="filter" onclick="setFilter('Clothes',this)">👕 Clothes</button>
+    <button class="filter" onclick="setFilter('Electronics',this)">💻 Electronics</button>
+    <button class="filter" onclick="setFilter('Food',this)">🍲 Food</button>
+    <button class="filter" onclick="setFilter('Other',this)">✨ Other</button>
+</div>
+
+
+<section class="section">
+
+    <div class="section-heading">
+        <div>
+            <h2>⭐ Featured Event</h2>
+            <p>Making a bigger difference together.</p>
+        </div>
+    </div>
+
+    <div class="featured-card">
+
+        <div class="featured-image" id="featuredImage">
+            📚
+        </div>
+
+        <div class="featured-content">
+
+            <span class="featured-label">FEATURED</span>
+
+            <h2 id="featuredTitle">Books for Students</h2>
+
+            <p id="featuredDescription">
+                Donate books, notebooks and learning materials to support students.
+            </p>
+
+            <div class="featured-info">
+                <span class="info-chip" id="featuredDate">📅 15 Sep 2026</span>
+                <span class="info-chip" id="featuredLocation">📍 Anna Nagar</span>
+                <span class="info-chip" id="featuredParticipants">👥 0 joined</span>
+            </div>
+
+            <div class="modal-actions">
+                <button class="primary-button" onclick="openFeaturedDetails()">
+                    View Event
+                </button>
+
+                <button class="action-btn" onclick="joinFeaturedEvent()">
+                    🤝 Join
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="events">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>🎉 Community Events</h2>
+            <p id="eventSubtext">Discover and join events near you.</p>
+        </div>
+
+        <strong id="eventCount">3 Events</strong>
+
+    </div>
+
+    <div class="event-grid" id="eventGrid"></div>
+
+</section>
+
+
+<section class="impact">
+
+    <h2>🌍 Community Impact</h2>
+
+    <div class="impact-grid">
+
+        <div class="impact-card">
+            <strong id="impactEvents">3</strong>
+            <span>Events Created</span>
+        </div>
+
+        <div class="impact-card">
+            <strong id="impactParticipants">0</strong>
+            <span>Participants</span>
+        </div>
+
+        <div class="impact-card">
+            <strong id="impactCompleted">0</strong>
+            <span>Completed Events</span>
+        </div>
+
+        <div class="impact-card">
+            <strong id="impactVolunteers">0</strong>
+            <span>Volunteers</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+<!-- CREATE / EDIT MODAL -->
+
+<div class="modal" id="createModal">
+
+
+<div class="modal-box">
+
+    <div class="modal-header">
+        <h2 id="formTitle">✨ Create New Event</h2>
+
+        <button class="close" onclick="closeModal('createModal')">
+            ×
+        </button>
+    </div>
+
+    <div class="form-grid">
+
+        <div class="form-group full">
+            <label>Event Name *</label>
+            <input id="eventName" type="text" placeholder="Example: Winter Clothes Drive">
+        </div>
+
+        <div class="form-group full">
+            <label>Description *</label>
+            <textarea id="eventDescription" placeholder="Tell people about your event..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Category</label>
+
+            <select id="eventCategory">
+                <option>Books</option>
+                <option>Clothes</option>
+                <option>Electronics</option>
+                <option>Food</option>
+                <option>Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Event Status</label>
+
+            <select id="eventStatus">
+                <option>Upcoming</option>
+                <option>Ongoing</option>
+                <option>Completed</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Date *</label>
+            <input id="eventDate" type="date">
+        </div>
+
+        <div class="form-group">
+            <label>Time *</label>
+            <input id="eventTime" type="time">
+        </div>
+
+        <div class="form-group full">
+            <label>Location *</label>
+            <input id="eventLocation" type="text" placeholder="Example: Anna Nagar, Madurai">
+        </div>
+
+        <div class="form-group full">
+            <label>🖼️ Upload Event Image</label>
+            <input id="eventImage" type="file" accept="image/*" onchange="previewImage()">
+
+            <div class="image-preview" id="imagePreview">
+                No image selected
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal-actions">
+        <button class="action-btn" onclick="closeModal('createModal')">
+            Cancel
+        </button>
+
+        <button class="primary-button" onclick="saveEvent()">
+            🎉 Save Event
+        </button>
+    </div>
+
+</div>
+
+
+</div>
+
+<!-- DETAILS MODAL -->
+
+<div class="modal" id="detailsModal">
+
+
+<div class="modal-box">
+
+    <div class="modal-header">
+
+        <h2 id="detailsTitle">Event Details</h2>
+
+        <button class="close" onclick="closeModal('detailsModal')">
+            ×
+        </button>
+
+    </div>
+
+    <div class="details-image" id="detailsImage">
+        🎉
+    </div>
+
+    <div class="detail-list">
+
+        <div class="detail-item">
+            <b>📝 Description:</b>
+            <span id="detailsDescription"></span>
+        </div>
+
+        <div class="detail-item" id="detailsMeta"></div>
+
+        <div class="detail-item">
+            <b>⏳ Countdown:</b>
+            <span id="detailsCountdown"></span>
+        </div>
+
+    </div>
+
+
+    <div class="tab-row">
+
+        <button class="tab-button active" onclick="openTab('participants',this)">
+            👥 Participants
+        </button>
+
+        <button class="tab-button" onclick="openTab('volunteers',this)">
+            🤝 Volunteers
+        </button>
+
+        <button class="tab-button" onclick="openTab('updates',this)">
+            📢 Updates
+        </button>
+
+        <button class="tab-button" onclick="openTab('gallery',this)">
+            📸 Gallery
+        </button>
+
+    </div>
+
+
+    <div class="tab-content active" id="participantsTab">
+        <div id="participantsList"></div>
+    </div>
+
+
+    <div class="tab-content" id="volunteersTab">
+
+        <div id="volunteersList"></div>
+
+        <div class="form-group">
+            <label>Your Name</label>
+            <input id="volunteerName" placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input id="volunteerPhone" placeholder="Enter phone number">
+        </div>
+
+        <div class="form-group">
+            <label>Available Time</label>
+            <input id="volunteerTime" placeholder="Example: Morning">
+        </div>
+
+        <button class="primary-button" style="margin-top:15px;width:100%;" onclick="addVolunteer()">
+            🤝 Register as Volunteer
+        </button>
+
+    </div>
+
+
+    <div class="tab-content" id="updatesTab">
+
+        <div id="updatesList"></div>
+
+        <div class="form-group">
+            <label>Post an Event Update</label>
+            <textarea id="newUpdate" placeholder="Example: Event location has changed."></textarea>
+        </div>
+
+        <button class="primary-button" style="margin-top:15px;width:100%;" onclick="addUpdate()">
+            📢 Post Update
+        </button>
+
+    </div>
+
+
+    <div class="tab-content" id="galleryTab">
+
+        <div class="gallery" id="galleryList"></div>
+
+        <div class="form-group">
+            <label>Add Event Photo</label>
+            <input type="file" id="galleryUpload" accept="image/*" onchange="addGalleryImage()">
+        </div>
+
+    </div>
+
+
+    <div class="modal-actions">
+
+        <button class="action-btn" onclick="shareEvent()">
+            📤 Share
+        </button>
+
+        <button class="action-btn" onclick="editCurrentEvent()">
+            ✏️ Edit
+        </button>
+
+        <button class="primary-button" id="joinDetailsButton" onclick="toggleJoinCurrentEvent()">
+            🤝 Join Event
+        </button>
+
+    </div>
+
+    <div class="modal-actions">
+
+        <button class="action-btn" style="color:#b4233c;" onclick="deleteCurrentEvent()">
+            🗑️ Delete Event
+        </button>
+
+    </div>
+
+</div>
+```
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+/* =================================================
+   DATA
+================================================= */
+
+let events = [
+    {
+        id:1,
+        name:"Books for Students",
+        description:"Donate books, notebooks and learning materials to support students.",
+        category:"Books",
+        date:"2026-09-15",
+        time:"10:00",
+        location:"Anna Nagar, Madurai",
+        status:"Upcoming",
+        image:"",
+        saved:false,
+        joined:false,
+        participants:[],
+        volunteers:[],
+        updates:["Welcome! Please bring clean and useful books."],
+        gallery:[]
+    },
+    {
+        id:2,
+        name:"Clothes for Care",
+        description:"Collect clean reusable clothes for families in need.",
+        category:"Clothes",
+        date:"2026-09-20",
+        time:"09:00",
+        location:"KK Nagar, Madurai",
+        status:"Upcoming",
+        image:"",
+        saved:false,
+        joined:false,
+        participants:[],
+        volunteers:[],
+        updates:["Sorting and collection begins at 9:00 AM."],
+        gallery:[]
+    },
+    {
+        id:3,
+        name:"Tech for Education",
+        description:"Donate working electronics to help students with education and projects.",
+        category:"Electronics",
+        date:"2026-09-28",
+        time:"11:00",
+        location:"Tallakulam, Madurai",
+        status:"Upcoming",
+        image:"",
+        saved:false,
+        joined:false,
+        participants:[],
+        volunteers:[],
+        updates:["Please bring chargers with electronic devices when possible."],
+        gallery:[]
+    }
+];
+
+
+let currentFilter = "all";
+let savedOnly = false;
+let editingId = null;
+let currentEventId = null;
+let selectedImageData = "";
+
+
+/* =================================================
+   ICON
+================================================= */
+
+function categoryIcon(category){
+
+    if(category === "Books") return "📚";
+    if(category === "Clothes") return "👕";
+    if(category === "Electronics") return "💻";
+    if(category === "Food") return "🍲";
+
+    return "✨";
+
+}
+
+
+/* =================================================
+   MODALS
+================================================= */
+
+function openCreateModal(){
+
+    editingId = null;
+    selectedImageData = "";
+
+    document.getElementById("formTitle").textContent =
+        "✨ Create New Event";
+
+    clearForm();
+
+    document.getElementById("createModal")
+        .classList.add("show");
+
+}
+
+
+function closeModal(id){
+
+    document.getElementById(id)
+        .classList.remove("show");
+
+}
+
+
+window.addEventListener("click",function(e){
+
+    if(e.target.classList.contains("modal")){
+
+        e.target.classList.remove("show");
+
+    }
+
+});
+
+
+/* =================================================
+   IMAGE PREVIEW
+================================================= */
+
+function previewImage(){
+
+    let file =
+        document.getElementById("eventImage").files[0];
+
+    if(!file) return;
+
+    let reader = new FileReader();
+
+    reader.onload = function(e){
+
+        selectedImageData = e.target.result;
+
+        document.getElementById("imagePreview").innerHTML =
+            '<img src="' + selectedImageData + '">';
+
+    };
+
+    reader.readAsDataURL(file);
+
+}
+
+
+/* =================================================
+   CREATE / EDIT EVENT
+================================================= */
+
+function saveEvent(){
+
+    let name =
+        document.getElementById("eventName").value.trim();
+
+    let description =
+        document.getElementById("eventDescription").value.trim();
+
+    let category =
+        document.getElementById("eventCategory").value;
+
+    let status =
+        document.getElementById("eventStatus").value;
+
+    let date =
+        document.getElementById("eventDate").value;
+
+    let time =
+        document.getElementById("eventTime").value;
+
+    let location =
+        document.getElementById("eventLocation").value.trim();
+
+
+    if(name === "" ||
+       description === "" ||
+       date === "" ||
+       time === "" ||
+       location === ""){
+
+        showToast("⚠️ Please complete all required fields.");
+
+        return;
+
+    }
+
+
+    if(editingId !== null){
+
+        let event =
+            events.find(function(e){
+                return e.id === editingId;
+            });
+
+        event.name = name;
+        event.description = description;
+        event.category = category;
+        event.status = status;
+        event.date = date;
+        event.time = time;
+        event.location = location;
+
+        if(selectedImageData !== ""){
+            event.image = selectedImageData;
+        }
+
+        showToast("✅ Event updated successfully!");
+
+        editingId = null;
+
+    }
+
+    else{
+
+        let newEvent = {
+            id:Date.now(),
+            name:name,
+            description:description,
+            category:category,
+            date:date,
+            time:time,
+            location:location,
+            status:status,
+            image:selectedImageData,
+            saved:false,
+            joined:false,
+            participants:[],
+            volunteers:[],
+            updates:["🎉 Event created successfully!"],
+            gallery:[]
+        };
+
+        events.unshift(newEvent);
+
+        addNotification(
+            "🎉 New event created: " + name
+        );
+
+        showToast(
+            "🎉 Event created successfully!"
+        );
+
+    }
+
+
+    closeModal("createModal");
+
+    renderEvents();
+
+    updateImpact();
+
+    updateFeatured();
+
+}
+
+
+/* =================================================
+   RENDER EVENTS
+================================================= */
+
+function renderEvents(){
+
+    let grid =
+        document.getElementById("eventGrid");
+
+    let search =
+        document.getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+
+    grid.innerHTML = "";
+
+
+    let visibleEvents =
+        events.filter(function(event){
+
+            let matchesFilter =
+                currentFilter === "all" ||
+                event.category === currentFilter;
+
+
+            let matchesSearch =
+                event.name.toLowerCase().includes(search) ||
+                event.location.toLowerCase().includes(search) ||
+                event.category.toLowerCase().includes(search);
+
+
+            let matchesSaved =
+                !savedOnly ||
+                event.saved;
+
+
+            return matchesFilter &&
+                   matchesSearch &&
+                   matchesSaved;
+
+        });
+
+
+    visibleEvents.forEach(function(event){
+
+        let card =
+            document.createElement("div");
+
+        card.className =
+            "event-card";
+
+
+        let imageHTML =
+            event.image
+            ? '<img src="' + event.image + '">'
+            : categoryIcon(event.category);
+
+
+        card.innerHTML =
+
+            '<div class="event-image">' +
+                imageHTML +
+            '</div>' +
+
+            '<button class="save-button ' +
+                (event.saved ? 'saved' : '') +
+            '" onclick="toggleSave(' + event.id + ')">' +
+
+                (event.saved ? '❤️' : '🤍') +
+
+            '</button>' +
+
+            '<div class="event-body">' +
+
+                '<div class="event-category">' +
+                    event.category +
+                '</div>' +
+
+                '<h3></h3>' +
+
+                '<p class="description"></p>' +
+
+                '<div class="event-meta">' +
+
+                    '<div>📅 ' +
+                        formatDate(event.date) +
+                    '</div>' +
+
+                    '<div>🕒 ' +
+                        formatTime(event.time) +
+                    '</div>' +
+
+                    '<div>📍 </div>' +
+
+                '</div>' +
+
+                '<span class="status">' +
+                    event.status +
+                '</span>' +
+
+                '<div class="countdown">' +
+                    getCountdown(event) +
+                '</div>' +
+
+                '<div class="card-actions">' +
+
+                    '<button class="action-btn" onclick="openDetails(' +
+                        event.id +
+                    ')">View Details</button>' +
+
+                    '<button class="action-btn green" onclick="quickJoin(' +
+                        event.id +
+                    ')">' +
+                        (event.joined ? '✓ Joined' : '🤝 Join') +
+                    '</button>' +
+
+                '</div>' +
+
+            '</div>';
+
+
+        card.querySelector("h3").textContent =
+            event.name;
+
+        card.querySelector(".description").textContent =
+            event.description;
+
+        card.querySelector(".event-meta div:last-child").textContent =
+            "📍 " + event.location;
+
+
+        grid.appendChild(card);
+
+    });
+
+
+    if(visibleEvents.length === 0){
+
+        grid.innerHTML =
+            '<div class="empty">No events found.</div>';
+
+    }
+
+
+    document.getElementById("eventCount")
+        .textContent =
+        visibleEvents.length + " Events";
+
+}
+
+
+/* =================================================
+   FILTER
+================================================= */
+
+function setFilter(category,button){
+
+    currentFilter = category;
+    savedOnly = false;
+
+    document
+        .querySelectorAll(".filter")
+        .forEach(function(btn){
+
+            btn.classList.remove("active");
+
+        });
+
+
+    button.classList.add("active");
+
+    renderEvents();
+
+}
+
+
+function showSavedOnly(){
+
+    savedOnly = true;
+    currentFilter = "all";
+
+    document
+        .querySelectorAll(".filter")
+        .forEach(function(btn){
+
+            btn.classList.remove("active");
+
+        });
+
+    renderEvents();
+
+    showToast("❤️ Showing your saved events.");
+
+}
+
+
+function showAllEvents(){
+
+    savedOnly = false;
+    currentFilter = "all";
+
+    renderEvents();
+
+}
+
+
+/* =================================================
+   SAVE EVENT
+================================================= */
+
+function toggleSave(id){
+
+    let event =
+        events.find(function(e){
+            return e.id === id;
+        });
+
+    event.saved = !event.saved;
+
+    renderEvents();
+
+    showToast(
+        event.saved
+        ? "❤️ Event saved!"
+        : "Removed from saved events."
+    );
+
+}
+
+
+/* =================================================
+   JOIN EVENT
+================================================= */
+
+function quickJoin(id){
+
+    let event =
+        events.find(function(e){
+            return e.id === id;
+        });
+
+
+    event.joined = !event.joined;
+
+
+    if(event.joined){
+
+        event.participants.push({
+            name:"You",
+            time:new Date().toLocaleString()
+        });
+
+        addNotification(
+            "🤝 You joined " + event.name
+        );
+
+        showToast(
+            "🎉 You joined " + event.name
+        );
+
+    }
+
+    else{
+
+        event.participants =
+            event.participants.filter(function(person){
+
+                return person.name !== "You";
+
+            });
+
+        showToast(
+            "You left " + event.name
+        );
+
+    }
+
+
+    renderEvents();
+    updateImpact();
+    updateFeatured();
+
+}
+
+
+/* =================================================
+   EVENT DETAILS
+================================================= */
+
+function openDetails(id){
+
+    currentEventId = id;
+
+    let event =
+        events.find(function(e){
+            return e.id === id;
+        });
+
+
+    document.getElementById("detailsTitle")
+        .textContent =
+        event.name;
+
+
+    document.getElementById("detailsDescription")
+        .textContent =
+        event.description;
+
+
+    document.getElementById("detailsMeta")
+        .innerHTML =
+
+        "📅 <b>Date:</b> " +
+        formatDate(event.date) +
+
+        "<br><br>" +
+
+        "🕒 <b>Time:</b> " +
+        formatTime(event.time) +
+
+        "<br><br>" +
+
+        "📍 <b>Location:</b> " +
+        event.location +
+
+        "<br><br>" +
+
+        "🏷️ <b>Category:</b> " +
+        event.category +
+
+        "<br><br>" +
+
+        "🟢 <b>Status:</b> " +
+        event.status;
+
+
+    document.getElementById("detailsCountdown")
+        .textContent =
+        getCountdown(event);
+
+
+    let imageBox =
+        document.getElementById("detailsImage");
+
+
+    if(event.image){
+
+        imageBox.innerHTML =
+            '<img src="' +
+            event.image +
+            '">';
+
+    }
+
+    else{
+
+        imageBox.textContent =
+            categoryIcon(event.category);
+
+    }
+
+
+    document.getElementById("joinDetailsButton")
+        .textContent =
+        event.joined
+        ? "✓ Leave Event"
+        : "🤝 Join Event";
+
+
+    renderParticipants(event);
+    renderVolunteers(event);
+    renderUpdates(event);
+    renderGallery(event);
+
+
+    document.getElementById("detailsModal")
+        .classList.add("show");
+
+}
+
+
+/* =================================================
+   PARTICIPANTS
+================================================= */
+
+function renderParticipants(event){
+
+    let list =
+        document.getElementById("participantsList");
+
+
+    if(event.participants.length === 0){
+
+        list.innerHTML =
+            '<div class="empty">No participants yet. Be the first to join!</div>';
+
+        return;
+
+    }
+
+
+    list.innerHTML = "";
+
+
+    event.participants.forEach(function(person){
+
+        let row =
+            document.createElement("div");
+
+        row.className =
+            "person-row";
+
+        row.textContent =
+            "👤 " +
+            person.name +
+            " — Joined";
+
+        list.appendChild(row);
+
+    });
+
+}
+
+
+/* =================================================
+   TOGGLE JOIN IN DETAILS
+================================================= */
+
+function toggleJoinCurrentEvent(){
+
+    if(currentEventId === null) return;
+
+    quickJoin(currentEventId);
+
+    openDetails(currentEventId);
+
+}
+
+
+/* =================================================
+   VOLUNTEERS
+================================================= */
+
+function addVolunteer(){
+
+    let name =
+        document.getElementById("volunteerName")
+        .value
+        .trim();
+
+    let phone =
+        document.getElementById("volunteerPhone")
+        .value
+        .trim();
+
+    let time =
+        document.getElementById("volunteerTime")
+        .value
+        .trim();
+
+
+    if(name === "" || phone === ""){
+
+        showToast(
+            "⚠️ Please enter your name and phone number."
+        );
+
+        return;
+
+    }
+
+
+    let event =
+        getCurrentEvent();
+
+
+    event.volunteers.push({
+        name:name,
+        phone:phone,
+        time:time
+    });
+
+
+    document.getElementById("volunteerName").value = "";
+    document.getElementById("volunteerPhone").value = "";
+    document.getElementById("volunteerTime").value = "";
+
+
+    renderVolunteers(event);
+
+    updateImpact();
+
+    showToast(
+        "🤝 Volunteer registration successful!"
+    );
+
+}
+
+
+function renderVolunteers(event){
+
+    let list =
+        document.getElementById("volunteersList");
+
+
+    if(event.volunteers.length === 0){
+
+        list.innerHTML =
+            '<div class="empty">No volunteers registered yet.</div>';
+
+        return;
+
+    }
+
+
+    list.innerHTML = "";
+
+
+    event.volunteers.forEach(function(volunteer){
+
+        let row =
+            document.createElement("div");
+
+        row.className =
+            "person-row";
+
+
+        row.innerHTML =
+            "🤝 <b>" +
+            escapeHTML(volunteer.name) +
+            "</b><br>" +
+
+            "📞 " +
+            escapeHTML(volunteer.phone) +
+            "<br>" +
+
+            "🕒 " +
+            escapeHTML(volunteer.time || "Not specified");
+
+
+        list.appendChild(row);
+
+    });
+
+}
+
+
+/* =================================================
+   EVENT UPDATES
+================================================= */
+
+function addUpdate(){
+
+    let text =
+        document.getElementById("newUpdate")
+        .value
+        .trim();
+
+
+    if(text === ""){
+
+        showToast(
+            "⚠️ Please write an update."
+        );
+
+        return;
+
+    }
+
+
+    let event =
+        getCurrentEvent();
+
+
+    event.updates.unshift(
+        "📢 " + text
+    );
+
+
+    document.getElementById("newUpdate")
+        .value = "";
+
+
+    renderUpdates(event);
+
+    addNotification(
+        "📢 New update posted for " +
+        event.name
+    );
+
+    showToast(
+        "📢 Event update posted!"
+    );
+
+}
+
+
+function renderUpdates(event){
+
+    let list =
+        document.getElementById("updatesList");
+
+
+    if(event.updates.length === 0){
+
+        list.innerHTML =
+            '<div class="empty">No updates yet.</div>';
+
+        return;
+
+    }
+
+
+    list.innerHTML = "";
+
+
+    event.updates.forEach(function(update){
+
+        let row =
+            document.createElement("div");
+
+        row.className =
+            "update-row";
+
+        row.textContent =
+            update;
+
+        list.appendChild(row);
+
+    });
+
+}
+
+
+/* =================================================
+   GALLERY
+================================================= */
+
+function addGalleryImage(){
+
+    let file =
+        document.getElementById("galleryUpload")
+        .files[0];
+
+    if(!file) return;
+
+
+    let reader =
+        new FileReader();
+
+
+    reader.onload =
+        function(e){
+
+            let event =
+                getCurrentEvent();
+
+
+            event.gallery.push(
+                e.target.result
+            );
+
+
+            renderGallery(event);
+
+            document
+                .getElementById("galleryUpload")
+                .value = "";
+
+
+            showToast(
+                "📸 Photo added to gallery!"
+            );
+
+        };
+
+
+    reader.readAsDataURL(file);
+
+}
+
+
+function renderGallery(event){
+
+    let gallery =
+        document.getElementById("galleryList");
+
+
+    if(event.gallery.length === 0){
+
+        gallery.innerHTML =
+            '<div class="empty">No event photos yet.</div>';
+
+        return;
+
+    }
+
+
+    gallery.innerHTML = "";
+
+
+    event.gallery.forEach(function(image){
+
+        let img =
+            document.createElement("img");
+
+        img.src = image;
+
+        gallery.appendChild(img);
+
+    });
+
+}
+
+
+/* =================================================
+   TABS
+================================================= */
+
+function openTab(tab,button){
+
+    document
+        .querySelectorAll(".tab-button")
+        .forEach(function(btn){
+
+            btn.classList.remove("active");
+
+        });
+
+
+    document
+        .querySelectorAll(".tab-content")
+        .forEach(function(content){
+
+            content.classList.remove("active");
+
+        });
+
+
+    button.classList.add("active");
+
+
+    document
+        .getElementById(tab + "Tab")
+        .classList.add("active");
+
+}
+
+
+/* =================================================
+   EDIT
+================================================= */
+
+function editCurrentEvent(){
+
+    let event =
+        getCurrentEvent();
+
+
+    editingId =
+        event.id;
+
+
+    document.getElementById("formTitle")
+        .textContent =
+        "✏️ Edit Event";
+
+
+    document.getElementById("eventName")
+        .value =
+        event.name;
+
+
+    document.getElementById("eventDescription")
+        .value =
+        event.description;
+
+
+    document.getElementById("eventCategory")
+        .value =
+        event.category;
+
+
+    document.getElementById("eventStatus")
+        .value =
+        event.status;
+
+
+    document.getElementById("eventDate")
+        .value =
+        event.date;
+
+
+    document.getElementById("eventTime")
+        .value =
+        event.time;
+
+
+    document.getElementById("eventLocation")
+        .value =
+        event.location;
+
+
+    selectedImageData =
+        event.image;
+
+
+    let preview =
+        document.getElementById("imagePreview");
+
+
+    if(event.image){
+
+        preview.innerHTML =
+            '<img src="' +
+            event.image +
+            '">';
+
+    }
+
+    else{
+
+        preview.textContent =
+            "No image selected";
+
+    }
+
+
+    closeModal("detailsModal");
+
+
+    document.getElementById("createModal")
+        .classList.add("show");
+
+}
+
+
+/* =================================================
+   DELETE
+================================================= */
+
+function deleteCurrentEvent(){
+
+    let event =
+        getCurrentEvent();
+
+
+    let answer =
+        confirm(
+            "Delete the event: " +
+            event.name +
+            "?"
+        );
+
+
+    if(!answer) return;
+
+
+    events =
+        events.filter(function(e){
+
+            return e.id !==
+                currentEventId;
+
+        });
+
+
+    closeModal("detailsModal");
+
+
+    addNotification(
+        "🗑️ Event deleted: " +
+        event.name
+    );
+
+
+    showToast(
+        "🗑️ Event deleted successfully."
+    );
+
+
+    currentEventId = null;
+
+
+    renderEvents();
+    updateImpact();
+    updateFeatured();
+
+}
+
+
+/* =================================================
+   SHARE
+================================================= */
+
+function shareEvent(){
+
+    let event =
+        getCurrentEvent();
+
+
+    let text =
+        "🎉 " +
+        event.name +
+
+        "\n📅 " +
+        formatDate(event.date) +
+
+        "\n🕒 " +
+        formatTime(event.time) +
+
+        "\n📍 " +
+        event.location +
+
+        "\n\nJoin this community event on Donate Smarter!";
+
+
+    if(navigator.share){
+
+        navigator.share({
+            title:event.name,
+            text:text
+        });
+
+    }
+
+    else if(navigator.clipboard){
+
+        navigator.clipboard
+            .writeText(text)
+            .then(function(){
+
+                showToast(
+                    "📋 Event details copied!"
+                );
+
+            });
+
+    }
+
+    else{
+
+        showToast(
+            "📤 Sharing is not supported on this browser."
+        );
+
+    }
+
+}
+
+
+/* =================================================
+   FEATURED EVENT
+================================================= */
+
+function updateFeatured(){
+
+    if(events.length === 0){
+
+        document.getElementById("featuredTitle")
+            .textContent =
+            "No Featured Event";
+
+        return;
+
+    }
+
+
+    let event =
+        events[0];
+
+
+    document.getElementById("featuredTitle")
+        .textContent =
+        event.name;
+
+
+    document.getElementById("featuredDescription")
+        .textContent =
+        event.description;
+
+
+    document.getElementById("featuredDate")
+        .textContent =
+        "📅 " +
+        formatDate(event.date);
+
+
+    document.getElementById("featuredLocation")
+        .textContent =
+        "📍 " +
+        event.location;
+
+
+    document.getElementById("featuredParticipants")
+        .textContent =
+        "👥 " +
+        event.participants.length +
+        " joined";
+
+
+    let image =
+        document.getElementById("featuredImage");
+
+
+    if(event.image){
+
+        image.innerHTML =
+            '<img src="' +
+            event.image +
+            '">';
+
+    }
+
+    else{
+
+        image.textContent =
+            categoryIcon(event.category);
+
+    }
+
+}
+
+
+function openFeaturedDetails(){
+
+    if(events.length > 0){
+
+        openDetails(
+            events[0].id
+        );
+
+    }
+
+}
+
+
+function joinFeaturedEvent(){
+
+    if(events.length > 0){
+
+        quickJoin(
+            events[0].id
+        );
+
+    }
+
+}
+
+
+/* =================================================
+   NOTIFICATIONS
+================================================= */
+
+let notifications = [
+    {
+        text:"Welcome to Donate Smarter Events! 🎉",
+        time:"Now"
+    }
+];
+
+
+function addNotification(text){
+
+    notifications.unshift({
+        text:text,
+        time:"Just now"
+    });
+
+
+    renderNotifications();
+
+}
+
+
+function renderNotifications(){
+
+    let list =
+        document.getElementById("notificationList");
+
+    list.innerHTML = "";
+
+
+    notifications.forEach(function(notification){
+
+        let item =
+            document.createElement("div");
+
+        item.className =
+            "notification-item";
+
+
+        item.innerHTML =
+            notification.text +
+            "<small>" +
+            notification.time +
+            "</small>";
+
+
+        list.appendChild(item);
+
+    });
+
+
+    document
+        .getElementById("notificationBadge")
+        .style.display =
+        notifications.length > 0
+        ? "block"
+        : "none";
+
+}
+
+
+function toggleNotifications(){
+
+    document
+        .getElementById("notificationPanel")
+        .classList.toggle("show");
+
+}
+
+
+/* =================================================
+   IMPACT
+================================================= */
+
+function updateImpact(){
+
+    let participants =
+        events.reduce(function(total,event){
+
+            return total +
+                event.participants.length;
+
+        },0);
+
+
+    let volunteers =
+        events.reduce(function(total,event){
+
+            return total +
+                event.volunteers.length;
+
+        },0);
+
+
+    let completed =
+        events.filter(function(event){
+
+            return event.status ===
+                "Completed";
+
+        }).length;
+
+
+    document.getElementById("heroEventCount")
+        .textContent =
+        events.length;
+
+
+    document.getElementById("heroParticipantCount")
+        .textContent =
+        participants;
+
+
+    document.getElementById("impactEvents")
+        .textContent =
+        events.length;
+
+
+    document.getElementById("impactParticipants")
+        .textContent =
+        participants;
+
+
+    document.getElementById("impactCompleted")
+        .textContent =
+        completed;
+
+
+    document.getElementById("impactVolunteers")
+        .textContent =
+        volunteers;
+
+}
+
+
+/* =================================================
+   COUNTDOWN
+================================================= */
+
+function getCountdown(event){
+
+    if(event.status === "Completed"){
+
+        return "🎉 This event is completed.";
+
+    }
+
+
+    let target =
+        new Date(
+            event.date +
+            "T" +
+            event.time
+        );
+
+
+    let now =
+        new Date();
+
+
+    let difference =
+        target - now;
+
+
+    if(difference <= 0){
+
+        return "🔵 Event is happening now.";
+
+    }
+
+
+    let days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    let hours =
+        Math.floor(
+            difference %
+            (1000 * 60 * 60 * 24) /
+            (1000 * 60 * 60)
+        );
+
+
+    let minutes =
+        Math.floor(
+            difference %
+            (1000 * 60 * 60) /
+            (1000 * 60)
+        );
+
+
+    return "⏳ Starts in " +
+        days + "d " +
+        hours + "h " +
+        minutes + "m";
+
+}
+
+
+/* =================================================
+   HELPERS
+================================================= */
+
+function getCurrentEvent(){
+
+    return events.find(function(event){
+
+        return event.id ===
+            currentEventId;
+
+    });
+
+}
+
+
+function formatDate(date){
+
+    if(!date) return "";
+
+    let value =
+        new Date(
+            date +
+            "T00:00:00"
+        );
+
+
+    return value.toLocaleDateString(
+        "en-IN",
+        {
+            day:"numeric",
+            month:"short",
+            year:"numeric"
+        }
+    );
+
+}
+
+
+function formatTime(time){
+
+    if(!time) return "";
+
+    let parts =
+        time.split(":");
+
+
+    let hour =
+        Number(parts[0]);
+
+
+    let minute =
+        parts[1];
+
+
+    let period =
+        hour >= 12
+        ? "PM"
+        : "AM";
+
+
+    hour =
+        hour % 12 || 12;
+
+
+    return hour +
+        ":" +
+        minute +
+        " " +
+        period;
+
+}
+
+
+function escapeHTML(text){
+
+    let div =
+        document.createElement("div");
+
+    div.textContent =
+        text;
+
+    return div.innerHTML;
+
+}
+
+
+function clearForm(){
+
+    document.getElementById("eventName").value = "";
+    document.getElementById("eventDescription").value = "";
+    document.getElementById("eventCategory").value = "Books";
+    document.getElementById("eventStatus").value = "Upcoming";
+    document.getElementById("eventDate").value = "";
+    document.getElementById("eventTime").value = "";
+    document.getElementById("eventLocation").value = "";
+    document.getElementById("eventImage").value = "";
+
+    document.getElementById("imagePreview")
+        .textContent =
+        "No image selected";
+
+}
+
+
+function showToast(message){
+
+    let toast =
+        document.getElementById("toast");
+
+
+    toast.textContent =
+        message;
+
+
+    toast.classList.add("show");
+
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+
+/* =================================================
+   INITIAL LOAD
+================================================= */
+
+renderEvents();
+updateImpact();
+updateFeatured();
+renderNotifications();
+
+
+/* UPDATE COUNTDOWNS */
+
+setInterval(function(){
+
+    renderEvents();
+
+    if(currentEventId !== null &&
+       document
+       .getElementById("detailsModal")
+       .classList.contains("show")){
+
+        let event =
+            getCurrentEvent();
+
+        if(event){
+
+            document
+                .getElementById("detailsCountdown")
+                .textContent =
+                getCountdown(event);
+
+        }
+
+    }
+
+},60000);
+
+</script>
+
+</body>
+</html>

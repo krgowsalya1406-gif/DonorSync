@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Donation Successful</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #f3f7fb;
+        }
+
+
+        .success-box {
+
+            width: 100%;
+
+            max-width: 500px;
+
+            background: white;
+
+            padding: 50px 35px;
+
+            text-align: center;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 35px rgba(0, 0, 0, 0.15);
+
+            animation:
+                slideUp 0.6s ease;
+        }
+
+
+        .success-icon {
+
+            width: 90px;
+
+            height: 90px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: #e8f5e9;
+
+            color: #2e7d32;
+
+            font-size: 55px;
+
+            font-weight: bold;
+        }
+
+
+        h1 {
+
+            color: #2e7d32;
+
+            margin-bottom: 15px;
+
+            font-size: 30px;
+        }
+
+
+        p {
+
+            color: #666;
+
+            font-size: 16px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .btn {
+
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 13px 25px;
+
+            background: #2e7d32;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .btn:hover {
+
+            background: #1b5e20;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        @keyframes slideUp {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(30px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .success-box {
+
+                padding: 35px 20px;
+
+            }
+
+
+            h1 {
+
+                font-size: 25px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="success-box">
+
+
+        <div class="success-icon">
+
+            ✓
+
+        </div>
+
+
+        <h1>
+
+            Donation Successful!
+
+        </h1>
+
+
+        <p>
+
+            Thank you for your generous
+            contribution ❤️
+
+        </p>
+
+
+        <a
+            href="donate.html"
+            class="btn">
+
+            Donate Another Item
+
+        </a>
+
+
+    </div>
+
+
+</body>
+
+</html>

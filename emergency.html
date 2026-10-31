@@ -1,0 +1,654 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emergency Support | Donate Smarter</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f4f8f6;
+    color: #26352e;
+}
+
+.topbar {
+    background: white;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+
+.logo {
+    color: #087f5b;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+.hero {
+    background: linear-gradient(120deg, #991b1b, #ef4444);
+    color: white;
+    padding: 35px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero h1 {
+    font-size: 30px;
+    margin: 12px 0;
+}
+
+.hero p {
+    color: #fee2e2;
+    line-height: 1.7;
+}
+
+.hero-icon {
+    font-size: 75px;
+    opacity: .8;
+}
+
+.btn {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.btn-white {
+    background: white;
+    color: #b91c1c;
+    margin-top: 18px;
+}
+
+.btn-green {
+    background: #087f5b;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: .9;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+    margin: 25px 0;
+}
+
+.stat-card {
+    background: white;
+    padding: 22px;
+    border-radius: 13px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.04);
+}
+
+.stat-card i {
+    font-size: 23px;
+    color: #dc2626;
+    margin-bottom: 12px;
+}
+
+.stat-card h2 {
+    font-size: 26px;
+    margin: 5px 0;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 30px 0 18px;
+    flex-wrap: wrap;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.filters button {
+    padding: 9px 17px;
+    border: 1px solid #dce7e1;
+    background: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.filters button.active {
+    background: #087f5b;
+    color: white;
+}
+
+.search {
+    padding: 11px 15px;
+    border: 1px solid #dce7e1;
+    border-radius: 8px;
+    width: 250px;
+    outline: none;
+}
+
+.request-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.request-card {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    border: 1px solid #e9efeb;
+    transition: .3s;
+}
+
+.request-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,.07);
+}
+
+.request-icon {
+    width: 48px;
+    height: 48px;
+    background: #fee2e2;
+    color: #dc2626;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    display: inline-block;
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 5px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.request-card h3 {
+    margin-bottom: 10px;
+}
+
+.details {
+    color: #718078;
+    font-size: 13px;
+    line-height: 2;
+    margin: 12px 0;
+}
+
+.progress {
+    height: 8px;
+    background: #e8eee9;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress span {
+    display: block;
+    height: 100%;
+    background: #10a66d;
+    border-radius: 10px;
+}
+
+.request-card .btn {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.55);
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    width: 100%;
+    max-width: 480px;
+    border-radius: 15px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content h2 {
+    margin-bottom: 18px;
+}
+
+.modal-content label {
+    display: block;
+    margin: 12px 0 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dce7e1;
+    border-radius: 7px;
+    outline: none;
+}
+
+.modal-content textarea {
+    resize: vertical;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.modal-actions button {
+    flex: 1;
+}
+
+.empty {
+    display: none;
+    text-align: center;
+    padding: 35px;
+    background: white;
+    border-radius: 12px;
+    color: #718078;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #718078;
+    margin-top: 30px;
+}
+
+@media(max-width:900px) {
+    .stats { grid-template-columns: repeat(2,1fr); }
+    .request-grid { grid-template-columns: repeat(2,1fr); }
+}
+
+@media(max-width:600px) {
+    .stats, .request-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 24px; }
+    .hero-icon { font-size: 45px; }
+    .search { width: 100%; }
+}
+</style>
+</head>
+
+<body>
+
+
+
+<main class="container">
+
+<section class="hero">
+    <div>
+        <span><i class="fa-solid fa-triangle-exclamation"></i> URGENT HELP NEEDED</span>
+        <h1>Emergency Donation Center</h1>
+        <p>Your small contribution can save lives and bring hope.<br>
+        Support people facing urgent situations.</p>
+        <button class="btn btn-white" onclick="openModal()">
+            <i class="fa-solid fa-plus"></i> Create Emergency Request
+        </button>
+    </div>
+    <i class="fa-solid fa-hand-holding-heart hero-icon"></i>
+</section>
+
+<section class="stats">
+    <div class="stat-card">
+        <i class="fa-solid fa-bell"></i>
+        <h2 id="totalRequests">4</h2>
+        <p>Emergency Requests</p>
+    </div>
+
+    <div class="stat-card">
+        <i class="fa-solid fa-heart"></i>
+        <h2 id="helpedCount">0</h2>
+        <p>Requests Supported</p>
+    </div>
+
+    <div class="stat-card">
+        <i class="fa-solid fa-droplet"></i>
+        <h2>2</h2>
+        <p>Blood Requests</p>
+    </div>
+
+    <div class="stat-card">
+        <i class="fa-solid fa-users"></i>
+        <h2>120+</h2>
+        <p>People Helping</p>
+    </div>
+</section>
+
+<div class="section-title">
+    <h2>Urgent Donation Requests</h2>
+    <button class="btn btn-green" onclick="openModal()">
+        + Add Request
+    </button>
+</div>
+
+<div class="filters">
+    <button class="active" onclick="filterRequests('All',this)">All</button>
+    <button onclick="filterRequests('Blood',this)">Blood</button>
+    <button onclick="filterRequests('Medical',this)">Medical</button>
+    <button onclick="filterRequests('Food',this)">Food</button>
+    <button onclick="filterRequests('Disaster',this)">Disaster Relief</button>
+</div>
+
+<input class="search" id="searchInput"
+placeholder="Search emergency requests..."
+oninput="searchRequests()">
+
+<div class="request-grid" id="requestGrid">
+
+    <div class="request-card" data-category="Blood">
+        <div class="request-icon"><i class="fa-solid fa-droplet"></i></div>
+        <span class="tag">URGENT • BLOOD</span>
+        <h3>Blood Donation Needed</h3>
+        <p class="details">
+            <i class="fa-solid fa-droplet"></i> Blood Group: O+<br>
+            <i class="fa-solid fa-location-dot"></i> Madurai<br>
+            <i class="fa-solid fa-clock"></i> Required urgently
+        </p>
+        <p>Blood donors are requested to help a patient.</p>
+        <button class="btn btn-green" onclick="supportRequest(this)">
+            Donate Now
+        </button>
+    </div>
+
+    <div class="request-card" data-category="Medical">
+        <div class="request-icon"><i class="fa-solid fa-kit-medical"></i></div>
+        <span class="tag">URGENT • MEDICAL</span>
+        <h3>Medical Supplies Required</h3>
+        <p class="details">
+            <i class="fa-solid fa-box"></i> Medical Essentials<br>
+            <i class="fa-solid fa-location-dot"></i> Chennai<br>
+            <i class="fa-solid fa-clock"></i> High Priority
+        </p>
+        <p>Help arrange essential medical supplies.</p>
+        <button class="btn btn-green" onclick="supportRequest(this)">
+            Donate Now
+        </button>
+    </div>
+
+    <div class="request-card" data-category="Food">
+        <div class="request-icon"><i class="fa-solid fa-bowl-food"></i></div>
+        <span class="tag">URGENT • FOOD</span>
+        <h3>Food for Needy Families</h3>
+        <p class="details">
+            <i class="fa-solid fa-box"></i> Food Packets<br>
+            <i class="fa-solid fa-location-dot"></i> Coimbatore<br>
+            <i class="fa-solid fa-clock"></i> Immediate Need
+        </p>
+        <p>Help provide food to families in need.</p>
+        <button class="btn btn-green" onclick="supportRequest(this)">
+            Donate Now
+        </button>
+    </div>
+
+    <div class="request-card" data-category="Disaster">
+        <div class="request-icon"><i class="fa-solid fa-house-flood-water"></i></div>
+        <span class="tag">URGENT • DISASTER</span>
+        <h3>Disaster Relief Support</h3>
+        <p class="details">
+            <i class="fa-solid fa-box"></i> Clothes & Essentials<br>
+            <i class="fa-solid fa-location-dot"></i> Tamil Nadu<br>
+            <i class="fa-solid fa-clock"></i> Immediate Support
+        </p>
+        <p>Support people affected by natural disasters.</p>
+        <button class="btn btn-green" onclick="supportRequest(this)">
+            Donate Now
+        </button>
+    </div>
+
+</div>
+
+<div class="empty" id="empty">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <h3>No requests found</h3>
+    <p>Try another search or category.</p>
+</div>
+
+</main>
+
+<!-- Create Request Modal -->
+<div class="modal" id="requestModal">
+    <div class="modal-content">
+        <h2>Create Emergency Request</h2>
+
+        <form id="requestForm">
+            <label>Request Title</label>
+            <input id="title" required placeholder="Enter request title">
+
+            <label>Emergency Category</label>
+            <select id="category" required>
+                <option value="">Select Category</option>
+                <option value="Blood">Blood Donation</option>
+                <option value="Medical">Medical</option>
+                <option value="Food">Food</option>
+                <option value="Disaster">Disaster Relief</option>
+            </select>
+
+            <label>Location</label>
+            <input id="location" required placeholder="Enter location">
+
+            <label>Description</label>
+            <textarea id="description" rows="3" required
+            placeholder="Describe the emergency"></textarea>
+
+            <div class="modal-actions">
+                <button type="button" class="btn"
+                style="background:#eee" onclick="closeModal()">Cancel</button>
+
+                <button type="submit" class="btn btn-green">
+                    Submit Request
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<footer>
+    © 2026 Donate Smarter | Every Act of Kindness Matters ❤️
+</footer>
+
+<script>
+let currentFilter = "All";
+let supported = 0;
+
+function openModal() {
+    document.getElementById("requestModal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("requestModal").style.display = "none";
+}
+
+function filterRequests(category, button) {
+    currentFilter = category;
+
+    document.querySelectorAll(".filters button").forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+    applyFilters();
+}
+
+function searchRequests() {
+    applyFilters();
+}
+
+function applyFilters() {
+    const search = document.getElementById("searchInput")
+        .value.toLowerCase();
+
+    const cards = document.querySelectorAll(".request-card");
+    let visible = 0;
+
+    cards.forEach(card => {
+        const category = card.dataset.category;
+        const matchesCategory =
+            currentFilter === "All" || category === currentFilter;
+
+        const matchesSearch =
+            card.innerText.toLowerCase().includes(search);
+
+        card.style.display =
+            matchesCategory && matchesSearch ? "block" : "none";
+
+        if (matchesCategory && matchesSearch) visible++;
+    });
+
+    document.getElementById("empty").style.display =
+        visible === 0 ? "block" : "none";
+}
+
+function supportRequest(button) {
+    const card = button.closest(".request-card");
+    if (button.dataset.supported === "true") {
+        alert("You have already supported this request in this session.");
+        return;
+    }
+
+    const confirmDonation = confirm(
+        "Do you want to support: " +
+        card.querySelector("h3").innerText + "?"
+    );
+
+    if (confirmDonation) {
+        button.dataset.supported = "true";
+        button.innerText = "Interest Registered";
+        button.disabled = true;
+        button.style.background = "#64748b";
+
+        supported++;
+        document.getElementById("helpedCount").innerText = supported;
+
+        alert("Thank you for helping! Please coordinate with the verified organizer before donating.");
+    }
+}
+
+document.getElementById("requestForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const title = document.getElementById("title").value;
+    const category = document.getElementById("category").value;
+    const location = document.getElementById("location").value;
+    const description = document.getElementById("description").value;
+
+    const icons = {
+        Blood: "fa-droplet",
+        Medical: "fa-kit-medical",
+        Food: "fa-bowl-food",
+        Disaster: "fa-house-flood-water"
+    };
+
+    const card = document.createElement("div");
+    card.className = "request-card";
+    card.dataset.category = category;
+
+    const icon = document.createElement("i");
+    icon.className = "fa-solid " + icons[category];
+
+    const iconBox = document.createElement("div");
+    iconBox.className = "request-icon";
+    iconBox.appendChild(icon);
+
+    const tag = document.createElement("span");
+    tag.className = "tag";
+    tag.textContent = "NEW • " + category.toUpperCase();
+
+    const heading = document.createElement("h3");
+    heading.textContent = title;
+
+    const details = document.createElement("p");
+    details.className = "details";
+    details.textContent = "📍 " + location;
+
+    const descriptionText = document.createElement("p");
+    descriptionText.textContent = description;
+
+    const donateButton = document.createElement("button");
+    donateButton.className = "btn btn-green";
+    donateButton.textContent = "Donate Now";
+    donateButton.addEventListener("click", function() {
+        supportRequest(donateButton);
+    });
+
+    card.append(iconBox, tag, heading, details,
+                descriptionText, donateButton);
+
+    document.getElementById("requestGrid").prepend(card);
+
+    document.getElementById("totalRequests").innerText =
+        document.querySelectorAll(".request-card").length;
+
+    document.getElementById("requestForm").reset();
+    closeModal();
+
+    document.querySelectorAll(".filters button")[0].click();
+
+    alert("Emergency request added successfully!");
+});
+
+window.addEventListener("click", function(e) {
+    if (e.target.id === "requestModal") closeModal();
+});
+</script>
+
+</body>
+</html>

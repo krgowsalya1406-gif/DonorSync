@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Account Settings | Donate Smarter</title>
+
+<style>
+
+/* =========================
+   ORANGE & YELLOW THEME
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+:root{
+    --primary:#f97316;
+    --primary-dark:#ea580c;
+    --secondary:#fbbf24;
+    --background:#fffaf5;
+    --white:#ffffff;
+    --text:#3f2a1d;
+    --muted:#78685b;
+    --border:#fde3c2;
+    --danger:#dc2626;
+    --success:#16a34a;
+}
+
+body{
+    background:var(--background);
+    color:var(--text);
+    min-height:100vh;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    width:100%;
+    background:linear-gradient(
+        135deg,
+        #f97316,
+        #fbbf24
+    );
+    color:white;
+    padding:16px 5%;
+    display:flex;
+    align-items:center;
+    gap:25px;
+    flex-wrap:wrap;
+    box-shadow:0 3px 15px rgba(234,88,12,.18);
+}
+
+.logo{
+    font-size:23px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+
+/* =========================
+   TOP NAVIGATION
+========================= */
+
+.top-nav{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    flex:1;
+    flex-wrap:wrap;
+}
+
+.top-nav button{
+    border:none;
+    background:transparent;
+    color:white;
+    padding:10px 13px;
+    border-radius:9px;
+    cursor:pointer;
+    font-size:14px;
+    transition:.3s;
+}
+
+.top-nav button:hover{
+    background:rgba(255,255,255,.22);
+}
+
+.top-nav button.active{
+    background:white;
+    color:var(--primary-dark);
+    font-weight:bold;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:40px auto;
+}
+
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.page-title{
+    margin-bottom:25px;
+}
+
+.page-title h1{
+    font-size:30px;
+    color:var(--primary-dark);
+    margin-bottom:8px;
+}
+
+.page-title p{
+    color:var(--muted);
+}
+
+
+/* =========================
+   CONTENT CARD
+========================= */
+
+.content{
+    background:var(--white);
+    border-radius:18px;
+    padding:32px;
+    box-shadow:0 8px 25px rgba(234,88,12,.10);
+    border:1px solid #fff0dc;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+    display:none;
+    animation:fade .3s ease;
+}
+
+.section.active{
+    display:block;
+}
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.section h2{
+    margin-bottom:8px;
+    font-size:24px;
+    color:#9a3412;
+}
+
+.section > p{
+    color:var(--muted);
+    margin-bottom:25px;
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-box{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding-bottom:25px;
+    margin-bottom:25px;
+    border-bottom:1px solid var(--border);
+}
+
+.avatar{
+    width:85px;
+    height:85px;
+    border-radius:50%;
+    background:linear-gradient(
+        135deg,
+        #f97316,
+        #fbbf24
+    );
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    font-weight:bold;
+    overflow:hidden;
+    flex-shrink:0;
+    box-shadow:0 6px 15px rgba(249,115,22,.25);
+}
+
+.avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.photo-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+
+.small-btn{
+    border:none;
+    padding:9px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.upload-btn{
+    background:#fff1df;
+    color:#c2410c;
+}
+
+.upload-btn:hover{
+    background:#fed7aa;
+}
+
+.remove-btn{
+    background:#fee2e2;
+    color:#b91c1c;
+}
+
+.remove-btn:hover{
+    background:#fecaca;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.form-group{
+    margin-bottom:10px;
+}
+
+.full{
+    grid-column:span 2;
+}
+
+label{
+    display:block;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:7px;
+    color:#5f3b26;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:13px;
+    border:1px solid var(--border);
+    border-radius:9px;
+    outline:none;
+    font-size:14px;
+    color:var(--text);
+    background:#fffdfb;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:var(--primary);
+    box-shadow:0 0 0 3px rgba(249,115,22,.12);
+}
+
+textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.save-btn{
+    background:linear-gradient(
+        135deg,
+        #f97316,
+        #fb923c
+    );
+    color:white;
+    border:none;
+    padding:13px 22px;
+    border-radius:9px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+    margin-top:18px;
+    transition:.3s;
+}
+
+.save-btn:hover{
+    background:#ea580c;
+    transform:translateY(-2px);
+}
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+.password-box{
+    position:relative;
+    max-width:550px;
+}
+
+.eye-btn{
+    position:absolute;
+    right:10px;
+    top:35px;
+    border:none;
+    background:transparent;
+    cursor:pointer;
+}
+
+
+/* =========================
+   NOTIFICATIONS
+========================= */
+
+.notification{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:20px 0;
+    border-bottom:1px solid var(--border);
+}
+
+.notification h3{
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.notification p{
+    font-size:13px;
+    color:var(--muted);
+}
+
+
+/* =========================
+   SWITCH
+========================= */
+
+.switch{
+    position:relative;
+    width:52px;
+    height:27px;
+    flex-shrink:0;
+}
+
+.switch input{
+    opacity:0;
+    width:0;
+    height:0;
+}
+
+.slider{
+    position:absolute;
+    inset:0;
+    background:#f3d5b5;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.slider:before{
+    content:"";
+    width:21px;
+    height:21px;
+    background:white;
+    position:absolute;
+    left:3px;
+    top:3px;
+    border-radius:50%;
+    transition:.3s;
+    box-shadow:0 2px 5px rgba(0,0,0,.15);
+}
+
+.switch input:checked + .slider{
+    background:var(--primary);
+}
+
+.switch input:checked + .slider:before{
+    transform:translateX(25px);
+}
+
+
+/* =========================
+   HISTORY
+========================= */
+
+.history-card{
+    border:1px solid var(--border);
+    padding:20px;
+    border-radius:13px;
+    margin-bottom:15px;
+    transition:.3s;
+    background:#fffdf9;
+}
+
+.history-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(249,115,22,.12);
+    border-color:#fdba74;
+}
+
+.history-card h3{
+    margin-bottom:9px;
+    color:#9a3412;
+}
+
+.history-card p{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:5px;
+}
+
+.status{
+    display:inline-block;
+    margin-top:10px;
+    padding:6px 13px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.completed{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.pending{
+    background:#fef3c7;
+    color:#92400e;
+}
+
+
+/* =========================
+   ACCOUNT
+========================= */
+
+.danger-box{
+    margin-top:28px;
+    background:#fff8f7;
+    border:1px solid #fecaca;
+    padding:22px;
+    border-radius:13px;
+}
+
+.danger-box h3{
+    color:var(--danger);
+    margin-bottom:8px;
+}
+
+.danger-box p{
+    color:#78685b;
+    margin-bottom:15px;
+}
+
+.delete-btn{
+    border:none;
+    background:var(--danger);
+    color:white;
+    padding:12px 20px;
+    border-radius:9px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.delete-btn:hover{
+    background:#b91c1c;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+    position:fixed;
+    right:25px;
+    top:25px;
+    background:#16a34a;
+    color:white;
+    padding:15px 22px;
+    border-radius:9px;
+    display:none;
+    z-index:9999;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark{
+    --background:#24160e;
+    --white:#342016;
+    --text:#fff7ed;
+    --muted:#e7c7aa;
+    --border:#5a3926;
+}
+
+body.dark input,
+body.dark select,
+body.dark textarea{
+    background:#24160e;
+    color:white;
+    border-color:#70442b;
+}
+
+body.dark .page-title h1{
+    color:#fbbf24;
+}
+
+body.dark .section h2,
+body.dark .history-card h3{
+    color:#fdba74;
+}
+
+body.dark label{
+    color:#fed7aa;
+}
+
+body.dark .history-card{
+    background:#2d1b12;
+}
+
+body.dark .danger-box{
+    background:#3b1d1d;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    margin-top:50px;
+    background:#5a2d0c;
+    color:white;
+    text-align:center;
+    padding:24px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+}
+
+@media(max-width:750px){
+
+    .top-nav{
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        width:100%;
+        padding-bottom:5px;
+    }
+
+    .top-nav button{
+        white-space:nowrap;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:span 1;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .container{
+        width:94%;
+        margin:25px auto;
+    }
+
+    .content{
+        padding:20px;
+    }
+
+    .profile-box{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .page-title h1{
+        font-size:25px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================
+     TOP HEADER
+========================= -->
+
+<header>
+
+
+<div class="logo">
+    🎁 Donate Smarter
+</div>
+
+
+<nav class="top-nav">
+
+    <button
+        class="top-menu active"
+        onclick="openTab('profile',this)"
+    >
+        👤 Profile
+    </button>
+
+
+    <button
+        class="top-menu"
+        onclick="openTab('security',this)"
+    >
+        🔐 Security
+    </button>
+
+
+    <button
+        class="top-menu"
+        onclick="openTab('notifications',this)"
+    >
+        🔔 Notifications
+    </button>
+
+
+    <button
+        class="top-menu"
+        onclick="openTab('preferences',this)"
+    >
+        🎨 Preferences
+    </button>
+
+
+    <button
+        class="top-menu"
+        onclick="openTab('history',this)"
+    >
+        📦 Donation History
+    </button>
+
+
+    <button
+        class="top-menu"
+        onclick="openTab('account',this)"
+    >
+        ⚠️ Account
+    </button>
+
+</nav>
+
+
+</header>
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<div class="container">
+
+
+<div class="page-title">
+    <h1>⚙️ Account Settings</h1>
+    <p>Manage your Donate Smarter account and preferences.</p>
+</div>
+
+
+<main class="content">
+
+
+    <!-- PROFILE -->
+
+    <section id="profile" class="section active">
+
+        <h2>👤 Profile Settings</h2>
+        <p>Update your personal information.</p>
+
+
+        <div class="profile-box">
+
+            <div class="avatar" id="avatar">
+                KR
+            </div>
+
+
+            <div>
+
+                <h3>Profile Photo</h3>
+
+                <div class="photo-buttons">
+
+                    <button
+                        type="button"
+                        class="small-btn upload-btn"
+                        onclick="document.getElementById('photoInput').click()"
+                    >
+                        Upload Photo
+                    </button>
+
+                    <button
+                        type="button"
+                        class="small-btn remove-btn"
+                        onclick="removePhoto()"
+                    >
+                        Remove
+                    </button>
+
+                </div>
+
+                <input
+                    type="file"
+                    id="photoInput"
+                    accept="image/*"
+                    hidden
+                    onchange="previewPhoto(event)"
+                >
+
+            </div>
+
+        </div>
+
+
+        <form onsubmit="saveProfile(event)">
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label>Full Name</label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        value="K.R. Gowsalya"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        value="krgowsalya1404@gmail.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Phone Number</label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        value="8946098001"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Date of Birth</label>
+
+                    <input
+                        type="date"
+                        id="dob"
+                        value="2007-06-14"
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label>Address</label>
+
+                    <textarea id="address">78 A/2 Kalainagar, Kottor Post, Nagercoil</textarea>
+
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="save-btn">
+                Save Profile
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- SECURITY -->
+
+    <section id="security" class="section">
+
+        <h2>🔐 Security</h2>
+        <p>Change your password and manage account security.</p>
+
+        <form onsubmit="changePassword(event)">
+
+            <div class="form-group password-box">
+
+                <label>Current Password</label>
+
+                <input
+                    type="password"
+                    id="currentPassword"
+                    required
+                >
+
+                <button
+                    type="button"
+                    class="eye-btn"
+                    onclick="togglePassword('currentPassword')"
+                >
+                    👁️
+                </button>
+
+            </div>
+
+
+            <div class="form-group password-box">
+
+                <label>New Password</label>
+
+                <input
+                    type="password"
+                    id="newPassword"
+                    required
+                >
+
+                <button
+                    type="button"
+                    class="eye-btn"
+                    onclick="togglePassword('newPassword')"
+                >
+                    👁️
+                </button>
+
+            </div>
+
+
+            <div class="form-group password-box">
+
+                <label>Confirm New Password</label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    required
+                >
+
+                <button
+                    type="button"
+                    class="eye-btn"
+                    onclick="togglePassword('confirmPassword')"
+                >
+                    👁️
+                </button>
+
+            </div>
+
+
+            <button type="submit" class="save-btn">
+                Update Password
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- NOTIFICATIONS -->
+
+    <section id="notifications" class="section">
+
+        <h2>🔔 Notifications</h2>
+        <p>Choose which notifications you want to receive.</p>
+
+
+        <div class="notification">
+
+            <div>
+                <h3>📧 Email Notifications</h3>
+                <p>Receive important updates through email.</p>
+            </div>
+
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+
+        </div>
+
+
+        <div class="notification">
+
+            <div>
+                <h3>🎁 Donation Updates</h3>
+                <p>Receive updates about your donations.</p>
+            </div>
+
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+
+        </div>
+
+
+        <div class="notification">
+
+            <div>
+                <h3>📅 Event Reminders</h3>
+                <p>Get reminders for upcoming events.</p>
+            </div>
+
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+
+        </div>
+
+
+        <button
+            class="save-btn"
+            onclick="showToast('Notification settings saved successfully!')"
+        >
+            Save Notifications
+        </button>
+
+    </section>
+
+
+    <!-- PREFERENCES -->
+
+    <section id="preferences" class="section">
+
+        <h2>🎨 Preferences</h2>
+        <p>Customize your Donate Smarter experience.</p>
+
+
+        <div class="notification">
+
+            <div>
+                <h3>🌙 Dark Mode</h3>
+                <p>Enable dark mode.</p>
+            </div>
+
+            <label class="switch">
+
+                <input
+                    type="checkbox"
+                    id="darkMode"
+                    onchange="toggleDarkMode()"
+                >
+
+                <span class="slider"></span>
+
+            </label>
+
+        </div>
+
+
+        <br>
+
+
+        <div class="form-group">
+
+            <label>Preferred Language</label>
+
+            <select id="language">
+                <option>English</option>
+                <option>Tamil</option>
+                <option>Hindi</option>
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Favorite Donation Category</label>
+
+            <select id="category">
+                <option>Clothes</option>
+                <option>Food</option>
+                <option>Books</option>
+                <option>Toys</option>
+                <option>Electronics</option>
+            </select>
+
+        </div>
+
+
+        <button
+            class="save-btn"
+            onclick="showToast('Preferences saved successfully!')"
+        >
+            Save Preferences
+        </button>
+
+    </section>
+
+
+    <!-- DONATION HISTORY -->
+
+    <section id="history" class="section">
+
+        <h2>📦 Donation History</h2>
+        <p>View your recent donation activities.</p>
+
+
+        <div class="history-card">
+
+            <h3>👕 Clothes Donation</h3>
+            <p>Items: 5 Clothing Items</p>
+            <p>Date: August 20, 2026</p>
+
+            <span class="status completed">
+                ✓ Completed
+            </span>
+
+        </div>
+
+
+        <div class="history-card">
+
+            <h3>📚 Book Donation</h3>
+            <p>Items: 10 Books</p>
+            <p>Date: August 25, 2026</p>
+
+            <span class="status pending">
+                ⏳ Pickup Pending
+            </span>
+
+        </div>
+
+
+        <div class="history-card">
+
+            <h3>🧸 Toy Donation</h3>
+            <p>Items: 3 Toys</p>
+            <p>Date: August 28, 2026</p>
+
+            <span class="status pending">
+                ⏳ Under Review
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACCOUNT -->
+
+    <section id="account" class="section">
+
+        <h2>⚠️ Account</h2>
+        <p>Manage important account actions.</p>
+
+
+        <button
+            class="save-btn"
+            onclick="logout()"
+        >
+            🚪 Logout
+        </button>
+
+
+        <div class="danger-box">
+
+            <h3>Delete Account</h3>
+
+            <p>
+                Once your account is deleted,
+                this action cannot be undone.
+            </p>
+
+            <button
+                class="delete-btn"
+                onclick="deleteAccount()"
+            >
+                Delete My Account
+            </button>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+</div>
+
+<!-- TOAST -->
+
+<div class="toast" id="toast"></div>
+
+<!-- FOOTER -->
+
+<footer>
+    © 2026 Donate Smarter ❤️
+    <br>
+    Together We Can Make a Difference
+</footer>
+
+<script>
+
+
+/* OPEN TABS */
+
+function openTab(tabId,button){
+
+    let sections =
+        document.querySelectorAll(".section");
+
+    sections.forEach(function(section){
+
+        section.classList.remove("active");
+
+    });
+
+
+    document
+        .getElementById(tabId)
+        .classList.add("active");
+
+
+    let menus =
+        document.querySelectorAll(".top-menu");
+
+    menus.forEach(function(menu){
+
+        menu.classList.remove("active");
+
+    });
+
+
+    button.classList.add("active");
+
+
+    window.scrollTo({
+
+        top:100,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+
+/* SAVE PROFILE */
+
+function saveProfile(event){
+
+    event.preventDefault();
+
+
+    let name =
+        document
+        .getElementById("fullName")
+        .value
+        .trim();
+
+
+    if(name === ""){
+
+        alert("Please enter your full name.");
+
+        return;
+
+    }
+
+
+    let initials =
+        name
+        .split(" ")
+        .map(function(word){
+
+            return word.charAt(0);
+
+        })
+        .join("")
+        .substring(0,2)
+        .toUpperCase();
+
+
+    let avatar =
+        document.getElementById("avatar");
+
+
+    if(!avatar.querySelector("img")){
+
+        avatar.textContent = initials;
+
+    }
+
+
+    showToast("Profile saved successfully!");
+
+}
+
+
+/* CHANGE PASSWORD */
+
+function changePassword(event){
+
+    event.preventDefault();
+
+
+    let newPassword =
+        document.getElementById("newPassword").value;
+
+    let confirmPassword =
+        document.getElementById("confirmPassword").value;
+
+
+    if(newPassword.length < 6){
+
+        alert(
+            "New password must contain at least 6 characters."
+        );
+
+        return;
+
+    }
+
+
+    if(newPassword !== confirmPassword){
+
+        alert("Passwords do not match!");
+
+        return;
+
+    }
+
+
+    showToast(
+        "Password updated successfully!"
+    );
+
+
+    document
+        .getElementById("currentPassword")
+        .value = "";
+
+    document
+        .getElementById("newPassword")
+        .value = "";
+
+    document
+        .getElementById("confirmPassword")
+        .value = "";
+
+}
+
+
+/* SHOW PASSWORD */
+
+function togglePassword(inputId){
+
+    let input =
+        document.getElementById(inputId);
+
+
+    if(input.type === "password"){
+
+        input.type = "text";
+
+    }else{
+
+        input.type = "password";
+
+    }
+
+}
+
+
+/* PROFILE PHOTO */
+
+function previewPhoto(event){
+
+    let file =
+        event.target.files[0];
+
+
+    if(!file) return;
+
+
+    let reader =
+        new FileReader();
+
+
+    reader.onload =
+        function(e){
+
+            document
+                .getElementById("avatar")
+                .innerHTML =
+                    "<img src='" +
+                    e.target.result +
+                    "'>";
+
+        };
+
+
+    reader.readAsDataURL(file);
+
+
+    showToast(
+        "Profile photo updated!"
+    );
+
+}
+
+
+/* REMOVE PHOTO */
+
+function removePhoto(){
+
+    let name =
+        document
+        .getElementById("fullName")
+        .value
+        .trim();
+
+
+    let initials = "KG";
+
+
+    if(name !== ""){
+
+        initials =
+            name
+            .split(" ")
+            .map(function(word){
+
+                return word.charAt(0);
+
+            })
+            .join("")
+            .substring(0,2)
+            .toUpperCase();
+
+    }
+
+
+    document
+        .getElementById("avatar")
+        .textContent = initials;
+
+
+    document
+        .getElementById("photoInput")
+        .value = "";
+
+
+    showToast(
+        "Profile photo removed!"
+    );
+
+}
+
+
+/* DARK MODE */
+
+function toggleDarkMode(){
+
+    document.body.classList.toggle("dark");
+
+
+    if(document.body.classList.contains("dark")){
+
+        showToast("Dark mode enabled!");
+
+    }else{
+
+        showToast("Light mode enabled!");
+
+    }
+
+}
+
+
+/* TOAST */
+
+function showToast(message){
+
+    let toast =
+        document.getElementById("toast");
+
+
+    toast.textContent = message;
+
+    toast.style.display = "block";
+
+
+    setTimeout(function(){
+
+        toast.style.display = "none";
+
+    },3000);
+
+}
+
+
+/* LOGOUT */
+
+function logout(){
+
+    let answer =
+        confirm(
+            "Are you sure you want to logout?"
+        );
+
+
+    if(answer){
+
+        showToast(
+            "Logged out successfully!"
+        );
+
+    }
+
+}
+
+
+/* DELETE ACCOUNT */
+
+function deleteAccount(){
+
+    let answer =
+        confirm(
+            "Are you sure you want to delete your account? This action cannot be undone."
+        );
+
+
+    if(answer){
+
+        showToast(
+            "Account deletion request submitted."
+        );
+
+    }
+
+}
+
+
+</script>
+
+</body>
+</html>

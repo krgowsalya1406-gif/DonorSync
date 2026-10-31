@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Notifications</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+/* ================= BODY ================= */
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#e8f8f0,#f4fff8,#e3f6ec);
+    color:#1f3b2d;
+}
+
+
+/* ================= TOP BAR ================= */
+
+.topbar{
+    height:72px;
+    padding:0 8%;
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+
+    background:rgba(255,255,255,.65);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid #d7eee1;
+}
+
+
+/* ================= BELL BOX ================= */
+
+.bell-box{
+    position:relative;
+}
+
+
+/* ================= BELL BUTTON ================= */
+
+.bell-btn{
+    width:48px;
+    height:48px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:linear-gradient(
+        135deg,
+        #16a34a,
+        #22c55e
+    );
+
+    color:white;
+
+    font-size:21px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(22,163,74,.28);
+
+    transition:.25s;
+}
+
+
+.bell-btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(22,163,74,.35);
+}
+
+
+/* ================= NOTIFICATION BADGE ================= */
+
+.badge{
+    position:absolute;
+
+    top:-6px;
+    right:-6px;
+
+    width:21px;
+    height:21px;
+
+    border-radius:50%;
+
+    background:#ef4444;
+
+    color:white;
+
+    font-size:10px;
+    font-weight:600;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:2px solid white;
+}
+
+
+/* ================= NOTIFICATION DROPDOWN ================= */
+
+.notification-dropdown{
+    position:absolute;
+
+    top:62px;
+    right:0;
+
+    width:390px;
+
+    background:white;
+
+    border:1px solid #dcefe4;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 20px 55px
+        rgba(30,90,55,.18);
+
+    overflow:hidden;
+
+    display:none;
+
+    z-index:1000;
+
+    animation:popup .25s ease;
+}
+
+
+.notification-dropdown.show{
+    display:block;
+}
+
+
+@keyframes popup{
+
+    from{
+        opacity:0;
+        transform:translateY(-10px) scale(.98);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}
+
+
+/* ================= HEADER ================= */
+
+.notification-header{
+    padding:18px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9f9ef,
+            #f4fff7
+        );
+
+    border-bottom:
+        1px solid #dcefe4;
+}
+
+
+.notification-header h3{
+    font-size:16px;
+    color:#1f5135;
+}
+
+
+.mark-read{
+    border:none;
+
+    background:#dff7e8;
+
+    color:#16803d;
+
+    padding:8px 12px;
+
+    border-radius:9px;
+
+    font-size:10px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+
+.mark-read:hover{
+    background:#c8f0d6;
+}
+
+
+/* ================= NOTIFICATION ITEM ================= */
+
+.notification-item{
+    display:flex;
+
+    gap:13px;
+
+    padding:17px 20px;
+
+    border-bottom:
+        1px solid #edf6f0;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+
+.notification-item:hover{
+    background:#f5fcf7;
+}
+
+
+.notification-icon{
+    width:46px;
+    height:46px;
+
+    min-width:46px;
+
+    border-radius:14px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:20px;
+}
+
+
+/* ================= ICON COLORS ================= */
+
+.icon-laptop{
+    background:#dcfce7;
+}
+
+
+.icon-location{
+    background:#dff7e8;
+}
+
+
+.icon-completed{
+    background:#c8f5d8;
+}
+
+
+/* ================= NOTIFICATION TEXT ================= */
+
+.notification-text{
+    flex:1;
+}
+
+
+.notification-text h4{
+    font-size:13px;
+
+    margin-bottom:4px;
+
+    color:#1f5135;
+}
+
+
+.notification-text p{
+    font-size:11px;
+
+    color:#658072;
+
+    line-height:1.5;
+}
+
+
+.notification-text span{
+    display:block;
+
+    margin-top:6px;
+
+    font-size:10px;
+
+    color:#9aaea1;
+}
+
+
+/* ================= UNREAD DOT ================= */
+
+.unread-dot{
+    width:8px;
+    height:8px;
+
+    min-width:8px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    margin-top:6px;
+}
+
+
+/* ================= MAIN ================= */
+
+.main{
+    width:min(1000px,90%);
+
+    margin:80px auto;
+}
+
+
+.main h1{
+    font-size:32px;
+    color:#1f5135;
+}
+
+
+.main p{
+    color:#658072;
+
+    margin-top:8px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:500px){
+
+    .topbar{
+        padding:0 5%;
+    }
+
+    .notification-dropdown{
+        position:fixed;
+
+        top:82px;
+
+        right:5%;
+
+        width:90%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= TOP BAR ================= -->
+
+<div class="topbar">
+
+
+<!-- NOTIFICATION -->
+
+<div class="bell-box">
+
+
+    <!-- BELL BUTTON -->
+
+    <button
+        class="bell-btn"
+        onclick="toggleNotification()">
+
+        🔔
+
+    </button>
+
+
+    <!-- NOTIFICATION COUNT -->
+
+    <span
+        class="badge"
+        id="badge">
+
+        3
+
+    </span>
+
+
+    <!-- ================= DROPDOWN ================= -->
+
+    <div
+        class="notification-dropdown"
+        id="notificationDropdown">
+
+
+        <!-- HEADER -->
+
+        <div class="notification-header">
+
+
+            <h3>
+                Notifications
+            </h3>
+
+
+            <button
+                class="mark-read"
+                onclick="markAllRead()">
+
+                Mark all read
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- ================= NOTIFICATION 1 ================= -->
+
+        <div
+            class="notification-item"
+            onclick="removeDot(this)">
+
+
+            <div class="notification-icon icon-laptop">
+
+                💻
+
+            </div>
+
+
+            <div class="notification-text">
+
+
+                <h4>
+                    Request Accepted
+                </h4>
+
+
+                <p>
+                    Your request for a Study Laptop
+                    has been accepted.
+                </p>
+
+
+                <span>
+                    2 minutes ago
+                </span>
+
+
+            </div>
+
+
+            <div class="unread-dot"></div>
+
+
+        </div>
+
+
+
+        <!-- ================= NOTIFICATION 2 ================= -->
+
+        <div
+            class="notification-item"
+            onclick="removeDot(this)">
+
+
+            <div class="notification-icon icon-location">
+
+                📍
+
+            </div>
+
+
+            <div class="notification-text">
+
+
+                <h4>
+                    Handover Confirmed
+                </h4>
+
+
+                <p>
+                    Anna Nagar • September 2 • 4:00 PM
+                </p>
+
+
+                <span>
+                    30 minutes ago
+                </span>
+
+
+            </div>
+
+
+            <div class="unread-dot"></div>
+
+
+        </div>
+
+
+
+        <!-- ================= NOTIFICATION 3 ================= -->
+
+        <div
+            class="notification-item"
+            onclick="removeDot(this)">
+
+
+            <div class="notification-icon icon-completed">
+
+                🎉
+
+            </div>
+
+
+            <div class="notification-text">
+
+
+                <h4>
+                    Donation Completed
+                </h4>
+
+
+                <p>
+                    Thank you for making a difference!
+                </p>
+
+
+                <span>
+                    Yesterday
+                </span>
+
+
+            </div>
+
+
+            <div class="unread-dot"></div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<div class="main">
+
+
+<h1>
+    My Notifications
+</h1>
+
+<p>
+    Click the notification bell to view your latest updates.
+</p>
+
+
+</div>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+/* ================= TOGGLE NOTIFICATION ================= */
+
+function toggleNotification(){
+
+    document
+        .getElementById(
+            "notificationDropdown"
+        )
+        .classList
+        .toggle(
+            "show"
+        );
+
+}
+
+
+
+/* ================= REMOVE UNREAD DOT ================= */
+
+function removeDot(item){
+
+    const dot =
+        item.querySelector(
+            ".unread-dot"
+        );
+
+
+    if(dot){
+
+        dot.remove();
+
+        updateBadge();
+
+    }
+
+}
+
+
+
+/* ================= MARK ALL READ ================= */
+
+function markAllRead(){
+
+    document
+        .querySelectorAll(
+            ".unread-dot"
+        )
+        .forEach(
+            function(dot){
+
+                dot.remove();
+
+            }
+        );
+
+
+    document
+        .getElementById(
+            "badge"
+        )
+        .style.display =
+        "none";
+
+}
+
+
+
+/* ================= UPDATE BADGE ================= */
+
+function updateBadge(){
+
+    const count =
+        document
+        .querySelectorAll(
+            ".unread-dot"
+        )
+        .length;
+
+
+    const badge =
+        document
+        .getElementById(
+            "badge"
+        );
+
+
+    if(count === 0){
+
+        badge.style.display =
+        "none";
+
+    }
+
+    else{
+
+        badge.innerText =
+        count;
+
+    }
+
+}
+
+
+/* ================= CLOSE WHEN CLICKING OUTSIDE ================= */
+
+document.addEventListener(
+    "click",
+    function(event){
+
+        const bellBox =
+            document.querySelector(
+                ".bell-box"
+            );
+
+
+        if(
+            !bellBox.contains(
+                event.target
+            )
+        ){
+
+            document
+            .getElementById(
+                "notificationDropdown"
+            )
+            .classList
+            .remove(
+                "show"
+            );
+
+        }
+
+    }
+);
+
+
+</script>
+
+</body>
+</html>
