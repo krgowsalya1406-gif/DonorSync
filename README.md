@@ -275,6 +275,9 @@ Fraud Detection and Prevention
 QR-Based Donation Tracking
 
 Automated Email/SMS Alerts
+
 Community Donation Campaigns
+
 Environmental Impact Tracking
+
 Cloud-Based Data Management
