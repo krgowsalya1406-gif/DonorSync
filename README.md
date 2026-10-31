@@ -121,13 +121,6 @@ The project demonstrates how web technologies can be used to support social resp
 
 ☁️ Cloud Deployment Support
 
-## 🎥 project Demo
-
-
-[Project Demo]()
-
-## 🚀 project Demo
-[Live Demo]()
 
 
 ## 📸 Screenshots
