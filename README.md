@@ -53,14 +53,18 @@ To make resource sharing more accessible, organized, and meaningful by connectin
 | 💬 Help & Support | Find assistance and support information |
 
 ---
-<p>
-  <a href="YOUR_LIVE_DEMO_URL">
-    <img src="https://img.shields.io/badge/🌐_LIVE_DEMO-8B5CF6?style=for-the-badge&logoColor=white" alt="Live Demo"/>
-  </a>
-  <a href="YOUR_GITHUB_REPOSITORY_URL">
-    <img src="https://img.shields.io/badge/⌘_SOURCE_CODE-24292F?style=for-the-badge&logo=github&logoColor=white" alt="Source Code"/>
-  </a>
-</p>
+### 🌐 LIVE DEMO
+
+<a href="YOUR_LIVE_DEMO_URL">
+  <img src="https://img.shields.io/badge/🚀_EXPLORE_DONORSYNC-8B5CF6?style=for-the-badge" alt="Live Demo"/>
+</a>
+
+### 💻 SOURCE CODE
+
+<a href="YOUR_GITHUB_REPOSITORY_URL">
+  <img src="https://img.shields.io/badge/VIEW_ON_GITHUB-24292F?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repository"/>
+</a>
+
 
 ## 🖼️ A Visual Tour of DonorSync
 
