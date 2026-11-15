@@ -161,7 +161,7 @@ Discover events and manage your personal account.
 
 ### Built with technologies that bring ideas to life
 
-<img src="https://skillicons.dev/icons?i=html,css,js,php,mysql,vscode,git,github" />
+<img src="https://skillicons.dev/icons?i=html,css,js,vscode,git,github" />
 
 </div>
 
@@ -170,8 +170,7 @@ Discover events and manage your personal account.
 | HTML5 | Application structure |
 | CSS3 | Styling, layouts and responsive design |
 | JavaScript | Interactive functionality |
-| PHP | Server-side development |
-| MySQL | Database management, if configured in the project |
+
 
 ---
 
