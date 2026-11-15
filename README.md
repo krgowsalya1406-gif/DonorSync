@@ -256,45 +256,12 @@ DonorSync/
 
 ---
 
-## 🚀 Run DonorSync Locally
 
-### Prerequisites
 
-- Visual Studio Code
-- XAMPP
-- PHP
-- MySQL, if used by your application
-- Web browser
 
-### Installation Steps
 
-**1. Clone the repository**
 
-```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-```
 
-**2. Move the project**
-
-Place the `DonorSync` folder inside the XAMPP `htdocs` directory.
-
-**3. Start the server**
-
-Open XAMPP Control Panel and start Apache and MySQL if required.
-
-**4. Configure the database**
-
-Create the project database, import the provided SQL file if available, and configure the PHP database connection.
-
-**5. Launch the application**
-
-Open your browser and visit:
-
-```text
-http://localhost/DonorSync/
-```
-
----
 
 ## 🔮 What's Coming Next?
 
@@ -311,19 +278,6 @@ The platform has opportunities to grow with additional capabilities.
 
 ---
 
-## 🎓 What I Learned
-
-Working on DonorSync helped me gain practical experience in:
-
-- Developing multi-page web applications.
-- Building responsive interfaces using HTML and CSS.
-- Implementing interactive features using JavaScript.
-- Understanding PHP-based web development.
-- Working with donation workflows and user interfaces.
-- Organizing a project into reusable files and modules.
-- Designing a platform around a real-world problem.
-
----
 
 ## 👩‍💻 Meet the Developer
 
@@ -339,9 +293,6 @@ Building meaningful digital experiences through creativity and code.
 
 <br/>
 
-<a href="https://github.com/krgowsalya1406-gif">
-<img src="https://img.shields.io/badge/GitHub-Visit%20Profile-181717?style=for-the-badge&logo=github"/>
-</a>
 
 </div>
 
