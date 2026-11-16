@@ -159,6 +159,8 @@ Allows users to manage personal information, update profile details, and customi
 ### 10. Get Help & Support
 
 Provides assistance, answers common questions, and helps users resolve issues while using the DonorSync platform.
+
+<p align="center">
 <img src="image/help.png" width="88%" alt="Help and Support"/>
 </p>
 
