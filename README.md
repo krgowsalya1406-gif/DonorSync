@@ -11,7 +11,7 @@ A modern donation management platform that brings donors, useful resources, and 
 <br/>
 
 <img src="https://img.shields.io/badge/PROJECT-DonorSync-8B5CF6?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/STATUS-In%20Develoyed-A78BFA?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/STATUS-%20Develoyed-A78BFA?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/FOCUS-Social%20Impact-EC4899?style=for-the-badge"/>
 
 <br/><br/>
