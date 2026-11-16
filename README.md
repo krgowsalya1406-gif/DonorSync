@@ -1,20 +1,28 @@
+
+
 <h1 align="center">
   💜 DonorSync — Smart Donation Platform
 </h1>
 
-<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=800&size=30&duration=2800&pause=900&color=A78BFA&center=true&vCenter=true&width=850&lines=Give+With+Purpose+%F0%9F%92%9C;Share+Resources.+Spread+Kindness.+%E2%9C%A8;Turn+Unused+Into+Useful+%F0%9F%8C%B1;Together%2C+We+Can+Make+A+Difference." alt="DonorSync Typing Animation"/>
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=800&size=30&duration=2800&pause=900&color=A78BFA&center=true&vCenter=true&width=850&lines=Give+With+Purpose+%F0%9F%92%9C;Share+Resources.+Spread+Kindness.+%E2%9C%A8;Turn+Unused+Into+Useful+%F0%9F%8C%B1;Together%2C+We+Can+Make+A+Difference." alt="DonorSync Typing Animation"/>
+</p>
 
-### ✨ Share What You Can. Change What You Can.
+<h2 align="center">✨ Give What You Don't Need. Help Someone Who Does.</h2>
 
-A modern donation management platform that brings donors, useful resources, and communities together through meaningful sharing.
+<p align="center">
+  A modern donation management platform that connects donors,
+  receivers, and communities through meaningful resource sharing.
+</p>
 
 <br/>
 
-<img src="https://img.shields.io/badge/PROJECT-DonorSync-8B5CF6?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/STATUS-%20Develoyed-A78BFA?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/FOCUS-Social%20Impact-EC4899?style=for-the-badge"/>
+<p align="center">
+  <img src="https://img.shields.io/badge/PROJECT-DonorSync-8B5CF6?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/STATUS-Active-22C55E?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/FOCUS-Social%20Impact-EC4899?style=for-the-badge"/>
+</p>
 
-<br/><br/>
 
 
 </div>
