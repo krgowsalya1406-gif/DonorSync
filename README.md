@@ -11,7 +11,7 @@ A modern donation management platform that brings donors, useful resources, and 
 <br/>
 
 <img src="https://img.shields.io/badge/PROJECT-DonorSync-8B5CF6?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/STATUS-In%20Development-A78BFA?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/STATUS-In%20Develoyed-A78BFA?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/FOCUS-Social%20Impact-EC4899?style=for-the-badge"/>
 
 <br/><br/>
@@ -62,13 +62,13 @@ To make resource sharing more accessible, organized, and meaningful by connectin
 
 ### 🌐 LIVE DEMO
 
-<a href="">
+<a href="https://heroic-cajeta-6d45b8.netlify.app">
   <img src="https://img.shields.io/badge/🚀_EXPLORE_DONORSYNC-8B5CF6?style=for-the-badge" alt="Live Demo"/>
 </a>
 
 ### 💻 SOURCE CODE
 
-<a href="YOUR_GITHUB_REPOSITORY_URL">
+<a href="https://github.com/krgowsalya1406-gif/DonorSync.git">
   <img src="https://img.shields.io/badge/VIEW_ON_GITHUB-24292F?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repository"/>
 </a>
 
