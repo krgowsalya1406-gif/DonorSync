@@ -38,7 +38,7 @@ That's the idea behind DonorSync.
 DonorSync is a web-based donation management platform designed to simplify the process of sharing useful items. It provides a centralized space where users can manage donations, explore available resources, view updates, and participate in community-focused activities.
 
 Instead of letting valuable resources go unused, DonorSync encourages people to give them a second life.
-
+----
 ### 🎯 Our Mission
 
 To make resource sharing more accessible, organized, and meaningful by connecting people through the power of giving.
