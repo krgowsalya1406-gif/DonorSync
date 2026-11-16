@@ -154,12 +154,12 @@ Discover events and manage your personal account.
 Allows users to manage personal information, update profile details, and customize account preferences.
 
 <p align="center">
-<img src="image/account.png" width="44%" alt="Account Settings"/>
+<img src="image/account.png" width="88%" alt="Account Settings"/>
 
 ### 10. Get Help & Support
 
 Provides assistance, answers common questions, and helps users resolve issues while using the DonorSync platform.
-<img src="image/help.png" width="44%" alt="Help and Support"/>
+<img src="image/help.png" width="88%" alt="Help and Support"/>
 </p>
 
 ---
