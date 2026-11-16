@@ -57,7 +57,8 @@ To make resource sharing more accessible, organized, and meaningful by connectin
 
 
 <a href="https://drive.google.com/file/d/1cx44_JNDH8ZY71bhQonTdXkKvEMn87WC/view?usp=sharing">
-  <img src="https://img.shields.io/badge/🚀_EXPLORE_DONORSYNC-8B5CF6?style=for-the-badge" alt="Project demo"/>
+  <img src="https://img.shields.io/badge/▶%20Watch%20Project%20Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/>
+
 </a>
 
 ### 🌐 LIVE DEMO
