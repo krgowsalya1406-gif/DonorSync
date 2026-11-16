@@ -1,5 +1,6 @@
-💜 DonorSync — Smart Donation Platform
-<div align="center">
+<h1 align="center">
+  💜 DonorSync — Smart Donation Platform
+</h1>
 
 <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=800&size=30&duration=2800&pause=900&color=A78BFA&center=true&vCenter=true&width=850&lines=Give+With+Purpose+%F0%9F%92%9C;Share+Resources.+Spread+Kindness.+%E2%9C%A8;Turn+Unused+Into+Useful+%F0%9F%8C%B1;Together%2C+We+Can+Make+A+Difference." alt="DonorSync Typing Animation"/>
 
