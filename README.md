@@ -53,6 +53,16 @@ To make resource sharing more accessible, organized, and meaningful by connectin
 | 💬 Help & Support | Find assistance and support information |
 
 ---
+## 🎥 Project Demo
+
+Watch the project demonstration to explore the user interface and functionality.
+
+<p align="center">
+
+<a href="https://drive.google.com/file/d/1g8423RMjPp7ByNngiQ1SyIG-OD-J0ay1/view?usp=sharing">
+<img src="https://img.shields.io/badge/▶%20Watch%20Project%20Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/>
+</a>
+
 ### 🌐 LIVE DEMO
 
 <a href="YOUR_LIVE_DEMO_URL">
